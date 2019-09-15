@@ -27,11 +27,12 @@ const Invoice = new Schema({
     math: Number,
     sub1: Number,
     sub2: Number,
-    showSubs: 'Number',
-    callumfeeResults: 'Number',
-    showTotalCalc: 'Number',
-    viewSubs: 'Number',
-    total: 'Number',
+    showSubs: Number,
+    callumfeeResults: Number,
+    showTotalCalc: Number,
+    viewSubs: Number,
+    total: Number,
+    address: String,
     
     allClients: [
         {

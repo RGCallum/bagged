@@ -630,14 +630,14 @@ font-weight: 200;
    
 `
 const LogoIdDiv = styled.div`
-padding-top: 50px;
-padding-bottom: 20px;
+padding-top: 30px;
+// padding-bottom: 20px;
 
 display: flex
 justify-content: space-between;
 align-content: center;
 .invoiceNum{
-    margin-left: 50vw;
+    margin-left: 40vw;
     color: rgba(0,0,0, 0.3);
     font-weight: 200;
     
@@ -668,6 +668,17 @@ img{
         margin-left: 65%;
 
     }
+    textarea::placeholder{
+    
+        color: white;
+    }
+    textarea{
+        
+        @media print{
+            border: none;
+            resize:none;
+
+        }
     .watermark{
         position: absolute;
         text-align: center;
@@ -836,7 +847,8 @@ class Invoices extends Component {
             callumfeeResults: '',
             showTotalCalc: '',
             viewSubs: '',
-            total: ''
+            total: '',
+            address: ''
         }
 
 

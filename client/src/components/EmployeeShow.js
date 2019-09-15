@@ -602,14 +602,14 @@ font-weight: 200;
    
 `
 const LogoIdDiv = styled.div`
-padding-top: 30px;
+padding-top: 50px;
 padding-bottom: 20px;
 
 display: flex
 justify-content: space-between;
 align-content: center;
 .invoiceNum{
-    margin-left: 40vw;
+    margin-left: 50vw;
     color: rgba(0,0,0, 0.3);
     font-weight: 200;
     
@@ -640,17 +640,7 @@ img{
         margin-left: 65%;
 
     }
-    textarea::placeholder{
-        font-weight: 100;
-        font-size: 10px;
-    }
-    textarea{
-        @media print{
-            border: none;
-            resize:none;
-
-        }
-    }
+    
 `
 
 
@@ -793,7 +783,6 @@ class EmployeeShow extends Component {
             showTotalCalc: '',
             viewSubs: '',
             total: '',
-            address: '',
             // id: 'idnumber'
             // addLine: true,
         }
@@ -1144,12 +1133,7 @@ class EmployeeShow extends Component {
                                                             <img src="https://www.tchevents.com/wp-content/uploads/2018/01/Captivating-Company-Logo-Images-Free-76-About-Remodel-Logo-Creator-with-Company-Logo-Images-Free.png" alt="Add your logo" />
 
                                                         </a>
-                                                        <img src={invoice.image} alt="Your Logo Here" />
-                                                            <textarea 
-                                                            onBlur={() => this.handleUpdate(invoice._id)}
-                                                            onChange={(event) => this.handleChange(event, invoice._id)}
-                                                            type="text" name="address" id="address" value={invoice.address} cols="30" rows="4" placeholder="your company's name and address"></textarea>
-                                                         
+                                                        
                                                             <div className="invoiceNum">ID:{invoice._id}  </div><br />
                                                         
                                                     </LogoIdDiv>

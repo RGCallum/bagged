@@ -622,7 +622,7 @@ align-content: center;
         // color: blue;
     }
 img{
-    width: 8%;
+    width: 10%;
         // z-index: 10;
         position: absolute;
         max-width: 250px;
@@ -1130,7 +1130,7 @@ class EmployeeShow extends Component {
                                                             {/* <img id="target" src={this.state.uploadImage} name='image' alt="Add your logo" />  */}
 
                                                             {/* below is Callum Enterprise logo */}
-                                                            <img src="https://peripherex.co.uk/wp-content/uploads/2018/01/YourLogoHere.png" alt="Add your logo" />
+                                                            <img src="https://www.tchevents.com/wp-content/uploads/2018/01/Captivating-Company-Logo-Images-Free-76-About-Remodel-Logo-Creator-with-Company-Logo-Images-Free.png" alt="Add your logo" />
 
                                                         </a>
                                                         

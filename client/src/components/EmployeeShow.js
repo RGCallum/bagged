@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaMinusCircle, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaMinusCircle, FaScroll, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from '../components/NavBar'
 
 
@@ -1188,10 +1188,10 @@ class EmployeeShow extends Component {
 
 
                                                     <div className="row header">
-                                                        <td>    <div className='required'><span> <FaBriefcase /> </span> <br /> Client</div></td>
-                                                        <td>    <div className='required'><span> <FaUserClock /> </span> <br /> Intervals</div></td>
-                                                        <td>    <div ><span> <FaClock /> </span> <br />Interval Type</div></td>
-                                                        <td>    <div className='required'><span> <FaDollarSign /> </span><br /> Interval Rate</div></td>
+                                                    <td>    <div className='required'><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
+                                                        <td>    <div className='required'><span> <FaCartPlus /> </span> <br /> Quantity</div></td>
+                                                        <td>    <div ><span> <FaScroll /> </span> <br />Description</div></td>
+                                                        <td>    <div className='required'><span> <FaDollarSign /> </span><br />Price</div></td>
                                                         <td id='subsHead'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>
                                                         <td id='subsHead2'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>
 
@@ -1438,11 +1438,12 @@ class EmployeeShow extends Component {
 
                                                 </TotalsInvoice>
                                                 <div className="memo noprint"> <b>Memo:</b>  <br />
-                                                    <i> {this.state.employee.employeename} serviced {invoice.client} for {invoice.frequency} {invoice.result}s at a rate of {"$" + invoice.rate} per {invoice.result} = <b> {"$" + (invoice.rate * invoice.frequency).toFixed(2)}. </b>
-                                                        {this.state.employee.employeename} serviced {invoice.client2} for {invoice.frequency2} {invoice.result2}s at a rate of {"$" + invoice.rate2} per {invoice.result2} = <b> {"$" + (invoice.rate2 * invoice.frequency2).toFixed(2)} </b>
+
+                                                <i> {invoice.frequency} {invoice.client} {invoice.result}s at a rate of {"$" + invoice.rate} per {invoice.result} = <b> {"$" + (invoice.rate * invoice.frequency).toFixed(2)}. </b>
+                                                        {invoice.frequency2} {invoice.client2}  {invoice.result2}s at a rate of {"$" + invoice.rate2} per {invoice.result2} = <b> {"$" + (invoice.rate2 * invoice.frequency2).toFixed(2)} </b>
                                                         for a total of <b>{'$' + ((invoice.rate * invoice.frequency).toFixed(2) && (invoice.rate * invoice.frequency + invoice.rate2 * invoice.frequency2).toFixed(2))} </b>
-                                                        minus Arise Service Fee <b>({"$" + 19.75})</b> and IB 10% Fee <b>({'$' + ((invoice.rate * invoice.frequency * .10).toFixed(2) && (invoice.rate * invoice.frequency * .10 + invoice.rate2 * invoice.frequency2 * .10).toFixed(2))})</b>.
-                                                <b>  Total Due = {'$' + ((.10 * -invoice.rate * invoice.frequency + invoice.rate * invoice.frequency - 19.75).toFixed(2) && ((.10 * -invoice.rate * invoice.frequency + invoice.rate * invoice.frequency) + (.10 * -invoice.rate2 * invoice.frequency2 + invoice.rate2 * invoice.frequency2) - 19.75).toFixed(2))}</b></i>
+                                                        minus {invoice.namefee} <b>({"$" + invoice.arisefee})</b> and {invoice.otherfee} <b>({'$' + ((invoice.rate * invoice.frequency * (invoice.callumfee)).toFixed(2) && (invoice.rate * invoice.frequency * (invoice.callumfee) + invoice.rate2 * invoice.frequency2 * (invoice.callumfee)).toFixed(2))})</b>.
+                                                <b>  Total Due = {'$' + (((invoice.callumfee) * -invoice.rate * invoice.frequency + invoice.rate * invoice.frequency - invoice.arisefee).toFixed(2) && (((invoice.callumfee) * -invoice.rate * invoice.frequency + invoice.rate * invoice.frequency) + ((invoice.callumfee) * -invoice.rate2 * invoice.frequency2 + invoice.rate2 * invoice.frequency2) - invoice.arisefee).toFixed(2))}</b></i>
                                                 </div>
                                                 <br />
                                                 <OptionsInvoice className='noprint printSave'>

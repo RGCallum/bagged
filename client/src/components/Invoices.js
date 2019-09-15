@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import EmployeeShow from './EmployeeShow'
-import { FaPaperPlane, FaMinusCircle, FaShareAlt, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaPaperPlane, FaScroll, FaMinusCircle, FaShareAlt, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from '../components/NavBar'
 
 
@@ -1014,12 +1014,12 @@ class Invoices extends Component {
 
 
                                             <div className="row header">
-                                                <td>    <div className='required'><span> <FaBriefcase /> </span> <br /> Client </div></td>
-                                                <td>    <div className='required'><span> <FaUserClock /> </span> <br /> Intervals </div></td>
-                                                <td>    <div ><span> <FaClock /> </span> <br />Interval Type </div></td>
-                                                <td>    <div className='required'><span> <FaDollarSign /> </span><br /> Interval Rate </div></td>
-                                                <td id='subsHead'>    <div  ><span><FaMoneyBillAlt /></span><br /> Total </div></td>
-                                                <td id='subsHead2'>    <div  ><span><FaMoneyBillAlt /></span><br /> Total </div></td>
+                                            <td>    <div className='required'><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
+                                                        <td>    <div className='required'><span> <FaCartPlus /> </span> <br /> Quantity</div></td>
+                                                        <td>    <div ><span> <FaScroll /> </span> <br />Description</div></td>
+                                                        <td>    <div className='required'><span> <FaDollarSign /> </span><br />Price</div></td>
+                                                        <td id='subsHead'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>
+                                                        <td id='subsHead2'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>
 
                                             </div>
                                             <div className="lineItems">
@@ -1251,12 +1251,12 @@ $<input
 
                                         </TotalsInvoice>
                                         <div className="memo noprint"> <b>Memo:</b>  <br />
-                                            <i>  {this.state.employee.employeename} serviced {this.state.invoice.client} for {this.state.invoice.frequency} {this.state.invoice.result}s at a rate of {"$" + this.state.invoice.rate} per {this.state.invoice.result} = <b> {"$" + (this.state.invoice.rate * this.state.invoice.frequency).toFixed(2)} </b>
-                                            {this.state.employee.employeename} also serviced {this.state.invoice.client2} for {this.state.invoice.frequency2} {this.state.invoice.result2}s at a rate of {"$" + this.state.invoice.rate2} per {this.state.invoice.result2} = <b> {"$" + (this.state.invoice.rate2 * this.state.invoice.frequency2).toFixed(2)} </b>
-                                                for a total of <b>{'$' + ((this.state.invoice.rate * this.state.invoice.frequency).toFixed(2) && (this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate2 * this.state.invoice.frequency2).toFixed(2))} </b>
-                                                minus Arise Service Fee <b>({"$" + 19.75})</b> and IB 10% Fee <b>({'$' + ((this.state.invoice.rate * this.state.invoice.frequency * .10).toFixed(2) && (this.state.invoice.rate * this.state.invoice.frequency * .10 + this.state.invoice.rate2 * this.state.invoice.frequency2 * .10).toFixed(2))})</b>.
-    <b>  Total Due = {'$' + ((.10 * -this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate * this.state.invoice.frequency - 19.75).toFixed(2) && ((.10 * -this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate * this.state.invoice.frequency) + (.10 * -this.state.invoice.rate2 * this.state.invoice.frequency2 + this.state.invoice.rate2 * this.state.invoice.frequency2) - 19.75).toFixed(2))}</b></i>
-                                        </div>
+                                        <i> {this.state.invoice.frequency} {this.state.invoice.client} {this.state.invoice.result}s at a rate of {"$" + this.state.invoice.rate} per {this.state.invoice.result} = <b> {"$" + (this.state.invoice.rate * this.state.invoice.frequency).toFixed(2)}. </b>
+                                                        {this.state.invoice.frequency2} {this.state.invoice.client2}  {this.state.invoice.result2}s at a rate of {"$" + this.state.invoice.rate2} per {this.state.invoice.result2} = <b> {"$" + (this.state.invoice.rate2 * this.state.invoice.frequency2).toFixed(2)} </b>
+                                                        for a total of <b>{'$' + ((this.state.invoice.rate * this.state.invoice.frequency).toFixed(2) && (this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate2 * this.state.invoice.frequency2).toFixed(2))} </b>
+                                                        minus {this.state.invoice.namefee} <b>({"$" + this.state.invoice.namefee})</b> and {this.state.invoice.otherfee} <b>({'$' + ((this.state.invoice.rate * this.state.invoice.frequency * (this.state.invoice.callumfee)).toFixed(2) && (this.state.invoice.rate * this.state.invoice.frequency * (this.state.invoice.callumfee) + this.state.invoice.rate2 * this.state.invoice.frequency2 * (this.state.invoice.callumfee)).toFixed(2))})</b>.
+                                                <b>  Total Due = {'$' + (((this.state.invoice.callumfee) * -this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate * this.state.invoice.frequency - 19.75).toFixed(2) && (((this.state.invoice.callumfee) * -this.state.invoice.rate * this.state.invoice.frequency + this.state.invoice.rate * this.state.invoice.frequency) + ((this.state.invoice.callumfee) * -this.state.invoice.rate2 * this.state.invoice.frequency2 + this.state.invoice.rate2 * this.state.invoice.frequency2) - 19.75).toFixed(2))}</b></i>
+                                                </div>
                                         <br />
 
 

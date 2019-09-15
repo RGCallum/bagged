@@ -1130,7 +1130,7 @@ class EmployeeShow extends Component {
                                                             {/* <img id="target" src={this.state.uploadImage} name='image' alt="Add your logo" />  */}
 
                                                             {/* below is Callum Enterprise logo */}
-                                                            <img src="/images/CAL_ent_logo.png" alt="Add your logo" />
+                                                            <img src="https://peripherex.co.uk/wp-content/uploads/2018/01/YourLogoHere.png" alt="Add your logo" />
 
                                                         </a>
                                                         

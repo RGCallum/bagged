@@ -224,7 +224,7 @@ class Employee extends Component {
           <h1>
             {/* 👩🏾‍🦱👨🏽‍🦳👩🏾‍🦳🧔🏾👱🏽‍♀️👨🏾‍👵🏾👨🏿‍🦱👨🏼‍👩🏾👴🏾👩🏻  */}
             <br/>Employee Directory</h1>
-            <a href="https://tenderfree.herokuapp.com/employees"><button>Free Editable version</button></a>   
+            <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>   
 
 <br/><br/> 
 <EmployeeOutline>

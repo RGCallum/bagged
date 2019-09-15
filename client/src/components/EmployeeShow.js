@@ -1478,4 +1478,4 @@ class EmployeeShow extends Component {
     }
 }
 
-export default EmployeeShow
+export default EmployeeShow;

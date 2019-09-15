@@ -1371,7 +1371,7 @@ class EmployeeShow extends Component {
                                                         {/* Callum Enterprise Arise fees */}
                                                         <input id="showSubs" type="hidden" name="showSubs" value={invoice.showSubs} placeholder='0' />
 
-                                                        <tr > <label htmlFor="arisefee" >Arise Fee:</label>
+                                                        <tr > <label htmlFor="arisefee" >Service Fee:</label>
                                                             <input className="arfee" id="arisefee" readOnly
                                                                 // type="number" name="arisefee" value={20}
                                                                 onBlur={() => this.handleUpdate(invoice._id)}
@@ -1381,7 +1381,7 @@ class EmployeeShow extends Component {
 
                                                             /></tr>
                                                         <tr >
-                                                            <label htmlFor="callumfee">IB Fee 10%:</label>
+                                                            <label htmlFor="callumfee">Tax 10%:</label>
 
 
                                                             {/* for function calculations below */}

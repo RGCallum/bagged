@@ -1187,7 +1187,7 @@ $<input
                                                 {/* Callum Enterprise Arise fees */}
                                                 <input id="showSubs" type="hidden" name="showSubs" value={this.state.invoice.showSubs} placeholder='0' />
 
-                                                <tr > <label htmlFor="arisefee" >Arise Fee:</label>
+                                                <tr > <label htmlFor="arisefee" >Service Fee:</label>
                                                     <input className="arfee" id="arisefee" readOnly
                                                         // type="number" name="arisefee" value={20}
                                                         
@@ -1196,7 +1196,7 @@ $<input
 
                                                     /></tr>
                                                 <tr >
-                                                    <label htmlFor="callumfee">IB Fee 10%:</label>
+                                                    <label htmlFor="callumfee">Tax 10%:</label>
 
 
                                                     {/* for function calculations below */}

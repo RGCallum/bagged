@@ -719,12 +719,21 @@ text-align: center;
 #subsHead2{
     display:none;
 }
+#phone{
+    display: none;
+}
 @media only screen and (max-width: 414px) {
     align-content: center;
     text-align: center;
     justify-content: center;
     width: 95vw;
     margin-left: -20px;
+    #desktop{
+        display:none;
+    }
+    #phone{
+        display: block;
+    }
     #subsHead{
         display: none;
     }
@@ -1188,9 +1197,14 @@ class EmployeeShow extends Component {
 
 
                                                     <div className="row header">
-                                                    <td>    <div className='required'><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
+                                                    <td id="desktop">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
+                                                        <td id="phone">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item / <br/> Service</div></td>
+
                                                         <td>    <div className='required'><span> <FaCartPlus /> </span> <br /> Quantity</div></td>
-                                                        <td>    <div ><span> <FaScroll /> </span> <br />Description</div></td>
+
+                                                        <td id="desktop">    <div ><span> <FaScroll /> </span> <br />Description</div></td>
+                                                        <td id="phone">    <div ><span> <FaScroll /> </span> <br />Desc- <br/> ription</div></td>
+                                                        
                                                         <td>    <div className='required'><span> <FaDollarSign /> </span><br />Price</div></td>
                                                         <td id='subsHead'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>
                                                         <td id='subsHead2'>    <div  ><span><FaMoneyBillAlt /></span><br />Total</div></td>

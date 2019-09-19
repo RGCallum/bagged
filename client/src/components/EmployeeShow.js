@@ -1214,25 +1214,25 @@ class EmployeeShow extends Component {
                                                         <td >    <input
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
-                                                            type="text" name="client" value={invoice.client} placeholder='Client'
+                                                            type="text" name="client" value={invoice.client} placeholder='Item/Service name'
                                                         /></td>
                                                         <td>    <input id="frequency"
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             // onChange={(event) => this.handleChange(event, invoice._id, executeMath())}
-                                                            type="number" name="frequency" value={invoice.frequency} placeholder="Time Worked"
+                                                            type="number" name="frequency" value={invoice.frequency} placeholder="Quantity/Time Worked"
                                                         /></td>
                                                         <td>      <input
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
-                                                            type="text" name="result" value={invoice.result} placeholder='Minute/Half-Hour/Hour'
+                                                            type="text" name="result" value={invoice.result} placeholder='Product/Interval Type'
                                                         /></td>
 
                                                         <td>     <input id='rate'
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
                                                             // onChange={(event) => this.handleChange(event, invoice._id, executeMath())}
-                                                            type="number" name="rate" value={invoice.rate} placeholder='Rate of pay 0.00'
+                                                            type="number" name="rate" value={invoice.rate} placeholder='Price/Rate of pay 0.00'
                                                         /> </td>
                                                         <td id='sub1'>     <input id='sub1' readOnly
 
@@ -1252,7 +1252,7 @@ class EmployeeShow extends Component {
                                                                 <td >    <input
                                                                     onBlur={() => this.handleUpdate(invoice._id)}
                                                                     onChange={(event) => this.handleChange(event, invoice._id)}
-                                                                    type="text" name="client2" value={invoice.client2} placeholder='Client'
+                                                                    type="text" name="client2" value={invoice.client2} placeholder='Item/Service name'
                                                                 /></td>
                                                                 <td>    <input id="frequency2"
                                                                     onChange={(event) => this.handleChange(event, invoice._id)}
@@ -1263,7 +1263,7 @@ class EmployeeShow extends Component {
                                                                 <td>      <input
                                                                     onBlur={() => this.handleUpdate(invoice._id)}
                                                                     onChange={(event) => this.handleChange(event, invoice._id)}
-                                                                    type="text" name="result2" value={invoice.result2} placeholder='Minute/Half-Hour/Hour'
+                                                                    type="text" name="result2" value={invoice.result2} placeholder='Product/Interval Type'
                                                                 /></td>
                                                                 <td>     <input id="rate2"
                                                                     onChange={(event) => this.handleChange(event, invoice._id)}
@@ -1294,7 +1294,7 @@ class EmployeeShow extends Component {
                                                         <input
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
-                                                            type="number" name="frequency" value={invoice.frequency} placeholder="Time Worked"
+                                                            type="number" name="frequency" value={invoice.frequency} placeholder="Quantity/Time Worked"
                                                         />
                                                       
                                                     </td>
@@ -1310,7 +1310,7 @@ class EmployeeShow extends Component {
                                                         $<input
                                                             onBlur={() => this.handleUpdate(invoice._id)}
                                                             onChange={(event) => this.handleChange(event, invoice._id)}
-                                                            type="number" name="rate" value={invoice.rate} placeholder='Rate of pay 0.00'
+                                                            type="number" name="rate" value={invoice.rate} placeholder='Price/Rate of pay 0.00'
                                                         /></td>
 
                                                 </tr> */}

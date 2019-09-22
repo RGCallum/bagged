@@ -221,12 +221,12 @@ class Employee extends Component {
         <NavBar />
         <BkgdColors>
           <div className="overlay">
-          <h1>
-            {/* 👩🏾‍🦱👨🏽‍🦳👩🏾‍🦳🧔🏾👱🏽‍♀️👨🏾‍👵🏾👨🏿‍🦱👨🏼‍👩🏾👴🏾👩🏻  */}
-            <br/>Employee Directory</h1>
-            <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>   
+            <br/>
+            <h1>Tender</h1>
+          <h1> Employee Directory </h1>
+            {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
 
-<br/><br/> 
+<br/>
 <EmployeeOutline>
 
           {this.state.employees.map((employee, index) => ( 

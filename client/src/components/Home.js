@@ -357,6 +357,7 @@ img{
     }
 }
 .thirdB{
+    border: 1px solid white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -365,11 +366,16 @@ img{
         justify-content: center;      
     }
     #tdr{
+    border: 1px solid white;
+
+        width: 50%;
         // border-radius: 5px;
         padding: 10px;
         background-color: rgba(28, 147, 145, 0.7);
         color: white;
         button{
+            padding: 5px;   
+
             background-color: rgb(28, 147, 145);     
             :hover{
             background-color: white;     
@@ -380,13 +386,17 @@ img{
     }
 
     #tfree{
+        width: 50%;
+        border: 1px solid white;
+
     padding: 10px;
     // border-radius: 5px;
         background-color: rgba(106, 127, 219, 0.7);
         // border-left: 1px solid rgba(0,0,0, 0.4);
         color: white;
         button{
-            background-color: #6A7FDB;     
+            background-color: #6A7FDB;  
+            padding: 5px;   
             :hover{
                 background-color: white;     
                color: #6A7FDB; 
@@ -571,12 +581,12 @@ class Home extends Component {
                    
 
                     <div className="thirdB">
-                    <h3 id="tdr"> To test out <b>Tender</b>  and play with adding employees and invoices  <HoverButton>
-                        <Link to="/employees"> <button>Click here for Tender</button></Link>
+                    <h3 id="tdr"> To see <b>Tender</b> in action and play with adding employees and invoices use <HoverButton>
+                        <Link to="/employees"> <button>Tender</button></Link>
                     </HoverButton></h3> 
   
-                    <h3 id="tfree"> To create a free invoice or pay stub with your own logo use <b>TenderFree</b> version <HoverButton>
-                        <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for TenderFree</button></a>
+                    <h3 id="tfree"> To create a free invoice or pay stub with your own logo use <b>TenderFree</b> <HoverButton>
+                        <a href="https://tenderfree.herokuapp.com/employees"><button>TenderFree</button></a>
                     </HoverButton></h3>
                     
                     </div>

@@ -369,7 +369,7 @@ img{
     border: 1px solid white;
 
         width: 50%;
-        // border-radius: 5px;
+        border-radius: 5px;
         padding: 10px;
         background-color: rgba(28, 147, 145, 0.7);
         color: white;
@@ -390,7 +390,7 @@ img{
         border: 1px solid white;
 
     padding: 10px;
-    // border-radius: 5px;
+    border-radius: 5px;
         background-color: rgba(106, 127, 219, 0.7);
         // border-left: 1px solid rgba(0,0,0, 0.4);
         color: white;

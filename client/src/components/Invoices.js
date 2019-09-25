@@ -67,7 +67,13 @@ const InvoicesContainerStyle = styled.div`
   .noprint {display:none;}
 
   }
-
+  h2{
+    justify-content: center;
+text-align: center;
+color: rgb(60, 60, 60);
+font-weight: 540;
+font-size: 16px;
+}
 `
 const InvoiceStyles = styled.div`
 // border: 1px 1px 5px rgba(0,0,0, 0.4);
@@ -925,6 +931,7 @@ class Invoices extends Component {
 
                     <div>
                         <InvoicesContainerStyle>
+                            <h2>Print, Download, Share or Pay your employees below.</h2>
                             <Addlogo>
 
                                 {/* below is add logo url input field for another company */}

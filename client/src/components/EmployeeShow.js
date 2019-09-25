@@ -76,7 +76,13 @@ const InvoicesContainerStyle = styled.div`
   .noprint {display:none;}
 
   }
-
+h2{
+    justify-content: center;
+text-align: center;
+color: rgb(60, 60, 60);
+font-weight: 540;
+font-size: 14px;
+}
 `
 const InvoiceStyles = styled.div`
 // border: 1px 1px 5px rgba(0,0,0, 0.4);
@@ -943,7 +949,8 @@ class EmployeeShow extends Component {
                     <div>
                         
                         <InvoicesContainerStyle>
-
+<h2>1. Fill out all fields in blue as needed. Tender will automatically calculate all values once <br/> a number has been entered in the "Quantity" and "Price" fields. Enter '0' if none. <br/>
+2. Click the export button to print, download, share or pay your employees/contractors. <br/></h2>
 
 
                             {/* Auto update info for another company */}

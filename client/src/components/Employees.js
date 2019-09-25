@@ -32,7 +32,12 @@ form{
   padding-bottom: 10px;
   box-shadow: 1px 1px 5px rgba(28, 147, 145, 0.4);
   background-color:  rgba(255,255,255,0.95);
-  
+  text-align: center;  
+  #empText{
+    color: rgb(43, 172, 174);  
+      font-size: 18px;
+    
+  }
 }
 input{
   background: rgba(151, 240, 240, 0.2);
@@ -74,6 +79,7 @@ h2{
   color: rgb(60, 60, 60);
   font-weight: 540;
 font-size: 14px;
+text-align: center;
 }
 label{
   font-size: 12px;
@@ -104,6 +110,7 @@ border-radius: 5px;
 font-size: 16px;
 font-weight: 300;
 cursor: pointer;
+
 }
 button:hover{
   background: white;
@@ -224,6 +231,8 @@ class Employee extends Component {
             <br/>
             <h1>Tender</h1>
           <h1> Employee Directory </h1>
+          <h2>Click on an employee name to view their profile. <br/>
+          Click on < FaFileInvoiceDollar/>Invoices to view the employee's invoices. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
@@ -253,11 +262,16 @@ class Employee extends Component {
             
           ))} 
 </EmployeeOutline>
+
 <br/><br/>
+
           <form onSubmit={this.handleSubmit} className='addemp' id='employeename'>
         <br/>  <h2 id='empText'>Add New Employees</h2> 
 
-<h3 id='empText'> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3> <br/>
+<h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
+ <h3>To add a new employee enter necessary info in the form below <br/>
+  then click the <FaPlusCircle className='icons'/>Add Employee button.</h3>
+ <br/> 
             <div >
            <th>  <label className='required' htmlFor="employeename" >Employee Name: </label></th> 
               <input onChange={this.handleChange} value={this.state.newEmployee.employeename} type="text" name="employeename"  required='true'/>

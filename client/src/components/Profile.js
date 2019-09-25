@@ -57,9 +57,14 @@ const EmployeesContainerStyle = styled.div`
 `
 const Toptext = styled.div`
 font-family: helvetica;
-font-size: 10px;
+// font-size: 10px;
 display:flex;
 justify-content: center;
+text-align: center;
+color: rgb(60, 60, 60);
+font-weight: 540;
+font-size: 14px;
+
 `
 
 const NameNButtonStyle = styled.div`
@@ -84,12 +89,15 @@ margin-bottom: 5px;
 // text-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
 
 }
+text-align: center;
+justify-content: center;
   button {
     // position: absolute;
     color: white;
     background-color: red;
     border-radius: 5px;
     padding: 10px;
+
   }
   button:hover{
     background-color: white;
@@ -106,6 +114,11 @@ margin-bottom: 5px;
   }
   label{
     font-size: 12px;
+text-align: left;
+  }
+  h3{
+text-align: left;
+
   }
   
 `
@@ -215,8 +228,8 @@ class Profile extends Component {
           <br />
           <Link to={`/employees/${this.props.match.params.employeeId}`}>
        <button><FaFileInvoiceDollar className='icons'/> Invoices</button> </Link></InvoiceBtn>
-        <br />    <Toptext><div>(All changes are auto saved)</div></Toptext>
-        <br />
+        <br />    <Toptext><div>Edit Employee/Contractor information below <br/>  (All changes are auto saved)</div></Toptext>
+        
         <NameNButtonStyle>
 
           <h3><FaUser/> {this.state.employee.employeename}</h3>

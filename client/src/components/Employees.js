@@ -232,7 +232,7 @@ class Employee extends Component {
             <h1>Tender</h1>
           <h1> Employee Directory </h1>
           <h2>Click on an employee name to view their profile. <br/>
-          Click on < FaFileInvoiceDollar/>Invoices to view the employee's invoices. </h2>
+          Click on < FaFileInvoiceDollar/>Invoices to view the employee/contractor's invoices. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>

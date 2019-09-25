@@ -260,6 +260,13 @@ h3{
     color: rgb(28, 147, 145);
     text-align: left;
 }
+h2{
+    font-family: helvetica;
+    font-size: 25px
+    font-weight: 300;
+    color: rgb(28, 147, 145);
+    text-align: left;
+}
 a{
     color: black;
     text-decoration: none;
@@ -361,14 +368,18 @@ img{
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
+    justify-content: center;
     h3{       
         text-align: center;
         justify-content: center;      
     }
     #tdr{
+
     border: 1px solid white;
 
-        width: 50%;
+        width: 40%;
+        // height: 70px;
         border-radius: 5px;
         padding: 10px;
         background-color: rgba(28, 147, 145, 0.7);
@@ -386,7 +397,9 @@ img{
     }
 
     #tfree{
-        width: 50%;
+        width: 40%;
+        // height: 70px;
+
         border: 1px solid white;
 
     padding: 10px;
@@ -413,11 +426,17 @@ img{
 
 .fourth{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: center;
+    h3{
+    text-align: center;
+
+    }
 }
 `
+
 const LoginOutStyles = styled.div`
 // display: flex;
 // flex-direction: column;
@@ -575,12 +594,14 @@ class Home extends Component {
                     <br /><br />
 
                     <div className="third"><img src="/images/monitorPrint3.png" alt="print" />
-                        <h3>    Export a professional version and easily share with just a few clicks. <br />Keep all your information organized in one place that you can reach from anywhere at anytime! </h3>
+                        <h3>    Export a professional version and easily share with just a few clicks. <br />Keep all your pay stubs and invoices organized in one place that you can reach from anywhere at anytime! </h3>
                     </div>
                     <br />
                    
 
                     <div className="thirdB">
+                        
+
                     <h3 id="tdr"> To see <b>Tender</b> in action and play with adding employees and invoices use <HoverButton>
                         <Link to="/employees"> <button>Tender</button></Link>
                     </HoverButton></h3> 
@@ -592,7 +613,9 @@ class Home extends Component {
                     </div>
 
                     <div className="fourth">
-                        <h3>  Contact us below for a quote on your personalized version of Tender today!</h3>
+                        <h3> Tender is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>
+                        <h2>Contact us below for a quote on your customized version of <FaFileInvoiceDollar/>Tender today!</h2>
+
                     </div>
                     <br />
 

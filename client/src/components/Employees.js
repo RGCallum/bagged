@@ -229,8 +229,7 @@ class Employee extends Component {
         <BkgdColors>
           <div className="overlay">
             <br/>
-            <h1>Tender</h1>
-          <h1> Employee Directory </h1>
+            <h1>Tender Directory</h1>
           <h2>Click on an employee name to view their profile. <br/>
           Click on < FaFileInvoiceDollar/>Invoices to view the employee/contractor's invoices. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
@@ -266,10 +265,10 @@ class Employee extends Component {
 <br/><br/>
 
           <form onSubmit={this.handleSubmit} className='addemp' id='employeename'>
-        <br/>  <h2 id='empText'>Add New Employees</h2> 
+        <br/>  <h2 id='empText'>Add New Employees/Contractors</h2> 
 
 <h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
- <h3>To add a new employee enter necessary info in the form below <br/>
+ <h3>To add a new employee/contractor enter necessary info <br/> in the form below 
   then click the <FaPlusCircle className='icons'/>Add Employee button.</h3>
  <br/> 
             <div >

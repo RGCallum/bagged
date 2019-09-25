@@ -229,7 +229,7 @@ class Profile extends Component {
           <Link to={`/employees/${this.props.match.params.employeeId}`}>
        <button><FaFileInvoiceDollar className='icons'/> Invoices</button> </Link></InvoiceBtn>
         <br />    <Toptext><div>Edit Employee/Contractor information below <br/>  (All changes are auto saved)</div></Toptext>
-        
+        <br/>
         <NameNButtonStyle>
 
           <h3><FaUser/> {this.state.employee.employeename}</h3>

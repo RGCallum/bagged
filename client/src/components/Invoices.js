@@ -931,7 +931,7 @@ class Invoices extends Component {
 
                     <div>
                         <InvoicesContainerStyle>
-                            <h2>Print, Download, Share or Pay your employees below.</h2>
+                            <h2 className="noprint">Print, Download, Share or Pay your employees below.</h2>
                             <Addlogo>
 
                                 {/* below is add logo url input field for another company */}

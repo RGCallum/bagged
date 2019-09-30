@@ -934,7 +934,7 @@ class EmployeeShow extends Component {
                             </NewInvoiceButton>
                             <EditProfileBtn >
                                 <Link to={`/employees/${this.props.match.params.employeeId}/profile`} >
-                                    <FaIdBadge className='icons' /> Employee Profile
+                                    <FaIdBadge className='icons' /> Payee Profile
                                 </Link>
                             </EditProfileBtn>
                             {/* <InvoiceBtn>
@@ -950,7 +950,7 @@ class EmployeeShow extends Component {
                         
                         <InvoicesContainerStyle>
 <h2>1. Fill out all fields in blue as needed. Tender will automatically calculate all values once <br/> a number has been entered in the "Quantity" and "Price" fields. Enter '0' if none. <br/>
-2. Click the export button to print, download, share or pay your employees/contractors. <br/></h2>
+2. Click the export button to print, download, share or pay your employees and contractors. <br/></h2>
 
 
                             {/* Auto update info for another company */}

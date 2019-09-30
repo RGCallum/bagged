@@ -918,7 +918,7 @@ class Invoices extends Component {
 <br/>
                             <EditProfileBtn >
                                 <Link to={`/employees/${this.props.match.params.employeeId}/profile`} >
-                                    <FaIdBadge className='icons' /> Employee Profile
+                                    <FaIdBadge className='icons' /> Payee Profile
                             </Link>
                             </EditProfileBtn>
                             <InvoiceBtn>
@@ -931,7 +931,7 @@ class Invoices extends Component {
 
                     <div>
                         <InvoicesContainerStyle>
-                            <h2 className="noprint">Print, Download, Share or Pay your employees below.</h2>
+                            <h2 className="noprint">Print, Download, Share or Pay your employees and contractors below.</h2>
                             <Addlogo>
 
                                 {/* below is add logo url input field for another company */}

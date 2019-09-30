@@ -230,8 +230,8 @@ class Employee extends Component {
           <div className="overlay">
             <br/>
             <h1>Tender Directory</h1>
-          <h2>Click on an employee name to view their profile. <br/>
-          Click on < FaFileInvoiceDollar/>Invoices to view the employee/contractor's invoices. </h2>
+          <h2>Click on a payee name to view their profile. <br/>
+          Click on < FaFileInvoiceDollar/>Invoices to view the payee's invoices. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
@@ -265,14 +265,14 @@ class Employee extends Component {
 <br/><br/>
 
           <form onSubmit={this.handleSubmit} className='addemp' id='employeename'>
-        <br/>  <h2 id='empText'>Add New Employees/Contractors</h2> 
+        <br/>  <h2 id='empText'>Add New Payees</h2> 
 
 <h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
- <h3>To add a new employee/contractor enter necessary info <br/> in the form below 
-  then click the <FaPlusCircle className='icons'/>Add Employee button.</h3>
+ <h3>To add a new payee enter necessary info <br/> in the form below 
+  then click the <FaPlusCircle className='icons'/>Add Payee button.</h3>
  <br/> 
             <div >
-           <th>  <label className='required' htmlFor="employeename" >Employee Name: </label></th> 
+           <th>  <label className='required' htmlFor="employeename" >Payee Name: </label></th> 
               <input onChange={this.handleChange} value={this.state.newEmployee.employeename} type="text" name="employeename"  required='true'/>
             </div>
             <div>
@@ -292,7 +292,7 @@ class Employee extends Component {
               <label htmlFor="invoices">Invoices: </label>
               <input onChange={this.handleChange} value={this.state.newEmployee.invoices} type="text" name="invoices" />
             </div> */}
-            <button type="submit"><FaPlusCircle className='icons'/> Add Employee</button>
+            <button type="submit"><FaPlusCircle className='icons'/> Add Payee</button>
           </form>
           </div>
         </BkgdColors>

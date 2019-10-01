@@ -614,6 +614,12 @@ class Home extends Component {
 
                     <div className="fourth">
                         <h3> Tender is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>
+                        <video width="320" height="240" controls>
+  <source src="TenderVideo.mov" type="video/mov"/>
+  Your browser does not support the video tag.
+</video>
+                     
+                       
                         <h2>Contact us below for a quote on your customized version of <FaFileInvoiceDollar/>Tender today!</h2>
 
                     </div>

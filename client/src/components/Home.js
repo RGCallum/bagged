@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Companys from './Companys';
 import { GoogleLogin } from 'react-google-login';
-import { FaFileInvoiceDollar, FaFolder, FaPlusCircle } from 'react-icons/fa';
+import { FaBriefcase, FaFolder, FaPlusCircle } from 'react-icons/fa';
 import axios from 'axios'
 
 const ImgStyles = styled.div`
 width: 100vw;
 margin-top: -10px;
 margin-left: -10px;
-// background-image: url('/images/TenderWebPhone.png');
+// background-image: url('/images/BaggedWebPhone.png');
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;
@@ -539,11 +539,11 @@ class Home extends Component {
 
                         <h1>
                             {/* 💰 💸*/}
-                            <FaFileInvoiceDollar className='icons' />
-                            Tender</h1>
-                        <img id="tenderWebPhone" src="/images/TenderWebPhone.png" alt="" />
+                            {/* <FaBriefcase className='icons' /> */}
+                            💼 Bagged</h1>
+                        <img id="tenderWebPhone" src="/images/BaggedWebPhone.png" alt="" />
                         <Text>
-                            <h2>The quick and easy way to do your payroll, in the office or on the go. </h2>
+                            <h2>Organize your job hunt and secure the bag. </h2>
                         </Text>
 
                         {/* <div className="googlelog">
@@ -560,16 +560,16 @@ class Home extends Component {
 
 
                         <ul className='iconsAnim'>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
+                            <li><FaBriefcase className='icons2' /></li>
                         </ul>
 
                     </CountStyles>
@@ -580,16 +580,16 @@ class Home extends Component {
                 <Paragraph>
                     <div className="first">
                         <img src="/images/handPhone.png" alt="mobile" />
-                        <h3>Tender is a simple and efficient payroll/position app created for the small business owner to create positions and pay stubs for your companys and contractors.</h3>
+                        <h3>Bagged is a simple and efficient payroll/position app created for the small business owner to create positions and pay stubs for your companys and contractors.</h3>
                     </div>
                     <br /><br />
                     <div className="second">
-                        <h3>After simply entering two numbers, Tender automatically calculates all data and creates a summary of the transaction for your records.</h3>
+                        <h3>After simply entering two numbers, Bagged automatically calculates all data and creates a summary of the transaction for your records.</h3>
                         <img src="/images/laptopgif.gif" alt="value" />
                     </div>
                     <div className="second2">
                         <img src="/images/laptopgif.gif" alt="value" />
-                        <h3>After simply entering two numbers, Tender automatically calculates all data and creates a summary of the transaction for your records.</h3>
+                        <h3>After simply entering two numbers, Bagged automatically calculates all data and creates a summary of the transaction for your records.</h3>
                     </div>
                     <br /><br />
 
@@ -602,26 +602,28 @@ class Home extends Component {
                     <div className="thirdB">
                         
 
-                    <h3 id="tdr"> To see <b>Tender</b> in action and play with adding companys and positions use <HoverButton>
-                        <Link to="/companys"> <button>Tender</button></Link>
+                    <h3 id="tdr"> 
+                    To see <b>Bagged</b> in action and play with adding companys and positions use 
+                    <HoverButton>
+                        <Link to="/companys"> <button>Enter</button></Link>
                     </HoverButton></h3> 
   
-                    <h3 id="tfree"> To create a free position or pay stub with your own logo use <b>TenderFree</b> <HoverButton>
-                        <a href="https://tenderfree.herokuapp.com/companys"><button>TenderFree</button></a>
-                    </HoverButton></h3>
+                    {/* <h3 id="tfree"> To create a free position or pay stub with your own logo use <b>BaggedFree</b> <HoverButton>
+                        <a href="https://tenderfree.herokuapp.com/companys"><button>BaggedFree</button></a>
+                    </HoverButton></h3> */}
                     
                     </div>
 
                     <div className="fourth">
-                        <h3> Tender is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>                 
-                        <h2>Contact us below for a quote on your customized version of <FaFileInvoiceDollar/>Tender today!</h2>
+                        <h3> Bagged is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>                 
+                        <h2>Contact us below for a quote on your customized version of <FaBriefcase/>Bagged today!</h2>
 
                     </div>
                     <br />
 
                 </Paragraph>
                 <MyForm>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIVJknuqNa24FnduXyMJAZiFmZ6cwa1Qa6JJT2hBWsmIikuw/viewform?embedded=true" width="640" height="650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    {/* <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIVJknuqNa24FnduXyMJAZiFmZ6cwa1Qa6JJT2hBWsmIikuw/viewform?embedded=true" width="640" height="650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> */}
 
                     {/* <form action='mailto:sceneitpix@gmail.com' id="contact-form" method="POST">
                         <div className="form-group">

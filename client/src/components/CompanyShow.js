@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaMinusCircle, FaScroll, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaMinusCircle, FaScroll, FaIdBadge, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
 
 const BigDiv = styled.div`
 input, textarea{
-    background: rgba(151, 240, 240, 0.2);
+    background: #95236005;
 border-radius: 3px;
 border: .5px solid rgba(0,0,0, 0.2);
 padding: 5px;
@@ -31,7 +31,7 @@ input:focus, textarea:focus{
 }
 h1{
     font-family: helvetica;
-  color: rgb(43, 172, 174);
+  color: #952360;
 //   text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
   
   }
@@ -59,7 +59,7 @@ h3{
     margin-bottom: 2px;
 }
 h3:hover{
-    color: rgb(43, 172, 174);
+    color: #952360;
 }
 `
 const PositionsContainerStyle = styled.div`
@@ -140,14 +140,14 @@ button:hover{
 button{
     background-color: white;
     padding: 5px 5px 5px 5px;
-    color: rgb(43, 172, 174);
+    color: #952360;
     border: inset .5px #c0c0c0;
         
          
 }
 button:hover{
     color: white;
-    background-color: rgb(43, 172, 174);
+    background-color: #952360;
 }
 p{
     margin-bottom: -2px;
@@ -456,7 +456,7 @@ text-align: center;
 
 // span{
 //     font-size: 30px;
-//     color: rgb(43, 172, 174);
+//     color: #952360;
 //     font-weight: 200;
 // }
 // a{
@@ -504,7 +504,7 @@ a:visited {
     text-decoration: none;
   }
 a:hover{
-    color: #6A7FDB;
+    color: #462255;
 
 }
 :hover{
@@ -520,7 +520,7 @@ height: 26.5px;
 }
 `
 const EditProfileBtn = styled.button`
-background: #6A7FDB;
+background: #462255;
 color: white;
 border-radius: 5px;
 font-size: 16px;
@@ -537,7 +537,7 @@ a:visited {
 :hover{
     background: white;
     a{
-        color: #6A7FDB;
+        color: #462255;
 
     }
 }
@@ -608,8 +608,8 @@ font-weight: 200;
    
 `
 const LogoIdDiv = styled.div`
-padding-top: 50px;
-padding-bottom: 20px;
+// padding-top: 50px;
+// padding-bottom: 20px;
 
 display: flex
 justify-content: space-between;
@@ -802,11 +802,7 @@ class CompanyShow extends Component {
             // addLine: true,
         }
     }
-    // addStuff() {
-    //     this.setState({
-    //         addLine: !this.state.addLine
-    //     })
-    // }
+
     
 
     componentDidMount() {
@@ -939,7 +935,7 @@ class CompanyShow extends Component {
                             </EditProfileBtn>
                             {/* <PositionBtn>
                                 <Link to={`/companys/${this.props.match.params.companyId}`}>
-                                    <button><FaFileInvoiceDollar className='icons' /> Positions</button>
+                                    <button><FaBriefcase className='icons' /> Positions</button>
                                 </Link>
                             </PositionBtn> */}
                         </div>
@@ -949,8 +945,8 @@ class CompanyShow extends Component {
                     <div>
                         
                         <PositionsContainerStyle>
-<h2>1. Fill out all fields in blue as needed. Tender will automatically calculate all values once <br/> a number has been entered in the "Quantity" and "Price" fields. Enter '0' if none. <br/>
-2. Click the export button to print, download, share or pay your companys and contractors. <br/></h2>
+<h2>1. Fill out all fields as needed. <br/>
+2. Click the export button to print or download position info. <br/></h2>
 
 
                             {/* Auto update info for another company */}
@@ -969,161 +965,16 @@ class CompanyShow extends Component {
                                 // console.log(position._id)
 
 
-                                // one big function for all client math 
-                                function executeMath() {
-
-                                    // client1 math
-                                    var numOne = document.getElementById('sub1').value;
-                                    var frequency = document.getElementById('frequency').value;
-                                    var rate = document.getElementById('rate').value;
-                                    var addClient1 = parseInt(frequency) * parseInt(rate);
-                                    document.getElementById('sub1').value = addClient1;
-                                    console.log("Client 1 subtotal is", numOne, addClient1)
-
-                                    // client2 math
-                                    var numTwo = document.getElementById('sub2').value;
-                                    var frequency2 = document.getElementById('frequency2').value;
-                                    var rate2 = document.getElementById('rate2').value;
-                                    var addClient2 = parseInt(frequency2) * parseInt(rate2);
-                                    document.getElementById('sub2').value = addClient2;
-
-                                    if (document.getElementById('sub2').value === '') {
-                                        console.log("no client 2 listed")
-                                    } else {
-                                        console.log("Client 2 subtotal is", addClient2);
-                                    }
-
-                                    // add subtotals math
-                                    var numOne = document.getElementById('sub1').value;
-                                    var numTwo = document.getElementById('sub2').value;
-                                    var showSubs = document.getElementById('showSubs').value;
-                                    var viewSubs = parseInt(numOne) + parseInt(numTwo);
-
-                                    document.getElementById('viewSubs').value = viewSubs;
-                                    if (document.getElementById('sub2').value === '') {
-                                        console.log("Subtotal is", numOne)
-                                        document.getElementById('viewSubs').value = document.getElementById('sub1').value;
-                                        document.getElementById('showSubs').value = viewSubs;
-                                    } else {
-                                        console.log('Subtotal is', viewSubs)
-                                        document.getElementById('showSubs').value = viewSubs;
-                                    }
-
-                                    // multiplication for percentage and show result 
-                                    var showSubs = document.getElementById('showSubs').value;
-                                    var callumfeeResults = document.getElementById('callumfeeResults').value;
-                                    var callumfee = document.getElementById('callumfee').value;
-                                    var multiCalFee = (showSubs) * (callumfee);
-                                    document.getElementById('callumfeeResults').value = multiCalFee;
-                                    console.log("callum fee is", multiCalFee);
-
-                                    // subtraction of whole number fee and percentage fee from subtotals
-                                    var showSubs = document.getElementById('showSubs').value;
-                                    var arisefee = document.getElementById('arisefee').value;
-                                    var total = document.getElementById('total').value;
-                                    var showTotalCalc = document.getElementById('showTotalCalc').value;
-                                    var callumfee = document.getElementById('callumfee').value;
-                                    var callumfeeResults = document.getElementById('callumfeeResults').value;
-                                    var minus = parseInt(showSubs) - parseInt(arisefee) - parseInt(callumfeeResults);
-                                    document.getElementById('showTotalCalc').value = minus;
-                                    document.getElementById('total').value = document.getElementById('showTotalCalc').value;
-                                    console.log("arise fee is", arisefee);
-                                    console.log("Total due is", document.getElementById('showTotalCalc').value);
-
-
-
-                                    //   var numOne = document.getElementById('sub1').value;
-                                    //   var frequency = document.getElementById('frequency').value;
-                                    //   var rate = document.getElementById('rate').value;
-                                    //   var numTwo = document.getElementById('sub2').value;
-                                    //   var frequency2 = document.getElementById('frequency2').value;
-                                    //   var rate2 = document.getElementById('rate2').value;
-                                    // //   var numOne = document.getElementById('sub1').value;
-                                    // //   var numTwo = document.getElementById('sub2').value;
-                                    //   var showSubs = document.getElementById('showSubs').value;
-                                    // //   var showSubs = document.getElementById('showSubs').value;
-                                    //   var callumfeeResults = document.getElementById('callumfeeResults').value;
-                                    //   var callumfee = document.getElementById('callumfee').value;
-                                    // //   var showSubs = document.getElementById('showSubs').value;
-                                    //   var arisefee = document.getElementById('arisefee').value;
-                                    //   var total = document.getElementById('total').value;
-                                    //   var showTotalCalc = document.getElementById('showTotalCalc').value;
-                                    // //   var callumfee = document.getElementById('callumfee').value;
-                                    // //   var callumfeeResults = document.getElementById('callumfeeResults').value;
-
-                                    // var addClient1 = parseInt(frequency) * parseInt(rate);
-                                    // var addClient2 = parseInt(frequency2) * parseInt(rate2);
-                                    // var viewSubs = parseInt(numOne) + parseInt(numTwo);
-                                    // var multiCalFee = (showSubs) * (callumfee);
-                                    // var minus = parseInt(showSubs) - parseInt(arisefee) - parseInt(callumfeeResults);
-
-                                    //   // client1 math
-                                    //   document.getElementById('sub1').value = addClient1;
-                                    //   console.log("Client 1 subtotal is", numOne, addClient1)
-
-                                    //   // client2 math
-                                    //   document.getElementById('sub2').value = addClient2;
-                                    //   if (document.getElementById('sub2').value === ''){
-                                    //     console.log("no client 2 listed")
-                                    //   } else{
-                                    //     console.log("Client 2 subtotal is", addClient2);
-                                    //   }
-
-                                    //   // add subtotals math
-                                    //   document.getElementById('viewSubs').value = viewSubs;
-                                    //   if (document.getElementById('sub2').value === '') {
-                                    //     console.log("Subtotal is", numOne)
-                                    //     document.getElementById('viewSubs').value = document.getElementById('sub1').value;
-                                    //     document.getElementById('showSubs').value = viewSubs;
-                                    //   } else {
-                                    //     console.log('Subtotal is', viewSubs)
-                                    //     document.getElementById('showSubs').value = viewSubs;
-                                    //   }
-
-                                    //   // multiplication for percentage and show result 
-                                    //   document.getElementById('callumfeeResults').value = multiCalFee;
-                                    //   console.log("callum fee is", multiCalFee);
-
-                                    //   // subtraction of whole number fee and percentage fee from subtotals
-                                    //   document.getElementById('showTotalCalc').value = minus;
-                                    //   document.getElementById('total').value = document.getElementById('showTotalCalc').value;
-                                    //   console.log("arise fee is", arisefee);
-                                    //   console.log("Total due is", document.getElementById('showTotalCalc').value);
-
-                                    // addSubMath
-
-
-                                }
-                                // function  addSubMath(){          
-                                //     var frequency2 = document.getElementById('frequency2').value;
-                                //     var rate2 = document.getElementById('rate2').value;
-                                // if (frequency2.value !== undefined) {
-                                //     frequency2.value = 0
-                                // } 
-                                // }
                                 
 
                                 return (
                                     
                                     <Addlogo>
-                                        {/* below is add logo url input field for another company */}
-                                        {/* <label className="noprint addlogotext" htmlFor=""> Add your logo by copying and pasting a url link to the image here⬇ <a href="https://imgbb.com" target="_blank"> to upload from your 💻 computer click here for a url </a><br /> </label>
-                                <input className='logo noprint' id='imgurl'
-                                    onBlur={() => this.handleUpdate(position._id)}
-                                    onChange={(event) => this.handleChange(event, position._id)}
-                                    name="image" placeholder='Paste your logo url here. (ie: https://example.com/logo123456.png) '
-                                /> */}
 
-                                        {/* below is upload input field for another company */}
-                                        {/* <input type="file" 
-                                    onBlur={() => this.handleUpdate(position._id)}
-                                    onChange={(event) => this.handleChange(event, position._id)}
-                                    name="uploadImage" className="logo noprint filetype" id="imgurl group_image"
-                                    /> */}
                                         <PositionStyles>
                                         <Link to={`/companys/${this.props.match.params.companyId}/positions/${position._id}`}
                                                             onClick={this.handleClick.bind(this, position._id)}>
-                                        <h3>(Position{index +1}) <br/> ID:{position._id}</h3>
+                                        <h3>(Position{index +1}) </h3>
 </Link>
                
                                             <BkgdImg>
@@ -1135,7 +986,7 @@ class CompanyShow extends Component {
                                                 <LogoStyles>
                                                     <LogoIdDiv>
 
-                                                        <a href={position.link} >
+                                                        {/* <a href={position.link} > */}
 
                                                             {/* another company can add its own logo here */}
 
@@ -1146,11 +997,10 @@ class CompanyShow extends Component {
                                                             {/* <img id="target" src={this.state.uploadImage} name='image' alt="Add your logo" />  */}
 
                                                             {/* below is Callum Enterprise logo */}
-                                                            <img src="https://www.tchevents.com/wp-content/uploads/2018/01/Captivating-Company-Logo-Images-Free-76-About-Remodel-Logo-Creator-with-Company-Logo-Images-Free.png" alt="Add your logo" />
 
-                                                        </a>
+                                                        {/* </a> */}
                                                         
-                                                            <div className="positionNum">ID:{position._id}  </div><br />
+                                                            {/* <div className="positionNum">ID:{position._id}  </div><br /> */}
                                                         
                                                     </LogoIdDiv>
 
@@ -1291,46 +1141,7 @@ class CompanyShow extends Component {
                                                 </LineItemsGrid>
                                                 <Client1Position>
 
-                                                    {/* <tr> <td id="box"><th><label htmlFor="client" className='required'><span> 🗂 </span>Client: </label></th>
-                                                    <input
-                                                        onBlur={() => this.handleUpdate(position._id)}
-                                                        onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="client" value={position.client} placeholder='Client'
-                                                    /></td>
-                                                    <td id="box">  <th> <label htmlFor="timew" className='required'><span> ⏱ </span>Time Worked:</label></th>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="number" name="frequency" value={position.frequency} placeholder="Quantity/Time Worked"
-                                                        />
-                                                      
-                                                    </td>
-
-
-                                                    <td id="box">  <th><label htmlFor="result" ><span> ⌛ </span>Interval Type: </label></th>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="text" name="result" value={position.result} placeholder='Minutes/Half-Hour/Hour'
-                                                        /></td>
-                                                    <td id="box">  <th><label htmlFor="rate" className='required'><span> <FaMoneyBillAlt/> </span>Interval Rate: </label></th>
-                                                        $<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="number" name="rate" value={position.rate} placeholder='Price/Rate of pay 0.00'
-                                                        /></td>
-
-                                                </tr> */}
-
-                                                    {/* media query position */}
-
-
-                                                    <br />
-                                                    {/* <div className="lineItem-app container">
-                                                <h1 className="center blue-text">LineItems</h1>
-                                                <LineItems lineItems={this.state.lineItems} deleteLineItem={this.deleteLineItem} />
-                                                <AddLineItem addLineItem={this.addLineItem} value={position.frequency} />
-                                            </div> */}
+                                                 
                                                 </Client1Position>
                                                 {/* button for next line */}
                                                 {/* <button onClick={() => this.addStuff()}>add item</button> */}
@@ -1363,31 +1174,6 @@ class CompanyShow extends Component {
                                                             /></tr>
 
 
-                                                        {/* changeable fees for another company fee */}
-                                                        {/* <br/> <br/>
-                                            <th>   <label htmlFor="namefee" >Add'l Fees to subtract (opt):</label></th>
-                                            <input
-                                            onBlur={() => this.handleUpdate(position._id)}
-                                            onChange={(event) => this.handleChange(event, position._id)}
-                                            type="text" placeholder='Business Fees (optional) name' name="namefee" value={position.namefee} /> <br/>
-                                            $<input className="arfee"
-                                                onBlur={() => this.handleUpdate(position._id)}
-                                                onChange={(event) => this.handleChange(event, position._id)}
-                                                type="number" name="arisefee" value={position.arisefee} placeholder='enter 0 if none' required='true'
-                                            />
-                                            <br/> <br/>
-                                            <th>    <label htmlFor="otherfee">Other fees to subtract (use decimals): </label></th>
-                                            <input
-                                            onBlur={() => this.handleUpdate(position._id)}
-                                            onChange={(event) => this.handleChange(event, position._id)}
-                                            type="text" placeholder='Taxes (optional) name' name="otherfee" value={position.otherfee} /> <br/>
-                                            $<input
-                                                onBlur={() => this.handleUpdate(position._id)}
-                                                onChange={(event) => this.handleChange(event, position._id)}
-                                                type="number" name="callumfee" placeholder='enter 0 if none' value={(position.callumfee)}
-                                            />
-                                            <br/> <br/> 
-                                            */}
 
                                                         {/* Callum Enterprise Arise fees */}
                                                         <input id="showSubs" type="hidden" name="showSubs" value={position.showSubs} placeholder='0' />
@@ -1428,15 +1214,7 @@ class CompanyShow extends Component {
 
 
                                                         <TotalDue>
-                                                            {/* another company totals */}
-                                                            {/* <th>   <label htmlFor="totaldue">Total <span> <FaMoneyBillAlt/> </span> Due this period: </label></th>
-                                                $<input
-                                                    onBlur={() => this.handleUpdate(position._id)}
-                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                    type="number" name="totaldue" value={((position.callumfee * -position.rate * position.frequency + position.rate * position.frequency) - position.arisefee).toFixed(2)}
-                                                /> */}
-                                                            {/* type="number" name="totaldue" value={((.10 * -position.rate * position.frequency + position.rate * position.frequency) + (.10 * -position.rate2 * position.frequency2 + position.rate2 * position.frequency2) - 19.75).toFixed(2)} */}
-
+         
 
                                                             {/* Callum Ent totals */}
                                                             <input id="showTotalCalc" type="hidden" name="showTotalCalc" value={position.showTotalCalc} />
@@ -1472,9 +1250,7 @@ class CompanyShow extends Component {
                                                             onClick={this.handleClick.bind(this, position._id)}>
                                                             <button > <span><FaPrint /> <FaFileDownload />  </span><p>Export</p>  </button>
                                                         </Link>
-                                                    {/* <a href="javascript:window.print()" ><span><FaPrint /></span> <br /> Print </a> 
-                                                    <a href="javascript:window.print()"><span><FaFileDownload /></span> <br /> Download <br /></a> */}
-                                                    <a href="https://squareup.com/login" target="_blank"><button><span><FaMoneyCheckAlt /></span><br /><p>Pay</p></button> </a>
+                                                   
                                                 </OptionsPosition>
 
                                                 <DletBtn>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { FaFileInvoiceDollar, FaFolder, FaPlusCircle} from 'react-icons/fa';
+import { FaBriefcase, FaFolder, FaPlusCircle} from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -16,7 +16,7 @@ font-size: 12px;
 color: white;
 display: flex ;
 justify-content: center ;
-font-family: helvetica;
+font-family: arial;
 // background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
 
 background-color: white;
@@ -30,17 +30,17 @@ height: 100%;
 form{
   justify-content: center;
   padding-bottom: 10px;
-  box-shadow: 1px 1px 5px rgba(28, 147, 145, 0.4);
+  box-shadow: 1px 1px 5px #95236097;
   background-color:  rgba(255,255,255,0.95);
   text-align: center;  
   #empText{
-    color: rgb(43, 172, 174);  
+    color: #952360;  
       font-size: 18px;
     
   }
 }
 input{
-  background: rgba(151, 240, 240, 0.2);
+  background: #95236005;
   border:.5px solid rgba(0,0,0, 0.2);
 border-radius: 2px;
 padding: 5px;
@@ -57,7 +57,7 @@ input:focus, textarea:focus{
 }
 
 h1{
-  color: rgb(43, 172, 174);
+  color: #952360;
 // text-shadow: .5px .5px .5px gray;
 display: flex;
 justify-content: center;
@@ -65,7 +65,7 @@ font-weight: 500;
 }
 span{
   color: white;
-  background-color: rgba(28, 147, 145, 0.5); 
+  background-color: #95236090; 
   padding: 5px 9px 5px 9px;
   border-radius: 50px;
 }
@@ -104,7 +104,7 @@ a:visited{
 }
 
 button{
-background: #6A7FDB;
+background: #462255;
 color: white;
 border-radius: 5px;
 font-size: 16px;
@@ -115,7 +115,7 @@ cursor: pointer;
 button:hover{
   background: white;
   
-      color: #6A7FDB;
+      color: #462255;
   
 }
 .addemp{
@@ -174,7 +174,7 @@ font-size: 15px;
 
 
 const CompanyOutline = styled.div`
-box-shadow: 1px 1px 5px rgba(28, 147, 145, 0.4);
+box-shadow: 1px 1px 5px #95236097;
 // border: solid black .5px;
 
 `
@@ -229,9 +229,9 @@ class Company extends Component {
         <BkgdColors>
           <div className="overlay">
             <br/>
-            <h1>Tender Directory</h1>
+            <h1>Bagged Directory</h1>
           <h2>Click on a company name to view their profile. <br/>
-          Click on < FaFileInvoiceDollar/>Positions to view the company's positions. </h2>
+          Click on < FaBriefcase/> Positions to view the positions you applied for. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
@@ -252,7 +252,7 @@ class Company extends Component {
                 </Link> 
                 <Link id="link" to={`/companys/${company._id}`}> 
           {/* 📂 */}
-          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaFileInvoiceDollar/>Positions</Link>
+          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaBriefcase/> Positions</Link>
                 {/* <h5> {company.email}</h5> 
                 <h5> {company.phone}</h5>  */}
               </CompanyContainer>
@@ -265,9 +265,9 @@ class Company extends Component {
 <br/><br/>
 
           <form onSubmit={this.handleSubmit} className='addemp' id='companyname'>
-        <br/>  <h2 id='empText'>Add New Companys</h2> 
+        <br/>  <h2 id='empText'>Add New Company</h2> 
 
-<h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
+<h3> </h3>         
  <h3>To add a new company enter necessary info <br/> in the form below 
   then click the <FaPlusCircle className='icons'/>Add Company button.</h3>
  <br/> 

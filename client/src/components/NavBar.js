@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { FaHome, FaUsers, FaBars, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaHome, FaUsers, FaBars, FaCity, FaCalendarAlt, FaGem, FaCalendarDay, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 
 const NavBarStyles = styled.div`
 *{
@@ -9,7 +9,7 @@ const NavBarStyles = styled.div`
 }
 
 padding: 5px;
-background: rgb(28, 147, 145);
+background: #302734;
 font-weight: 300;
 color: white;
 font-family: helvetica;
@@ -75,10 +75,12 @@ class NavBar extends Component {
                         <Link to="/"> <FaHome />&#160; <p>Home</p>
                         {/* <img src="/images/CAL_ent_logo.png" alt="logo" /> */}
                          </Link> 
-
-                        <Link to="/companys"> <FaUsers/>&#160; <p>Directory</p></Link>
+                         <Link to="#"> <FaCalendarDay/>&#160; <p>Home</p>
+                         </Link> 
+                        <Link to="/companys"> <FaCity/>&#160; <p>Directory</p></Link>
                         {/* <Link to="/companys/#companyname"> 👩🏿‍💻Add New Company </Link> */}
-
+                        <Link to="#"> <FaGem/>&#160; <p>Home</p>
+                         </Link> 
                     </LogoStyles>
                     <div>
 

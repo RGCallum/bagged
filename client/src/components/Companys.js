@@ -185,12 +185,13 @@ class Company extends Component {
     companys: [],
     newCompany: {
       index: '',
-
       companyname: '',
-      idnumber: '',
+      website: '',
+      careerpage: '',
+      location: '',
+      maincontact: '',
       email: '',
       phone: '',
-      
     }
   }
 
@@ -276,9 +277,24 @@ class Company extends Component {
               <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname"  required='true'/>
             </div>
             <div>
-             <th> <label htmlFor="idnumber">ID Number: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.idnumber} type="idnumber" name="idnumber" />
+             <th> <label htmlFor="website">Website Url: </label> </th>
+              <input onChange={this.handleChange} value={this.state.newCompany.website} type="website" name="website" />
             </div>
+            <div>
+             <th> <label htmlFor="careerpage">Career Page Url: </label> </th>
+              <input onChange={this.handleChange} value={this.state.newCompany.careerpage} type="careerpage" name="careerpage" />
+            </div>
+            <div>
+             <th> <label htmlFor="location">Company Location: </label> </th>
+              <input onChange={this.handleChange} value={this.state.newCompany.location} type="location" name="location" />
+            </div>
+            <div>
+             <th> <label htmlFor="maincontact">Main Contact Name: </label> </th>
+              <input onChange={this.handleChange} value={this.state.newCompany.maincontact} type="maincontact" name="maincontact" />
+            </div>
+
+
+
             <div>
              <th> <label htmlFor="email">Email: </label> </th>
               <input onChange={this.handleChange} value={this.state.newCompany.email} type="text" name="email" />

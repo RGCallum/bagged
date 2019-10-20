@@ -162,7 +162,10 @@ class Profile extends Component {
   state = {
     company: {},
     companyname: '',
-    idnumber: '',
+    website: '',
+    careerpage: '',
+    location: '',
+    maincontact: '',
     email: '',
     phone: '',
     
@@ -233,7 +236,7 @@ class Profile extends Component {
         <NameNButtonStyle>
 
           <h3><FaUser/> {this.state.company.companyname}</h3>
-          <label htmlFor="companyname" >Update Name: </label>
+          <label htmlFor="companyname" >Update Company: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -241,7 +244,7 @@ class Profile extends Component {
             value={this.state.company.companyname}
           />
 
-          <h3> <FaAddressCard/> {this.state.company.website} </h3>
+          <h3> <FaAddressCard/> <a href='#'> {this.state.company.website}</a> </h3>
           <label htmlFor="website">Update Website Url: </label>
           <input
             onBlur={() => this.handleUpdate()}
@@ -251,7 +254,7 @@ class Profile extends Component {
             name="website"
           />
 
-           <h3> <FaAddressCard/> {this.state.company.careerpage} </h3>
+           <h3> <FaAddressCard/> <a href='#'> {this.state.company.careerpage} </a></h3>
           <label htmlFor="careerpage">Update career page Url: </label>
           <input
             onBlur={() => this.handleUpdate()}
@@ -279,26 +282,6 @@ class Profile extends Component {
             type='text' placeholder='main point of contact for company'
             value={this.state.company.maincontact}
             name="maincontact"
-          />
-
-<h3> <FaAddressCard/> {this.state.company.email} </h3>
-          <label htmlFor="email">Update Contact Email Address: </label>
-          <input
-            onBlur={() => this.handleUpdate()}
-            onChange={(event) => this.handleChange(event)}
-            type='text' placeholder='main contact for company email'
-            value={this.state.company.email}
-            name="email"
-          />
-
-<h3> <FaAddressCard/> {this.state.company.phone} </h3>
-          <label htmlFor="phone">Update Main Contact Phone: </label>
-          <input
-            onBlur={() => this.handleUpdate()}
-            onChange={(event) => this.handleChange(event)}
-            type='text' placeholder='main contact for company phone'
-            value={this.state.company.phone}
-            name="phone"
           />
 
           <h3> <FaEnvelope/> {this.state.company.email}</h3>

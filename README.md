@@ -1,5 +1,5 @@
 # CallumEntApp
-CalPay is a small business payroll app created with MongoDB, Express, React and Node. I created this app for a logistics company and than refactored it for a customer service company.
+CalPay is a small business payroll app created with MongoDB, Express, React and Node. I created this app for a logistics company and then refactored it for a customer service company.
 The owner needed an position app that she can access whether on a computer or phone or anywhere in the world that allowed her to create and manage positions for her contractors.
 Basically the owner needed: 
 1 - Be able to calculate payment and save automatically

@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Company from './Companys';
-import {FaMinusCircle, FaUser, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaFilePositionDollar } from 'react-icons/fa';
+import {FaMinusCircle, FaUser, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaFileInvoiceDollar } from 'react-icons/fa';
 import NavBar from '../components/NavBar'
 
 
@@ -227,7 +227,7 @@ class Profile extends Component {
 
           <br />
           <Link to={`/companys/${this.props.match.params.companyId}`}>
-       <button><FaFilePositionDollar className='icons'/> Positions</button> </Link></PositionBtn>
+       <button><FaFileInvoiceDollar className='icons'/> Positions</button> </Link></PositionBtn>
         <br />    <Toptext><div>Edit Company information below <br/>  (All changes are auto saved)</div></Toptext>
         <br/>
         <NameNButtonStyle>

@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import CompanyShow from './CompanyShow'
-import { FaPaperPlane, FaScroll, FaMinusCircle, FaShareAlt, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFilePositionDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaPaperPlane, FaScroll, FaMinusCircle, FaShareAlt, FaIdBadge, FaBriefcase, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaFileInvoiceDollar, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -923,7 +923,7 @@ class Positions extends Component {
                             </EditProfileBtn>
                             <PositionBtn>
                                 <Link to={`/companys/${this.props.match.params.companyId}`}>
-                                    <button><FaFilePositionDollar className='icons' /> All Positions</button>
+                                    <button><FaFileInvoiceDollar className='icons' /> All Positions</button>
                                 </Link>
                             </PositionBtn>
                         </div>

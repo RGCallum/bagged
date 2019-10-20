@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { FaFilePositionDollar, FaFolder, FaPlusCircle} from 'react-icons/fa';
+import { FaFileInvoiceDollar, FaFolder, FaPlusCircle} from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -231,7 +231,7 @@ class Company extends Component {
             <br/>
             <h1>Tender Directory</h1>
           <h2>Click on a company name to view their profile. <br/>
-          Click on < FaFilePositionDollar/>Positions to view the company's positions. </h2>
+          Click on < FaFileInvoiceDollar/>Positions to view the company's positions. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
@@ -252,7 +252,7 @@ class Company extends Component {
                 </Link> 
                 <Link id="link" to={`/companys/${company._id}`}> 
           {/* 📂 */}
-          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaFilePositionDollar/>Positions</Link>
+          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaFileInvoiceDollar/>Positions</Link>
                 {/* <h5> {company.email}</h5> 
                 <h5> {company.phone}</h5>  */}
               </CompanyContainer>

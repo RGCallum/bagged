@@ -14,6 +14,7 @@ border-radius: 3px;
 border: .5px solid rgba(0,0,0, 0.2);
 padding: 5px;
 font-family: helvetica;
+
 }
 @media print
 {

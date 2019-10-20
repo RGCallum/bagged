@@ -9,7 +9,7 @@ const NavBarStyles = styled.div`
 }
 
 padding: 5px;
-background: #302734;
+background: #952360;
 font-weight: 300;
 color: white;
 font-family: helvetica;

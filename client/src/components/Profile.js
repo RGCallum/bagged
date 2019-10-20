@@ -14,7 +14,7 @@ padding-top: 20px;
 h1{
   font-family: helvetica;
 font-weight: 500;
-color: rgb(43, 172, 174);
+color: #952360;
 font-size: 30px;
 text-align: center;
 }
@@ -28,9 +28,9 @@ const CompanyStyles = styled.div`
   position: relative;
   flex-direction: column;
 
-  // background: rgb(43, 172, 174, 0.6);
+  // background: #95236005;
   input {
-    background: rgb(43, 172, 174, 0.6);
+    background: #95236005;
 
     font-size: 15px;
 
@@ -83,7 +83,7 @@ h1{
 
 }
 h3{
-  color: rgb(43, 172, 174);
+  color: #952360;
   font-weight: 500;
 margin-bottom: 5px;
 // text-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
@@ -106,7 +106,7 @@ justify-content: center;
   
   }
   input{
-    background: rgba(28, 147, 145, 0.2);
+    background: #95236005;
     border-radius: 3px;
     border: .5px solid rgba(0,0,0, 0.2);
     padding: 5px;
@@ -234,26 +234,75 @@ class Profile extends Component {
 
           <h3><FaUser/> {this.state.company.companyname}</h3>
           <label htmlFor="companyname" >Update Name: </label>
-          
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
             type="text" name="companyname" placeholder='Company Name'
             value={this.state.company.companyname}
           />
-          <h3> <FaAddressCard/> {this.state.company.idnumber} </h3>
-          <label htmlFor="idnumber">Update ID Number: </label>
 
+          <h3> <FaAddressCard/> {this.state.company.website} </h3>
+          <label htmlFor="website">Update Website Url: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
-            type='text' placeholder='Company ID'
-            value={this.state.company.idnumber}
-            name="idnumber"
+            type='text' placeholder='URL'
+            value={this.state.company.website}
+            name="website"
           />
+
+           <h3> <FaAddressCard/> {this.state.company.careerpage} </h3>
+          <label htmlFor="careerpage">Update career page Url: </label>
+          <input
+            onBlur={() => this.handleUpdate()}
+            onChange={(event) => this.handleChange(event)}
+            type='text' placeholder='URL'
+            value={this.state.company.careerpage}
+            name="careerpage"
+          />
+
+                     <h3> <FaAddressCard/> {this.state.company.location} </h3>
+          <label htmlFor="location">Update location: </label>
+          <input
+            onBlur={() => this.handleUpdate()}
+            onChange={(event) => this.handleChange(event)}
+            type='text' placeholder='location'
+            value={this.state.company.location}
+            name="location"
+          />
+
+<h3> <FaAddressCard/> {this.state.company.maincontact} </h3>
+          <label htmlFor="maincontact">Update Main Contact: </label>
+          <input
+            onBlur={() => this.handleUpdate()}
+            onChange={(event) => this.handleChange(event)}
+            type='text' placeholder='main point of contact for company'
+            value={this.state.company.maincontact}
+            name="maincontact"
+          />
+
+<h3> <FaAddressCard/> {this.state.company.email} </h3>
+          <label htmlFor="email">Update Contact Email Address: </label>
+          <input
+            onBlur={() => this.handleUpdate()}
+            onChange={(event) => this.handleChange(event)}
+            type='text' placeholder='main contact for company email'
+            value={this.state.company.email}
+            name="email"
+          />
+
+<h3> <FaAddressCard/> {this.state.company.phone} </h3>
+          <label htmlFor="phone">Update Main Contact Phone: </label>
+          <input
+            onBlur={() => this.handleUpdate()}
+            onChange={(event) => this.handleChange(event)}
+            type='text' placeholder='main contact for company phone'
+            value={this.state.company.phone}
+            name="phone"
+          />
+
           <h3> <FaEnvelope/> {this.state.company.email}</h3>
           <label htmlFor="email">Update Email: </label>
-
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}

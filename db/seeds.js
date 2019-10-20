@@ -14,7 +14,8 @@ const position1 = new Position({
     contactphone: '(555)555-5555',
     joburl: 'www.bagged.herokuapp.com',
     jobsummary: 'stuff and stuff and more stuff',
-    jobsalary: '70k',
+    jobsalary: '70k',    
+    foundon: 'indeed',
     coverletter: '',
     intvwdate: 09/16/2019,
     intvwtime: '10:30am',
@@ -28,7 +29,6 @@ const position1 = new Position({
     gotthebag: '',
     nexttime: '',
     tostudy: 'java',
-
 })
 
 const position2 = new Position({
@@ -42,6 +42,7 @@ const position2 = new Position({
     joburl: 'www.bagged.herokuapp.com',
     jobsummary: 'stuff and stuff and more stuff',
     jobsalary: '60k',
+    foundon: 'glassdoor',
     coverletter: '',
     intvwdate: 09/26/2019,
     intvwtime: '11:30am',
@@ -68,6 +69,7 @@ const position3 = new Position({
     joburl: 'www.bagged.herokuapp.com',
     jobsummary: 'stuff and stuff and more stuff',
     jobsalary: '80k',
+    foundon: 'linkedin',
     coverletter: '',
     intvwdate: 01/16/2019,
     intvwtime: '10:00am',

@@ -24,6 +24,7 @@ const Position = new Schema({
     gotthebag: String,
     nexttime: String,
     tostudy: String,
+    foundon: String,
     
     allClients: [
         {

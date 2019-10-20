@@ -1,10 +1,10 @@
-const Employee = require('../models/Employee.js')
-const Invoice = require('../models/Invoice.js')
+const Company = require('../models/Company.js')
+const Position = require('../models/Position.js')
 const AllClient = require('../models/AllClient.js')
 const mongoose = require('./connections')
 
 
-const invoice1 = new Invoice({
+const position1 = new Position({
     date: 06/01/2019,
     payperiodstart: 05/15/2019, 
     payperiodend: 05/30/2019, 
@@ -29,7 +29,7 @@ const invoice1 = new Invoice({
     viewSubs: ''
 
 })
-const invoice2 = new Invoice({
+const position2 = new Position({
     date: 06/01/2019,
     payperiodstart: 05/15/2019, 
     payperiodend: 05/30/2019,  
@@ -55,7 +55,7 @@ const invoice2 = new Invoice({
     viewSubs: ''
 })
 
-const invoice3 = new Invoice({
+const position3 = new Position({
     date: 06/01/2019,
     payperiodstart: 05/15/2019, 
     payperiodend: 05/30/2019, 
@@ -80,38 +80,38 @@ const invoice3 = new Invoice({
 })
 
 
-const employee1 = new Employee({
-    employeename: "Nola Darling",
+const company1 = new Company({
+    companyname: "Nola Darling",
     idnumber: "123456",
     email: "yurrr@gmail.com",
     phone: "9178957463",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/208171_10150149295942499_3384854_n.jpg?_nc_cat=111&_nc_ht=scontent-atl3-1.xx&oh=3c3860f0098c2d75265051e7cb4a26dc&oe=5C770518",
-    invoices: [invoice1]
+    positions: [position1]
 })
-const employee2 = new Employee({
-    employeename: "Sha Bizness",
+const company2 = new Company({
+    companyname: "Sha Bizness",
     idnumber: "489623",
-    email: "invoices@gmail.com",
+    email: "positions@gmail.com",
     phone: "2128070984",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/430010_4069878260161_907945121_n.jpg?_nc_cat=108&_nc_ht=scontent-atl3-1.xx&oh=aeb71085e0be9d5915915fa937d95462&oe=5C686213",
-    invoices: [invoice2]
+    positions: [position2]
 })
-const employee3 = new Employee({
-    employeename: "Taminck Fortune",
+const company3 = new Company({
+    companyname: "Taminck Fortune",
     idnumber: "356748",
     email: "lit@gmail.com",
     phone: "718378465",
     image: "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/40640178_2387864784563143_8407232597398126592_n.jpg?_nc_cat=110&_nc_ht=scontent-atl3-1.xx&oh=011dff69f560483733e58f3cfda1d543&oe=5C6CF9F7",
-    invoices: [invoice3]
+    positions: [position3]
 })
 
 
 
-Employee.remove({})
-    .then(() => Invoice.remove({}))
-    .then(() => Invoice.insertMany([invoice1, invoice2, invoice3]))
-    .then(() => employee1.save())
-    .then(() => employee2.save())
-    .then(() => employee3.save())
+Company.remove({})
+    .then(() => Position.remove({}))
+    .then(() => Position.insertMany([position1, position2, position3]))
+    .then(() => company1.save())
+    .then(() => company2.save())
+    .then(() => company3.save())
     .then(() => console.log("Database seeded successfully"))
     .then(() => mongoose.connection.close()) 

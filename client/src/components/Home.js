@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Employees from './Employees';
+import Companys from './Companys';
 import { GoogleLogin } from 'react-google-login';
-import { FaFileInvoiceDollar, FaFolder, FaPlusCircle } from 'react-icons/fa';
+import { FaFilePositionDollar, FaFolder, FaPlusCircle } from 'react-icons/fa';
 import axios from 'axios'
 
 const ImgStyles = styled.div`
@@ -539,7 +539,7 @@ class Home extends Component {
 
                         <h1>
                             {/* 💰 💸*/}
-                            <FaFileInvoiceDollar className='icons' />
+                            <FaFilePositionDollar className='icons' />
                             Tender</h1>
                         <img id="tenderWebPhone" src="/images/TenderWebPhone.png" alt="" />
                         <Text>
@@ -560,16 +560,16 @@ class Home extends Component {
 
 
                         <ul className='iconsAnim'>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
-                            <li><FaFileInvoiceDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
+                            <li><FaFilePositionDollar className='icons2' /></li>
                         </ul>
 
                     </CountStyles>
@@ -580,7 +580,7 @@ class Home extends Component {
                 <Paragraph>
                     <div className="first">
                         <img src="/images/handPhone.png" alt="mobile" />
-                        <h3>Tender is a simple and efficient payroll/invoice app created for the small business owner to create invoices and pay stubs for your employees and contractors.</h3>
+                        <h3>Tender is a simple and efficient payroll/position app created for the small business owner to create positions and pay stubs for your companys and contractors.</h3>
                     </div>
                     <br /><br />
                     <div className="second">
@@ -594,7 +594,7 @@ class Home extends Component {
                     <br /><br />
 
                     <div className="third"><img src="/images/monitorPrint3.png" alt="print" />
-                        <h3>    Export a professional version and easily share with just a few clicks. <br />Keep all your pay stubs and invoices organized in one place that you can reach from anywhere at anytime! </h3>
+                        <h3>    Export a professional version and easily share with just a few clicks. <br />Keep all your pay stubs and positions organized in one place that you can reach from anywhere at anytime! </h3>
                     </div>
                     <br />
                    
@@ -602,19 +602,19 @@ class Home extends Component {
                     <div className="thirdB">
                         
 
-                    <h3 id="tdr"> To see <b>Tender</b> in action and play with adding employees and invoices use <HoverButton>
-                        <Link to="/employees"> <button>Tender</button></Link>
+                    <h3 id="tdr"> To see <b>Tender</b> in action and play with adding companys and positions use <HoverButton>
+                        <Link to="/companys"> <button>Tender</button></Link>
                     </HoverButton></h3> 
   
-                    <h3 id="tfree"> To create a free invoice or pay stub with your own logo use <b>TenderFree</b> <HoverButton>
-                        <a href="https://tenderfree.herokuapp.com/employees"><button>TenderFree</button></a>
+                    <h3 id="tfree"> To create a free position or pay stub with your own logo use <b>TenderFree</b> <HoverButton>
+                        <a href="https://tenderfree.herokuapp.com/companys"><button>TenderFree</button></a>
                     </HoverButton></h3>
                     
                     </div>
 
                     <div className="fourth">
                         <h3> Tender is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>                 
-                        <h2>Contact us below for a quote on your customized version of <FaFileInvoiceDollar/>Tender today!</h2>
+                        <h2>Contact us below for a quote on your customized version of <FaFilePositionDollar/>Tender today!</h2>
 
                     </div>
                     <br />

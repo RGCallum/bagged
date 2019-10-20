@@ -39,7 +39,7 @@ animation: color-change-5x 30s linear infinite alternate both;
 }
 
 `
-const EmployeeContainer = styled.div`
+const CompanyContainer = styled.div`
 
 border: inset #C0C0C0;
 background-color: #ffffff70;
@@ -56,11 +56,11 @@ padding: 10px;
 box-shadow: 1px 1px 1px;
 `
 
-class Employee extends Component {
+class Company extends Component {
     state = {
-      employees: [],
-      newEmployee: {
-        employeename: '',
+      companys: [],
+      newCompany: {
+        companyname: '',
         idnumber: '',
         email: '',
         phone: '',
@@ -69,30 +69,30 @@ class Employee extends Component {
     }
   
     handleChange = (event) => {
-      const updatedNewEmployee = { ...this.state.newEmployee }
+      const updatedNewCompany = { ...this.state.newCompany }
   
-      updatedNewEmployee[event.target.name] = event.target.value
-      this.setState({ newEmployee: updatedNewEmployee })
+      updatedNewCompany[event.target.name] = event.target.value
+      this.setState({ newCompany: updatedNewCompany })
     }
   
     handleSubmit = (event) => {
       event.preventDefault()
   
-      axios.post('/api/employees', this.state.newEmployee).then(res => {
+      axios.post('/api/companys', this.state.newCompany).then(res => {
         console.log(res.data)
-        this.props.history.push(`/employees/${res.data._id}`)
+        this.props.history.push(`/companys/${res.data._id}`)
       })
   
     }
   
-    getAllEmployees = () => {
-      axios.get('/api/employees').then((res) => {
-        this.setState({ employees: res.data })
+    getAllCompanys = () => {
+      axios.get('/api/companys').then((res) => {
+        this.setState({ companys: res.data })
       })
     }
   
     componentDidMount() {
-      this.getAllEmployees()
+      this.getAllCompanys()
     }
   
     render() {
@@ -100,51 +100,51 @@ class Employee extends Component {
         <div>
  
  <BkgdColors>
- <EmployeeContainer>
-            <h1>Sign-Up to be a featured Invoicemaker</h1>
+ <CompanyContainer>
+            <h1>Sign-Up to be a featured Positionmaker</h1>
             <br/>
             <h2>   <form onSubmit={this.handleSubmit}>
             <br/>
 
               <div>
-                <label htmlFor="employeename">Employee Name: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.employeename} type="text" name="employeename" />
+                <label htmlFor="companyname">Company Name: </label>
+                <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname" />
               </div>
               <br/>
 
               <div>
                 <label htmlFor="idnumber">ID Number: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.idnumber} type="idnumber" name="idnumber" />
+                <input onChange={this.handleChange} value={this.state.newCompany.idnumber} type="idnumber" name="idnumber" />
               </div>
               <br/>
 
               <div>
                 <label htmlFor="email">Email: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.email} type="text" name="email" />
+                <input onChange={this.handleChange} value={this.state.newCompany.email} type="text" name="email" />
               </div>
               <br/>
 
               <div>
                 <label htmlFor="phone">phone: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.phone} type="text" name="phone" />
+                <input onChange={this.handleChange} value={this.state.newCompany.phone} type="text" name="phone" />
               </div>
               <br/>
 
               <div>
                 <label htmlFor="image">Image: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.image} type="text" name="image" />
+                <input onChange={this.handleChange} value={this.state.newCompany.image} type="text" name="image" />
               </div>
               <br/>
 
               <div>
-                <label htmlFor="invoices">Invoices: </label>
-                <input onChange={this.handleChange} value={this.state.newEmployee.invoices} type="text" name="invoices" />
+                <label htmlFor="positions">Positions: </label>
+                <input onChange={this.handleChange} value={this.state.newCompany.positions} type="text" name="positions" />
               </div>
               <br/>
-              <button type="submit">Create Employee</button>
+              <button type="submit">Create Company</button>
             </form></h2>
-            </EmployeeContainer>
+            </CompanyContainer>
             </BkgdColors>
         </div>
       )} }
-  export default Employee;
+  export default Company;

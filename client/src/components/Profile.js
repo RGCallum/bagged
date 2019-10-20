@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Employee from './Employees';
-import {FaMinusCircle, FaUser, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaFileInvoiceDollar } from 'react-icons/fa';
+import Company from './Companys';
+import {FaMinusCircle, FaUser, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaFilePositionDollar } from 'react-icons/fa';
 import NavBar from '../components/NavBar'
 
 
@@ -22,7 +22,7 @@ display:flex;
 justify-content: center;
 `
 
-const EmployeeStyles = styled.div`
+const CompanyStyles = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
@@ -45,7 +45,7 @@ const EmployeeStyles = styled.div`
 `
 
 
-const EmployeesContainerStyle = styled.div`
+const CompanysContainerStyle = styled.div`
   // display: flex;
   // justify-content: space-evenly;
   // flex-wrap: wrap;
@@ -122,7 +122,7 @@ text-align: left;
   }
   
 `
-const InvoiceBtn = styled.div`
+const PositionBtn = styled.div`
 display: flex;
 justify-content: center;
 color: #d090c3;
@@ -160,8 +160,8 @@ a:hover{
 
 class Profile extends Component {
   state = {
-    employee: {},
-    employeename: '',
+    company: {},
+    companyname: '',
     idnumber: '',
     email: '',
     phone: '',
@@ -169,23 +169,23 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    const employeeId = this.props.match.params.employeeId
-    axios.get(`/api/employees/${employeeId}`).then(res => {
+    const companyId = this.props.match.params.companyId
+    axios.get(`/api/companys/${companyId}`).then(res => {
       console.log(res.data)
       this.setState({
-        employee: res.data,
+        company: res.data,
       })
     })
   }
 
-  handleDelete = employeeId => {
-    if (this.props.match.params.employeeId) {
-      const employeeId = this.props.match.params.employeeId;
-      console.log(employeeId);
-      axios.delete(`/api/employees/${employeeId}`)
+  handleDelete = companyId => {
+    if (this.props.match.params.companyId) {
+      const companyId = this.props.match.params.companyId;
+      console.log(companyId);
+      axios.delete(`/api/companys/${companyId}`)
         .then(res => {
-          this.setState({ employee: res.data.employee });
-          this.props.history.push(`/employees/`)
+          this.setState({ company: res.data.company });
+          this.props.history.push(`/companys/`)
 
         })
     }
@@ -193,23 +193,23 @@ class Profile extends Component {
 
   handleChange = (event) => {
     //take it
-    const employee = { ...this.state.employee }
+    const company = { ...this.state.company }
     //change it
     const name = event.target.name
     const value = event.target.value
-    employee[name] = value
+    company[name] = value
     //put it back
-    this.setState({ employee })
+    this.setState({ company })
   }
 
   handleUpdate = () => {
-    const employeeId = this.props.match.params.employeeId
-    const updatedEmployee = this.state.employee
-    console.log(employeeId)
-    axios.patch(`/api/employees/${employeeId}`, updatedEmployee)
+    const companyId = this.props.match.params.companyId
+    const updatedCompany = this.state.company
+    console.log(companyId)
+    axios.patch(`/api/companys/${companyId}`, updatedCompany)
       .then((res) => {
         console.log(res.data, 'updates')
-        this.setState({ employee: this.state.employee })
+        this.setState({ company: this.state.company })
       })
       .catch(console.error)
   }
@@ -221,76 +221,76 @@ class Profile extends Component {
         <NavBar />
         <NameContainer>
         <br /><h1>
-        {this.state.employee.employeename}'s Profile</h1>
+        {this.state.company.companyname}'s Profile</h1>
         </NameContainer>
-        <InvoiceBtn>
+        <PositionBtn>
 
           <br />
-          <Link to={`/employees/${this.props.match.params.employeeId}`}>
-       <button><FaFileInvoiceDollar className='icons'/> Invoices</button> </Link></InvoiceBtn>
+          <Link to={`/companys/${this.props.match.params.companyId}`}>
+       <button><FaFilePositionDollar className='icons'/> Positions</button> </Link></PositionBtn>
         <br />    <Toptext><div>Edit Payee information below <br/>  (All changes are auto saved)</div></Toptext>
         <br/>
         <NameNButtonStyle>
 
-          <h3><FaUser/> {this.state.employee.employeename}</h3>
-          <label htmlFor="employeename" >Update Name: </label>
+          <h3><FaUser/> {this.state.company.companyname}</h3>
+          <label htmlFor="companyname" >Update Name: </label>
           
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
-            type="text" name="employeename" placeholder='Employee Name'
-            value={this.state.employee.employeename}
+            type="text" name="companyname" placeholder='Company Name'
+            value={this.state.company.companyname}
           />
-          <h3> <FaAddressCard/> {this.state.employee.idnumber} </h3>
+          <h3> <FaAddressCard/> {this.state.company.idnumber} </h3>
           <label htmlFor="idnumber">Update ID Number: </label>
 
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
-            type='text' placeholder='Employee ID'
-            value={this.state.employee.idnumber}
+            type='text' placeholder='Company ID'
+            value={this.state.company.idnumber}
             name="idnumber"
           />
-          <h3> <FaEnvelope/> {this.state.employee.email}</h3>
+          <h3> <FaEnvelope/> {this.state.company.email}</h3>
           <label htmlFor="email">Update Email: </label>
 
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
             type='text' name="email" placeholder='Payee Email'
-            value={this.state.employee.email}
+            value={this.state.company.email}
           />
-          <h3><FaMobileAlt/> {this.state.employee.phone} </h3>
+          <h3><FaMobileAlt/> {this.state.company.phone} </h3>
           <label htmlFor="phone">Update Phone: </label>
 
           <input
             onBlur={() => this.handleUpdate()}
             onChange={this.handleChange}
-            type='text' name="phone" placeholder='Employee Phone'
-            value={this.state.employee.phone}
+            type='text' name="phone" placeholder='Company Phone'
+            value={this.state.company.phone}
           />
 
 
           <br />
-          <a href={`/employees`}>
+          <a href={`/companys`}>
             <button className='noprint' onClick={e =>
-              window.confirm("Are you sure you want to delete this employee? All their invoices will be deleted as well!") &&
-              this.handleDelete(e)}> <FaMinusCircle/> Delete {this.state.employee.employeename} from directory</button>
+              window.confirm("Are you sure you want to delete this company? All their positions will be deleted as well!") &&
+              this.handleDelete(e)}> <FaMinusCircle/> Delete {this.state.company.companyname} from directory</button>
           </a>
           <br />
         </NameNButtonStyle>
 
         <div>
-          <EmployeesContainerStyle>
+          <CompanysContainerStyle>
 
-            <EmployeeStyles>
-              {/* <label htmlFor="employeename" >Employee Name: </label>
+            <CompanyStyles>
+              {/* <label htmlFor="companyname" >Company Name: </label>
 
               <input
                 onBlur={() => this.handleUpdate()}
                 onChange={(event) => this.handleChange(event)}
-                type="text" name="employeename" placeholder={this.state.employee.employeename}
-                value={this.state.employee.employeename}
+                type="text" name="companyname" placeholder={this.state.company.companyname}
+                value={this.state.company.companyname}
               />
               <label htmlFor="idnumber">ID Number: </label>
 
@@ -298,7 +298,7 @@ class Profile extends Component {
                 onBlur={() => this.handleUpdate()}
                 onChange={(event) => this.handleChange(event)}
                 type='text' placeholder='idnumber'
-                value={this.state.employee.idnumber}
+                value={this.state.company.idnumber}
                 name="idnumber"
               />
               <label htmlFor="email">Email: </label>
@@ -307,7 +307,7 @@ class Profile extends Component {
                 onBlur={() => this.handleUpdate()}
                 onChange={(event) => this.handleChange(event)}
                 type='text' name="email" placeholder='Email'
-                value={this.state.employee.email}
+                value={this.state.company.email}
               />
               <label htmlFor="phone">Phone: </label>
 
@@ -315,19 +315,19 @@ class Profile extends Component {
                 onBlur={() => this.handleUpdate()}
                 onChange={this.handleChange}
                 type='text' name="phone" placeholder='phone'
-                value={this.state.employee.phone}
+                value={this.state.company.phone}
               /> */}
 
-              {/* <Link to={`/employees`}> 
+              {/* <Link to={`/companys`}> 
                         <button className='noprint' onClick={e =>
-                                            window.confirm("Are you sure you want to delete this employee? All their invoices will be deleted as well!") &&
-                                            this.handleDelete(e)}>Delete Employee</button>
+                                            window.confirm("Are you sure you want to delete this company? All their positions will be deleted as well!") &&
+                                            this.handleDelete(e)}>Delete Company</button>
                         </Link>  */}
 
 
-            </EmployeeStyles>
+            </CompanyStyles>
 
-          </EmployeesContainerStyle>
+          </CompanysContainerStyle>
         </div>
 
         

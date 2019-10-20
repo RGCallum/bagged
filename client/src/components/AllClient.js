@@ -59,7 +59,7 @@ class AllClient extends Component {
           </div>
         )) } */}
 
-        <h3>Edit Invoice AllClient</h3>
+        <h3>Edit Position AllClient</h3>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="name">Name: </label>
@@ -107,20 +107,20 @@ export default AllClient;
 
 
 //     componentDidMount() {
-//     // make an api call to get one single invoice
-//     // On the server URL is '/api/invoices/:invoiceId'
-//     const invoiceId = this.props.match.params.invoiceId
-//     axios.get(`/api/invoices/${invoiceId}`).then(res => {
+//     // make an api call to get one single position
+//     // On the server URL is '/api/positions/:positionId'
+//     const positionId = this.props.match.params.positionId
+//     axios.get(`/api/positions/${positionId}`).then(res => {
 //       console.log(res.data)
 //       this.setState({
-//         invoices: res.data,
+//         positions: res.data,
 //         allClients: res.data.allClients
 //       })
 //     })
 //   }
 
 //   handleCreateNewAllClient = () => {
-//     const invoiceId = this.props.match.params.invoiceId
+//     const positionId = this.props.match.params.positionId
 //     const payload = {
 //         name: 'name',
 //         image: 'image',
@@ -135,7 +135,7 @@ export default AllClient;
 //     //   location: 'location',
 //     //   awards: 'awards'
 //     }
-//     axios.post(`/api/invoices/${invoiceId}/allClients`, payload).then(res => {
+//     axios.post(`/api/positions/${positionId}/allClients`, payload).then(res => {
 //       const newAllClient = res.data
 //       console.log(res.data)
 //       const newStateallClients = [...this.state.allClients, newAllClient]
@@ -186,7 +186,7 @@ export default AllClient;
 //     render() {
 //         return (
 //             <div>
-//                            {/* <h1>{this.state.invoice.name}'s allClients </h1> */}
+//                            {/* <h1>{this.state.position.name}'s allClients </h1> */}
 
 
 
@@ -204,8 +204,8 @@ export default AllClient;
 // import axios from 'axios'
 // import styled from 'styled-components'
 
-// // Need allClient about a invoice
-// // Need allClient about that invoices allClients
+// // Need allClient about a position
+// // Need allClient about that positions allClients
 
 // const allClientstyles = styled.div`
 //   display: flex;
@@ -285,20 +285,20 @@ export default AllClient;
   
 
 //   componentDidMount() {
-//     // make an api call to get one single invoice
-//     // On the server URL is '/api/invoices/:invoiceId'
-//     const invoiceId = this.props.match.params.invoiceId
-//     axios.get(`/api/invoices/${invoiceId}`).then(res => {
+//     // make an api call to get one single position
+//     // On the server URL is '/api/positions/:positionId'
+//     const positionId = this.props.match.params.positionId
+//     axios.get(`/api/positions/${positionId}`).then(res => {
 //       console.log(res.data)
 //       this.setState({
-//         invoices: res.data,
+//         positions: res.data,
 //         allClients: res.data.allClients
 //       })
 //     })
 //   }
 
 //   handleCreateNewAllClient = () => {
-//     const invoiceId = this.props.match.params.invoiceId
+//     const positionId = this.props.match.params.positionId
 //     const payload = {
 //         name: 'name',
 //         image: 'image',
@@ -313,7 +313,7 @@ export default AllClient;
 //     //   location: 'location',
 //     //   awards: 'awards'
 //     }
-//     axios.post(`/api/invoices/${invoiceId}/allClients`, payload).then(res => {
+//     axios.post(`/api/positions/${positionId}/allClients`, payload).then(res => {
 //       const newAllClient = res.data
 //       const newStateallClients = [...this.state.allClients, newAllClient]
 //       this.setState({ allClients: newStateallClients })
@@ -334,17 +334,17 @@ export default AllClient;
 //     })
 //   }
 
-// //   handleDelete = invoiceId => {
+// //   handleDelete = positionId => {
 // //     // some unique value
-// //     axios.delete(`/api/invoices`).then(() => {
-// //       //Remove the invoice with invoiceID from this.state.invoices
-// //       const newInvoices = [...this.state.invoices]
-// //       // Return only invoices that are NOT the id provided
-// //       const filtered = newInvoices.filter(invoice => {
-// //         return invoice._id !== invoiceId // ! = =
+// //     axios.delete(`/api/positions`).then(() => {
+// //       //Remove the position with positionID from this.state.positions
+// //       const newPositions = [...this.state.positions]
+// //       // Return only positions that are NOT the id provided
+// //       const filtered = newPositions.filter(position => {
+// //         return position._id !== positionId // ! = =
 // //       })
-// //       // Take filtered data and set it to invoices
-// //       this.setState({ invoices: filtered })
+// //       // Take filtered data and set it to positions
+// //       this.setState({ positions: filtered })
 // //     })
 // //   }
 
@@ -380,7 +380,7 @@ export default AllClient;
 //       <div>
 //         <NameNButtonStyle>
 
-//           {/* <h1>{this.state.invoice.name}'s allClients </h1> */}
+//           {/* <h1>{this.state.position.name}'s allClients </h1> */}
 //           <br />
 //         </NameNButtonStyle>
 //         <NewAllClientButton onClick={this.handleCreateNewAllClient}>
@@ -505,20 +505,20 @@ export default AllClient;
     
     
 //   componentDidMount() {
-//     // make an api call to get one single invoice
-//     // On the server URL is '/api/invoices/:invoiceId'
-//     const invoiceId = this.props.match.params.invoiceId
-//     axios.get(`/api/invoices/${invoiceId}`).then(res => {
+//     // make an api call to get one single position
+//     // On the server URL is '/api/positions/:positionId'
+//     const positionId = this.props.match.params.positionId
+//     axios.get(`/api/positions/${positionId}`).then(res => {
 //       console.log(res.data)
 //       this.setState({
-//         invoice: res.data,
+//         position: res.data,
 //         allClients: res.data.allClients
 //       })
 //     })
 //   }
 
 //   handleCreateNewAllClient = () => {
-//     const invoiceId = this.props.match.params.invoiceId
+//     const positionId = this.props.match.params.positionId
 //     const payload = {
 //       name: 'name',
 //       link: 'link',
@@ -531,7 +531,7 @@ export default AllClient;
 //       awards: 'awards',
 
 //     }
-//     axios.post(`/api/invoices/${invoiceId}/allClients`, payload).then(res => {
+//     axios.post(`/api/positions/${positionId}/allClients`, payload).then(res => {
 //       const newAllClient = res.data
 //       const newStateallClients = [...this.state.allClients, newAllClient]
 //       this.setState({ allClients: newStateallClients })
@@ -584,10 +584,10 @@ export default AllClient;
 //   render() {
 //     return (
 //       <div>
-//           Invoice allClient page
+//           Position allClient page
 //         <NameNButtonStyle>
 
-//           {/* <h1>{this.state.invoice.invoicename}'s allClients </h1> */}
+//           {/* <h1>{this.state.position.positionname}'s allClients </h1> */}
 //           <br />
 //         </NameNButtonStyle>
 //         <NewAllClientButton onClick={this.handleCreateNewAllClient}>

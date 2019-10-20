@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { FaFileInvoiceDollar, FaFolder, FaPlusCircle} from 'react-icons/fa';
-import NavBar from '../components/NavBar'
+import { FaFilePositionDollar, FaFolder, FaPlusCircle} from 'react-icons/fa';
+import NavBar from './NavBar'
 
 
 const BkgdColors = styled.div`
@@ -153,7 +153,7 @@ h2, h3{
   flex-direction: row;
 }
 `
-const EmployeeContainer = styled.div`
+const CompanyContainer = styled.div`
 background-color:  white;
 border-bottom: inset #C0C0C0 .5px;
 // border-radius: 5px;
@@ -173,20 +173,20 @@ font-size: 15px;
 `
 
 
-const EmployeeOutline = styled.div`
+const CompanyOutline = styled.div`
 box-shadow: 1px 1px 5px rgba(28, 147, 145, 0.4);
 // border: solid black .5px;
 
 `
 
 
-class Employee extends Component {
+class Company extends Component {
   state = {
-    employees: [],
-    newEmployee: {
+    companys: [],
+    newCompany: {
       index: '',
 
-      employeename: '',
+      companyname: '',
       idnumber: '',
       email: '',
       phone: '',
@@ -195,30 +195,30 @@ class Employee extends Component {
   }
 
   handleChange = (event) => {
-    const updatedNewEmployee = { ...this.state.newEmployee }
+    const updatedNewCompany = { ...this.state.newCompany }
 
-    updatedNewEmployee[event.target.name] = event.target.value
-    this.setState({ newEmployee: updatedNewEmployee })
+    updatedNewCompany[event.target.name] = event.target.value
+    this.setState({ newCompany: updatedNewCompany })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    axios.post('/api/employees', this.state.newEmployee).then(res => {
+    axios.post('/api/companys', this.state.newCompany).then(res => {
       console.log(res.data)
-      this.props.history.push(`/employees/${res.data._id}`)
+      this.props.history.push(`/companys/${res.data._id}`)
     })
 
   }
 
-  getAllEmployees = () => {
-    axios.get('/api/employees').then((res) => {
-      this.setState({ employees: res.data })
+  getAllCompanys = () => {
+    axios.get('/api/companys').then((res) => {
+      this.setState({ companys: res.data })
     })
   }
 
   componentDidMount() {
-    this.getAllEmployees()
+    this.getAllCompanys()
   }
 
   render() {
@@ -231,40 +231,40 @@ class Employee extends Component {
             <br/>
             <h1>Tender Directory</h1>
           <h2>Click on a payee name to view their profile. <br/>
-          Click on < FaFileInvoiceDollar/>Invoices to view the payee's invoices. </h2>
-            {/* <a href="https://tenderfree.herokuapp.com/employees"><button>Click here for Free Editable version</button></a>    */}
+          Click on < FaFilePositionDollar/>Positions to view the payee's positions. </h2>
+            {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
-<EmployeeOutline>
+<CompanyOutline>
 
-          {this.state.employees.map((employee, index) => ( 
+          {this.state.companys.map((company, index) => ( 
            
            
-            <div key={employee._id}>
+            <div key={company._id}>
 
-              <EmployeeContainer>
+              <CompanyContainer>
              
-              {/* <h5> ID: {employee.idnumber}</h5>  */}
+              {/* <h5> ID: {company.idnumber}</h5>  */}
 
-                <Link id="linkNum" to={`/employees/${employee._id}/profile`}> 
-                <span>{index + 1}</span>&#160;&#160; <h3>{employee.employeename} </h3>
+                <Link id="linkNum" to={`/companys/${company._id}/profile`}> 
+                <span>{index + 1}</span>&#160;&#160; <h3>{company.companyname} </h3>
                 
                 </Link> 
-                <Link id="link" to={`/employees/${employee._id}`}> 
+                <Link id="link" to={`/companys/${company._id}`}> 
           {/* 📂 */}
-          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaFileInvoiceDollar/>Invoices</Link>
-                {/* <h5> {employee.email}</h5> 
-                <h5> {employee.phone}</h5>  */}
-              </EmployeeContainer>
+          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaFilePositionDollar/>Positions</Link>
+                {/* <h5> {company.email}</h5> 
+                <h5> {company.phone}</h5>  */}
+              </CompanyContainer>
 
             </div>
             
           ))} 
-</EmployeeOutline>
+</CompanyOutline>
 
 <br/><br/>
 
-          <form onSubmit={this.handleSubmit} className='addemp' id='employeename'>
+          <form onSubmit={this.handleSubmit} className='addemp' id='companyname'>
         <br/>  <h2 id='empText'>Add New Payees</h2> 
 
 <h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
@@ -272,25 +272,25 @@ class Employee extends Component {
   then click the <FaPlusCircle className='icons'/>Add Payee button.</h3>
  <br/> 
             <div >
-           <th>  <label className='required' htmlFor="employeename" >Payee Name: </label></th> 
-              <input onChange={this.handleChange} value={this.state.newEmployee.employeename} type="text" name="employeename"  required='true'/>
+           <th>  <label className='required' htmlFor="companyname" >Payee Name: </label></th> 
+              <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname"  required='true'/>
             </div>
             <div>
              <th> <label htmlFor="idnumber">ID Number: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newEmployee.idnumber} type="idnumber" name="idnumber" />
+              <input onChange={this.handleChange} value={this.state.newCompany.idnumber} type="idnumber" name="idnumber" />
             </div>
             <div>
              <th> <label htmlFor="email">Email: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newEmployee.email} type="text" name="email" />
+              <input onChange={this.handleChange} value={this.state.newCompany.email} type="text" name="email" />
             </div>
             <div>
              <th> <label htmlFor="phone">Phone: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newEmployee.phone} type="text" name="phone" />
+              <input onChange={this.handleChange} value={this.state.newCompany.phone} type="text" name="phone" />
             </div>
             <br/>
             {/* <div>
-              <label htmlFor="invoices">Invoices: </label>
-              <input onChange={this.handleChange} value={this.state.newEmployee.invoices} type="text" name="invoices" />
+              <label htmlFor="positions">Positions: </label>
+              <input onChange={this.handleChange} value={this.state.newCompany.positions} type="text" name="positions" />
             </div> */}
             <button type="submit"><FaPlusCircle className='icons'/> Add Payee</button>
           </form>
@@ -302,4 +302,4 @@ class Employee extends Component {
 
 }
 
-export default Employee;
+export default Company;

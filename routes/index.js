@@ -1,18 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const employeeController = require('../controllers/employeeController')
-const invoicesController = require('../controllers/invoicesController')
+const companyController = require('../controllers/companyController')
+const positionsController = require('../controllers/positionsController')
 const allClientController = require('../controllers/allClientController')
 var passport = require('passport');
 var nodemailer = require('nodemailer');
 const creds = require('../config/config');
 
-router.get('/api/employees', employeeController.index)
-router.post('/api/employees', employeeController.create)
-router.get('/api/employees/:employeeId', employeeController.show)
-router.patch('/api/employees/:employeeId', employeeController.update)
-router.delete('/api/employees/:employeeId', employeeController.delete)
-// router.patch('/api/employees/:employeeId/profile', employeeController.update)
+router.get('/api/companys', companyController.index)
+router.post('/api/companys', companyController.create)
+router.get('/api/companys/:companyId', companyController.show)
+router.patch('/api/companys/:companyId', companyController.update)
+router.delete('/api/companys/:companyId', companyController.delete)
+// router.patch('/api/companys/:companyId/profile', companyController.update)
 
 /* GET Google Authentication API. */
 router.get(
@@ -28,11 +28,11 @@ router.get(
     }
 );
 
-router.get('/api/employees/:employeeId', invoicesController.index)
-router.get('/api/employees/:employeeId/:invoiceId', invoicesController.show)
-router.delete('/api/invoices/:invoiceId', invoicesController.delete)
-router.patch('/api/invoices/:invoiceId', invoicesController.update)
-router.post('/api/employees/:employeeId/invoices', invoicesController.create)
+router.get('/api/companys/:companyId', positionsController.index)
+router.get('/api/companys/:companyId/:positionId', positionsController.show)
+router.delete('/api/positions/:positionId', positionsController.delete)
+router.patch('/api/positions/:positionId', positionsController.update)
+router.post('/api/companys/:companyId/positions', positionsController.create)
 
 
 var transport = {
@@ -78,11 +78,11 @@ var transport = {
       }
     })
   })
-// router.get('/api/invoices/:invoiceId', allClientController.index)
-// router.get('/api/invoices/:invoiceId', allClientController.show)
+// router.get('/api/positions/:positionId', allClientController.index)
+// router.get('/api/positions/:positionId', allClientController.show)
 // router.delete('/api/allClients/:allClientId', allClientController.delete)
 // router.patch('/api/allClients/:allClientId', allClientController.update)
-// router.post('/api/invoices/:invoiceId/allClientId', allClientController.create)
+// router.post('/api/positions/:positionId/allClientId', allClientController.create)
 
 
 module.exports = router

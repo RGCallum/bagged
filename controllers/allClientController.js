@@ -1,12 +1,12 @@
-const Invoice = require('../models/Invoice')
+const Position = require('../models/Position')
 const AllClient = require('../models/AllClient')
 
 const allClientController = {
     index: (req, res) => {
-        var invoiceId = req.params.invoiceId
-        Invoice.findById(invoiceId).populate('allClients')
-            .then((invoice) => {
-                res.send(invoice.allClients)
+        var positionId = req.params.positionId
+        Position.findById(positionId).populate('allClients')
+            .then((position) => {
+                res.send(position.allClients)
             })
     },
     show: (req, res) => {
@@ -26,22 +26,22 @@ const allClientController = {
     update: (req, res) => {
         var allClientId = req.params.allClientId
         AllClient.findByIdAndUpdate(allClientId, req.body, { new: true })
-            .then((updatedInvoice) => {
-                updatedInvoice.save()
-                res.send(updatedInvoice)
+            .then((updatedPosition) => {
+                updatedPosition.save()
+                res.send(updatedPosition)
             })
     },
     create: (req, res) => {
-        var invoiceId = req.params.invoiceId
-        Invoice.findById(invoiceId)
-            .then((invoice) => {
-                console.log(invoice)
+        var positionId = req.params.positionId
+        Position.findById(positionId)
+            .then((position) => {
+                console.log(position)
                 AllClient.create(req.body)
-                    .then((newInvoice) => {
-                        console.log(newInvoice)
-                        invoice.allClients.push(newInvoice)
-                        invoice.save()
-                        res.send(newInvoice)
+                    .then((newPosition) => {
+                        console.log(newPosition)
+                        position.allClients.push(newPosition)
+                        position.save()
+                        res.send(newPosition)
                     })
             })
     }

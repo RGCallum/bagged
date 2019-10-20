@@ -79,9 +79,9 @@ class Footer extends Component {
                         {/* <img src="/images/CAL_ent_logo.png" alt="logo" /> */}
                         </Link> 
 
-                        <Link to="/employees"> <FaUsers/>
+                        <Link to="/companys"> <FaUsers/>
                         <br/> Directory </Link>
-                        {/* <Link to="/employees/#employeename"> 👩🏿‍💻Add New Employee </Link> */}
+                        {/* <Link to="/companys/#companyname"> 👩🏿‍💻Add New Company </Link> */}
 
                     </LogoStyles>
                     <div>

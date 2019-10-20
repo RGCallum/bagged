@@ -1,7 +1,7 @@
 const mongoose = require('../db/connections')
 const Schema = mongoose.Schema
 
-const Invoice = new Schema({
+const Position = new Schema({
     date: String,
     payperiodstart: String,
     payperiodend: String,
@@ -42,5 +42,5 @@ const Invoice = new Schema({
       ]
 })
 
-module.exports = mongoose.model('Invoice', Invoice)
+module.exports = mongoose.model('Position', Position)
 

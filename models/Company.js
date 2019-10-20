@@ -1,18 +1,18 @@
 const mongoose = require('../db/connections')
 const Schema = mongoose.Schema
 
-const Employee = new Schema({
+const Company = new Schema({
   index: Number,
-  employeename: String,
+  companyname: String,
   idnumber: String, 
   email: String,
   phone: String,
-  invoices: [
+  positions: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Invoice"
+      ref: "Position"
     }
   ]
 })
 
-module.exports = mongoose.model('Employee', Employee)
+module.exports = mongoose.model('Company', Company)

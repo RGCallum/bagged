@@ -208,7 +208,7 @@ const CountStyles = styled.div`
     z-index: 1;
     height: 50vw;
     text-align: left;
-    background-color: rgba(28, 147, 145, 0.5);
+    background-color: #952360;
     width: 100vw;
     @media only screen and (max-width: 414px){
     height: 100vh;
@@ -382,15 +382,14 @@ img{
         // height: 70px;
         border-radius: 5px;
         padding: 10px;
-        background-color: rgba(28, 147, 145, 0.7);
-        color: white;
+ 
         button{
             padding: 5px;   
 
-            background-color: rgb(28, 147, 145);     
+            background-color: #952360;     
             :hover{
             background-color: white;     
-            color: rgb(28, 147, 145); 
+            color: #952360; 
             }  
         }
     }
@@ -541,9 +540,9 @@ class Home extends Component {
                             {/* 💰 💸*/}
                             {/* <FaBriefcase className='icons' /> */}
                             💼 Bagged</h1>
-                        <img id="tenderWebPhone" src="/images/BaggedWebPhone.png" alt="" />
+                        {/* <img id="tenderWebPhone" src="/images/TenderWebPhone.png" alt="" /> */}
                         <Text>
-                            <h2>Organize your job hunt and secure the bag. </h2>
+                            <h2>Organize your job hunt and secure that bag. </h2>
                         </Text>
 
                         {/* <div className="googlelog">
@@ -578,7 +577,7 @@ class Home extends Component {
                     {/* <img src='/images/office.jpeg' alt="people" /> */}
                 </ImgStyles>
                 <Paragraph>
-                    <div className="first">
+                    {/* <div className="first">
                         <img src="/images/handPhone.png" alt="mobile" />
                         <h3>Bagged is a simple and efficient payroll/position app created for the small business owner to create positions and pay stubs for your companys and contractors.</h3>
                     </div>
@@ -597,15 +596,15 @@ class Home extends Component {
                         <h3>    Export a professional version and easily share with just a few clicks. <br />Keep all your pay stubs and positions organized in one place that you can reach from anywhere at anytime! </h3>
                     </div>
                     <br />
-                   
+                    */}
 
                     <div className="thirdB">
                         
 
                     <h3 id="tdr"> 
-                    To see <b>Bagged</b> in action and play with adding companys and positions use 
+               
                     <HoverButton>
-                        <Link to="/companys"> <button>Enter</button></Link>
+                        <Link to="/companys"> <button>Click here for <b>Bagged</b></button></Link>
                     </HoverButton></h3> 
   
                     {/* <h3 id="tfree"> To create a free position or pay stub with your own logo use <b>BaggedFree</b> <HoverButton>
@@ -614,11 +613,7 @@ class Home extends Component {
                     
                     </div>
 
-                    <div className="fourth">
-                        <h3> Bagged is fully customizable for your business. <br/> Any taxes or fees to be included and even a 1099 creator can be added if your business requires.</h3>                 
-                        <h2>Contact us below for a quote on your customized version of <FaBriefcase/>Bagged today!</h2>
-
-                    </div>
+                   
                     <br />
 
                 </Paragraph>
@@ -643,16 +638,10 @@ class Home extends Component {
 
                 </MyForm>
                 <HomeFooter>
-                    <footer>
+                    {/* <footer>
                         <a href="#" id="rights">2019 ©️ All Rights Reserved.</a>
                         <a href="https://rgcallum.herokuapp.com/">  Built with ❤️ by RGC</a>
-                        {/* <a href="mailto:sceneitpix@gmail.com "> ✉️Email: sceneitpix@gmail.com </a> */}
-
-
-
-
-
-                    </footer>
+                    </footer> */}
                 </HomeFooter>
             </div>
         );

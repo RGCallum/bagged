@@ -244,7 +244,8 @@ class Profile extends Component {
             value={this.state.company.companyname}
           />
 
-          <h3> <FaAddressCard/> <a href='#'> {this.state.company.website}</a> </h3>
+          <h3> <FaAddressCard/> 
+          <a href={this.state.company.website}> {this.state.company.website}</a> </h3>
           <label htmlFor="website">Update Website Url: </label>
           <input
             onBlur={() => this.handleUpdate()}

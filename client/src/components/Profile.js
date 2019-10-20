@@ -228,7 +228,7 @@ class Profile extends Component {
           <br />
           <Link to={`/companys/${this.props.match.params.companyId}`}>
        <button><FaFilePositionDollar className='icons'/> Positions</button> </Link></PositionBtn>
-        <br />    <Toptext><div>Edit Payee information below <br/>  (All changes are auto saved)</div></Toptext>
+        <br />    <Toptext><div>Edit Company information below <br/>  (All changes are auto saved)</div></Toptext>
         <br/>
         <NameNButtonStyle>
 
@@ -257,7 +257,7 @@ class Profile extends Component {
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
-            type='text' name="email" placeholder='Payee Email'
+            type='text' name="email" placeholder='Company Email'
             value={this.state.company.email}
           />
           <h3><FaMobileAlt/> {this.state.company.phone} </h3>

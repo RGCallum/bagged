@@ -230,8 +230,8 @@ class Company extends Component {
           <div className="overlay">
             <br/>
             <h1>Tender Directory</h1>
-          <h2>Click on a payee name to view their profile. <br/>
-          Click on < FaFilePositionDollar/>Positions to view the payee's positions. </h2>
+          <h2>Click on a company name to view their profile. <br/>
+          Click on < FaFilePositionDollar/>Positions to view the company's positions. </h2>
             {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
 
 <br/>
@@ -265,14 +265,14 @@ class Company extends Component {
 <br/><br/>
 
           <form onSubmit={this.handleSubmit} className='addemp' id='companyname'>
-        <br/>  <h2 id='empText'>Add New Payees</h2> 
+        <br/>  <h2 id='empText'>Add New Companys</h2> 
 
 <h3> 👩🏾‍🦱 👨🏽‍🦳 👩🏾‍🦳 🧔🏾 👱🏽‍♀️ 👨🏾‍ 👵🏾  👨🏿‍🦱 👨🏼‍ 👩🏾 👴🏾 👩🏻</h3>         
- <h3>To add a new payee enter necessary info <br/> in the form below 
-  then click the <FaPlusCircle className='icons'/>Add Payee button.</h3>
+ <h3>To add a new company enter necessary info <br/> in the form below 
+  then click the <FaPlusCircle className='icons'/>Add Company button.</h3>
  <br/> 
             <div >
-           <th>  <label className='required' htmlFor="companyname" >Payee Name: </label></th> 
+           <th>  <label className='required' htmlFor="companyname" >Company Name: </label></th> 
               <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname"  required='true'/>
             </div>
             <div>
@@ -292,7 +292,7 @@ class Company extends Component {
               <label htmlFor="positions">Positions: </label>
               <input onChange={this.handleChange} value={this.state.newCompany.positions} type="text" name="positions" />
             </div> */}
-            <button type="submit"><FaPlusCircle className='icons'/> Add Payee</button>
+            <button type="submit"><FaPlusCircle className='icons'/> Add Company</button>
           </form>
           </div>
         </BkgdColors>

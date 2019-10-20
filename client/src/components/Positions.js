@@ -918,7 +918,7 @@ class Positions extends Component {
 <br/>
                             <EditProfileBtn >
                                 <Link to={`/companys/${this.props.match.params.companyId}/profile`} >
-                                    <FaIdBadge className='icons' /> Payee Profile
+                                    <FaIdBadge className='icons' /> Company Profile
                             </Link>
                             </EditProfileBtn>
                             <PositionBtn>

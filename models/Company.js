@@ -4,7 +4,10 @@ const Schema = mongoose.Schema
 const Company = new Schema({
   index: Number,
   companyname: String,
-  idnumber: String, 
+  website: String, 
+  careerpage: String,
+  location: String, 
+  maincontact: String, 
   email: String,
   phone: String,
   positions: [

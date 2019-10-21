@@ -238,7 +238,7 @@ justify-content: center;
 const TopPosition = styled.div`
 // border: black solid 1px;
 margin-left: 75%;
-// margin-top: 8%;
+margin-top: 3%;
 position: relative;
 @media only screen and (max-width: 414px) {
     margin-top: -27%;
@@ -874,9 +874,6 @@ class CompanyShow extends Component {
                     <div>
 
                         <PositionsContainerStyle>
-                            <h2>1. Fill out all fields as needed. <br />
-                                2. Click the export button to print or download position info. <br /></h2>
-
 
                             {/* Auto update info for another company */}
                             {/* <div className="noprint">     All updates are auto saved <br /> 

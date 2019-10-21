@@ -173,7 +173,6 @@ span, p{
   input{
     font-size: 13px;
     font-family: helvetica;
-    // background: rgba(01, 240, 240, 0.2);
   }
   textarea {
     height: 70%;
@@ -616,7 +615,7 @@ td{
     }
 
 .row{
-background-color: rgba(43, 172, 174, 0.1);   
+background-color: #95236045;   
 font-weight: 700;
 @media print{
     span{
@@ -624,14 +623,18 @@ font-weight: 700;
     }
 }
 }
+.tab3{
+    border: solid rgb(182, 182, 182) .5px;
 
+}
 .lineItems{
     border-top: solid rgb(182, 182, 182) .5px;
   align-items: center;
-   
+
 }
 .row, .lineItems{
-    
+    border: solid rgb(182, 182, 182) .5px;
+
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -679,6 +682,12 @@ text-align: center;
     }
     input{
         height: 30px;
+       
+    }
+    td{
+        input{
+            width: 60px !important;
+        }
     }
 //     input:focus{
 // position: absolute;
@@ -1036,22 +1045,23 @@ class CompanyShow extends Component {
 
                                                     <h1>Interview Info:</h1>
                                                     <div className="row header">
-                                                        <td id="desktop">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
-                                                        <td id="phone">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item / <br /> Service</div></td>
+                                                        <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 1</div></td>
+                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 1</div></td>
 
-                                                        <td>    <div className='required'><span> <FaCartPlus /> </span> <br /> Quantity</div></td>
+                                                        <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 2</div></td>
+                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 2</div></td>
+                                                        
+                                                        <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 3</div></td>
+                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 3</div></td>
 
-                                                        <td id="desktop">    <div ><span> <FaScroll /> </span> <br />Description</div></td>
-                                                        <td id="phone">    <div ><span> <FaScroll /> </span> <br />Desc- <br /> ription</div></td>
-
-                                                        <td>    <div className='required'><span> <FaDollarSign /> </span><br />Price</div></td>
-
+                                                        <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 4</div></td>
+                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 4</div></td>
 
                                                     </div>
                                                     <div className="lineItems">
-                                                        <table>
+                                                        
 
-                                                            <td> <tr> <th><label htmlFor="intvw1" >Interview 1: </label></th></tr>
+                                                            <td> 
                                                                 <label htmlFor="intvwdate1" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1079,34 +1089,9 @@ class CompanyShow extends Component {
                                                                 </label>
                                                                 <br /><br />
                                                             </td>
-                                                            {/* 
-                                                        Phone<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwphone1"
-                                                            value={position.intvwphone1}
-                                                        />
-                                                        Virtual<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwvirtual1"
-                                                            value={position.intvwvirtual1}
-                                                        />
-                                                        In-Person<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwperson1"
-                                                            value={position.intvwperson1}
-                                                        />
-                                                        TBNT (Thanks But No Thanks)<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwtbnt1"
-                                                            value={position.intvwtbnt1}
-                                                        />
-                                                        <br /> */}
+                                                            
 
-                                                            <td> <tr><th> <label htmlFor="intvw2" >Interview 2: </label></th></tr>
+                                                            <td> 
                                                                 <label htmlFor="intvwdate2" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1135,33 +1120,9 @@ class CompanyShow extends Component {
                                                                     </select>
                                                                 </label>
                                                                 <br /><br /></td>
-                                                            {/* Phone<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwphone2"
-                                                            value={position.intvwphone2}
-                                                        />
-                                                        Virtual<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwvirtual2"
-                                                            value={position.intvwvirtual2}
-                                                        />
-                                                        In-Person<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwperson2"
-                                                            value={position.intvwperson2}
-                                                        />
-                                                        TBNT (Thanks But No Thanks)<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwtbnt2"
-                                                            value={position.intvwtbnt2}
-                                                        />
-                                                        <br /> */}
+                                                           
 
-                                                            <td> <tr> <th> <label htmlFor="intvw3" >Interview 3: </label></th></tr>
+                                                            <td> 
                                                                 <label htmlFor="intvwdate3" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1190,33 +1151,9 @@ class CompanyShow extends Component {
                                                                     </select>
                                                                 </label>
                                                                 <br /><br /></td>
-                                                            {/* Phone<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwphone3"
-                                                            value={position.intvwphone3}
-                                                        />
-                                                        Virtual<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwvirtual3"
-                                                            value={position.intvwvirtual3}
-                                                        />
-                                                        In-Person<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwperson3"
-                                                            value={position.intvwperson3}
-                                                        />
-                                                        TBNT (Thanks But No Thanks)<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwtbnt3"
-                                                            value={position.intvwtbnt3}
-                                                        />
-                                                        <br /> */}
+                                                           
 
-                                                            <td> <tr> <th> <label htmlFor="intvw4" >Interview 4: </label></th></tr>
+                                                            <td> 
                                                                 <label htmlFor="intvwdate4" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1244,33 +1181,8 @@ class CompanyShow extends Component {
                                                                     </select>
                                                                 </label>
                                                                 <br /><br /></td>
-                                                            {/* Phone<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwphone4"
-                                                            value={position.intvwphone4}
-                                                        />
-                                                        Virtual<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwvirtual4"
-                                                            value={position.intvwvirtual4}
-                                                        />
-                                                        In-Person<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwperson4"
-                                                            value={position.intvwperson4}
-                                                        />
-                                                        TBNT (Thanks But No Thanks)<input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="intvwtbnt4"
-                                                            value={position.intvwtbnt4}
-                                                        /> */}
-
-
-                                                        </table>
+                                                            
+                                                        
                                                     </div>
                                                     <label htmlFor="intvwques" >Interview Questions: </label>
                                                     <textarea

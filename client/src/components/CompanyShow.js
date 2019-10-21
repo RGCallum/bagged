@@ -16,6 +16,7 @@ padding: 5px;
 font-family: helvetica;
 
 }
+
 @media print
 {
     input{
@@ -238,14 +239,15 @@ justify-content: center;
 const TopPosition = styled.div`
 // border: black solid 1px;
 margin-left: 75%;
-margin-top: 3%;
+margin-top: -3.7%;
 position: relative;
 @media only screen and (max-width: 414px) {
-    margin-top: -27%;
+    margin-top: -13.5%;
     margin-left: 55%;
     margin-bottom: -10px;
     input{
         width: 115px;
+        height: 100%;
     }  
 }
 @media print { 
@@ -584,7 +586,9 @@ border-radius: 3px;
 // box-sizing: content-box;
 display: flex;
 flex-direction: column;
-
+label{
+    font-weight: bold;
+}
 
 .client2line{
     display: block;
@@ -599,6 +603,9 @@ input{
     // width: 100px;
     flex-flow: row wrap;
 }
+textarea{
+    height: 80px;
+}
 td{
     border-left:.5px solid rgba(0,0,0, 0.2);
 // width: 10%;
@@ -609,12 +616,7 @@ td{
     }
 
 .row{
-    
-    // display: flex;
-    // justify-content: space-around;
-    // flex-direction: row;
-    // align-items: center;
-    background-color: rgba(43, 172, 174, 0.1);   
+background-color: rgba(43, 172, 174, 0.1);   
 font-weight: 700;
 @media print{
     span{
@@ -622,6 +624,7 @@ font-weight: 700;
     }
 }
 }
+
 .lineItems{
     border-top: solid rgb(182, 182, 182) .5px;
   align-items: center;
@@ -740,7 +743,7 @@ class CompanyShow extends Component {
             nexttime: '',
             tostudy: '',
             foundon: '',
-            
+
         }
     }
 
@@ -802,17 +805,17 @@ class CompanyShow extends Component {
             if (event.target.files && event.target.files[0]) {
                 this.setState({
                     uploadImage: URL.createObjectURL(event.target.files[0])
-                    
+
                 });
 
             }
-            
+
             return position
 
         })
 
         this.setState({ positions: updatedValue })
-        this.state = {value: 'intvwperson1'};
+        this.state = { value: 'intvwperson1' };
 
     }
 
@@ -926,7 +929,7 @@ class CompanyShow extends Component {
                                                         {/* <div className="positionNum">ID:{position._id}  </div><br /> */}
 
                                                     </LogoIdDiv>
-                                                    <label htmlFor="jobtitle" >Position: </label>
+                                                    <th> <label htmlFor="jobtitle" > <span> <FaBriefcase /> </span>Position: </label> </th>
                                                     <input
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
@@ -949,7 +952,7 @@ class CompanyShow extends Component {
 
 
                                                 <br /><br />
-                                                <LineItemsGrid>
+                                                <LineItemsGrid className='tab1'>
 
                                                     <h1>Contact Info:</h1>
 
@@ -985,7 +988,7 @@ class CompanyShow extends Component {
                                                         value={position.contactphone}
                                                     />
                                                 </LineItemsGrid>
-                                                <LineItemsGrid>
+                                                <LineItemsGrid className='tab2'>
 
                                                     <h1>Job Info:</h1>
 
@@ -1013,7 +1016,7 @@ class CompanyShow extends Component {
                                                         value={position.jobsalary}
                                                     />
 
-                                                    <label htmlFor="foundon" >Listed On: </label>
+                                                    <label htmlFor="foundon" >Found On: </label>
                                                     <input
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
@@ -1029,40 +1032,54 @@ class CompanyShow extends Component {
                                                     > </textarea>
                                                 </LineItemsGrid>
 
-                                                <LineItemsGrid>
+                                                <LineItemsGrid className='tab3'>
 
                                                     <h1>Interview Info:</h1>
-                                                    <table>
+                                                    <div className="row header">
+                                                        <td id="desktop">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item/Service</div></td>
+                                                        <td id="phone">    <div className='required' ><span> <FaBriefcase /> </span> <br /> Item / <br /> Service</div></td>
 
-                                                        <tr> <th><label htmlFor="intvw1" >Interview 1: </label></th></tr>
-                                                        <label htmlFor="intvwdate1" >Date: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="date" name="intvwdate1" placeholder='contact Name'
-                                                            value={position.intvwdate1}
-                                                        />
-                                                        <label htmlFor="intvwtime1" > Time: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="time" name="intvwtime1" placeholder='interview time'
-                                                            value={position.intvwtime1}
-                                                        />
-                                                        <label htmlFor="intvw1"> <br/>                    
-                                                            Type of Interview:
+                                                        <td>    <div className='required'><span> <FaCartPlus /> </span> <br /> Quantity</div></td>
+
+                                                        <td id="desktop">    <div ><span> <FaScroll /> </span> <br />Description</div></td>
+                                                        <td id="phone">    <div ><span> <FaScroll /> </span> <br />Desc- <br /> ription</div></td>
+
+                                                        <td>    <div className='required'><span> <FaDollarSign /> </span><br />Price</div></td>
+
+
+                                                    </div>
+                                                    <div className="lineItems">
+                                                        <table>
+
+                                                            <td> <tr> <th><label htmlFor="intvw1" >Interview 1: </label></th></tr>
+                                                                <label htmlFor="intvwdate1" >Date: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="date" name="intvwdate1" placeholder='contact Name'
+                                                                    value={position.intvwdate1}
+                                                                />
+                                                                <label htmlFor="intvwtime1" > Time: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="time" name="intvwtime1" placeholder='interview time'
+                                                                    value={position.intvwtime1}
+                                                                />
+                                                                <label htmlFor="intvw1"> <br />
+                                                                    Type of Interview:
                                                             <select value={this.state.value}
-                                                                onBlur={() => this.handleUpdate(position._id)}
-                                                                onChange={(event) => this.handleChange(event, position._id)}>
-                                                                <option value={position.intvwphone1}>Phone</option>
-                                                                <option value={position.intvwvirtual1}>Virtual</option>
-                                                                <option value={position.intvwperson1}>In-Person</option>
-                                                                <option value={position.intvwtbnt1}>TBNT</option>
-                                                            </select>
-                                                        </label>
-                                                        <br/><br/>
-                                                            
-                                                        {/* 
+                                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                                        onChange={(event) => this.handleChange(event, position._id)}>
+                                                                        <option value={position.intvwphone1}>Phone</option>
+                                                                        <option value={position.intvwvirtual1}>Virtual</option>
+                                                                        <option value={position.intvwperson1}>In-Person</option>
+                                                                        <option value={position.intvwtbnt1}>TBNT</option>
+                                                                    </select>
+                                                                </label>
+                                                                <br /><br />
+                                                            </td>
+                                                            {/* 
                                                         Phone<input
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}
@@ -1089,36 +1106,36 @@ class CompanyShow extends Component {
                                                         />
                                                         <br /> */}
 
-                                                        <tr><th> <label htmlFor="intvw2" >Interview 2: </label></th></tr>
-                                                        <label htmlFor="intvwdate2" >Date: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="date" name="intvwdate2" placeholder='contact Name'
-                                                            value={position.intvwdate2}
-                                                        />
-                                                        <label htmlFor="intvwtime2" > Time: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="time" name="intvwtime2" placeholder='interview time'
-                                                            value={position.intvwtime2}
-                                                        />
+                                                            <td> <tr><th> <label htmlFor="intvw2" >Interview 2: </label></th></tr>
+                                                                <label htmlFor="intvwdate2" >Date: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="date" name="intvwdate2" placeholder='contact Name'
+                                                                    value={position.intvwdate2}
+                                                                />
+                                                                <label htmlFor="intvwtime2" > Time: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="time" name="intvwtime2" placeholder='interview time'
+                                                                    value={position.intvwtime2}
+                                                                />
 
-                                                        <label htmlFor="intvw2">
-                                                            <br/>
-                                                            Type of Interview:
+                                                                <label htmlFor="intvw2">
+                                                                    <br />
+                                                                    Type of Interview:
                                                             <select value={this.state.value}
-                                                                onBlur={() => this.handleUpdate(position._id)}
-                                                                onChange={(event) => this.handleChange(event, position._id)}>
-                                                                <option value={position.intvwphone2}>Phone</option>
-                                                                <option value={position.intvwvirtual2}>Virtual</option>
-                                                                <option value={position.intvwperson2}>In-Person</option>
-                                                                <option value={position.intvwtbnt2}>TBNT</option>
-                                                            </select>
-                                                        </label>
-                                                        <br/><br/>
-                                                        {/* Phone<input
+                                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                                        onChange={(event) => this.handleChange(event, position._id)}>
+                                                                        <option value={position.intvwphone2}>Phone</option>
+                                                                        <option value={position.intvwvirtual2}>Virtual</option>
+                                                                        <option value={position.intvwperson2}>In-Person</option>
+                                                                        <option value={position.intvwtbnt2}>TBNT</option>
+                                                                    </select>
+                                                                </label>
+                                                                <br /><br /></td>
+                                                            {/* Phone<input
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}
                                                             type="checkbox" name="intvwphone2"
@@ -1144,36 +1161,36 @@ class CompanyShow extends Component {
                                                         />
                                                         <br /> */}
 
-                                                        <tr> <th> <label htmlFor="intvw3" >Interview 3: </label></th></tr>
-                                                        <label htmlFor="intvwdate3" >Date: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="date" name="intvwdate3" placeholder='contact Name'
-                                                            value={position.intvwdate3}
-                                                        />
-                                                        <label htmlFor="intvwtime3" > Time: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="time" name="intvwtime3" placeholder='interview time'
-                                                            value={position.intvwtime3}
-                                                        />
+                                                            <td> <tr> <th> <label htmlFor="intvw3" >Interview 3: </label></th></tr>
+                                                                <label htmlFor="intvwdate3" >Date: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="date" name="intvwdate3" placeholder='contact Name'
+                                                                    value={position.intvwdate3}
+                                                                />
+                                                                <label htmlFor="intvwtime3" > Time: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="time" name="intvwtime3" placeholder='interview time'
+                                                                    value={position.intvwtime3}
+                                                                />
 
-                                                        <label htmlFor="intvw3">
-                                                            <br/>
-                                                            Type of Interview:
+                                                                <label htmlFor="intvw3">
+                                                                    <br />
+                                                                    Type of Interview:
                                                             <select value={this.state.value}
-                                                                onBlur={() => this.handleUpdate(position._id)}
-                                                                onChange={(event) => this.handleChange(event, position._id)}>
-                                                                <option value={position.intvwphone3}>Phone</option>
-                                                                <option value={position.intvwvirtual3}>Virtual</option>
-                                                                <option value={position.intvwperson3}>In-Person</option>
-                                                                <option value={position.intvwtbnt3}>TBNT</option>
-                                                            </select>
-                                                        </label>
-                                                        <br/><br/>
-                                                        {/* Phone<input
+                                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                                        onChange={(event) => this.handleChange(event, position._id)}>
+                                                                        <option value={position.intvwphone3}>Phone</option>
+                                                                        <option value={position.intvwvirtual3}>Virtual</option>
+                                                                        <option value={position.intvwperson3}>In-Person</option>
+                                                                        <option value={position.intvwtbnt3}>TBNT</option>
+                                                                    </select>
+                                                                </label>
+                                                                <br /><br /></td>
+                                                            {/* Phone<input
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}
                                                             type="checkbox" name="intvwphone3"
@@ -1199,35 +1216,35 @@ class CompanyShow extends Component {
                                                         />
                                                         <br /> */}
 
-                                                        <tr> <th> <label htmlFor="intvw4" >Interview 4: </label></th></tr>
-                                                        <label htmlFor="intvwdate4" >Date: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="date" name="intvwdate4" placeholder='contact Name'
-                                                            value={position.intvwdate4}
-                                                        />
-                                                        <label htmlFor="intvwtime4" > Time: </label>
-                                                        <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="time" name="intvwtime4" placeholder='interview time'
-                                                            value={position.intvwtime4}
-                                                        />
-                                                        <label htmlFor="intvw4">
-                                                            <br/>
-                                                            Type of Interview:
+                                                            <td> <tr> <th> <label htmlFor="intvw4" >Interview 4: </label></th></tr>
+                                                                <label htmlFor="intvwdate4" >Date: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="date" name="intvwdate4" placeholder='contact Name'
+                                                                    value={position.intvwdate4}
+                                                                />
+                                                                <label htmlFor="intvwtime4" > Time: </label>
+                                                                <input
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}
+                                                                    type="time" name="intvwtime4" placeholder='interview time'
+                                                                    value={position.intvwtime4}
+                                                                />
+                                                                <label htmlFor="intvw4">
+                                                                    <br />
+                                                                    Type of Interview:
                                                             <select value={this.state.value}
-                                                                onBlur={() => this.handleUpdate(position._id)}
-                                                                onChange={(event) => this.handleChange(event, position._id)}>
-                                                                <option value={position.intvwphone4}>Phone</option>
-                                                                <option value={position.intvwvirtual4}>Virtual</option>
-                                                                <option value={position.intvwperson4}>In-Person</option>
-                                                                <option value={position.intvwtbnt4}>TBNT</option>
-                                                            </select>
-                                                        </label>
-                                                        <br/><br/>
-                                                        {/* Phone<input
+                                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                                        onChange={(event) => this.handleChange(event, position._id)}>
+                                                                        <option value={position.intvwphone4}>Phone</option>
+                                                                        <option value={position.intvwvirtual4}>Virtual</option>
+                                                                        <option value={position.intvwperson4}>In-Person</option>
+                                                                        <option value={position.intvwtbnt4}>TBNT</option>
+                                                                    </select>
+                                                                </label>
+                                                                <br /><br /></td>
+                                                            {/* Phone<input
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}
                                                             type="checkbox" name="intvwphone4"
@@ -1253,7 +1270,8 @@ class CompanyShow extends Component {
                                                         /> */}
 
 
-                                                    </table>
+                                                        </table>
+                                                    </div>
                                                     <label htmlFor="intvwques" >Interview Questions: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
@@ -1270,11 +1288,20 @@ class CompanyShow extends Component {
                                                     > </textarea>
                                                 </LineItemsGrid>
 
-                                                <LineItemsGrid>
+                                                <LineItemsGrid className='tab4'>
 
                                                     <h1>Results:</h1>
+
                                                     <table>
-                                                        Secured the Bag  <span>💰</span> <input
+                                                        <select value={this.state.value}
+                                                            onBlur={() => this.handleUpdate(position._id)}
+                                                            onChange={(event) => this.handleChange(event, position._id)}>
+                                                            <option value={position.gotthebag}>Secured the Bag💰</option>
+                                                            <option value={position.intvwvirtual2}>Better Luck Next Time🧗🏽‍♀</option>
+                                                        </select>
+                                                        <br />
+                                                        <br />
+                                                        {/* Secured the Bag  <span>💰</span> <input
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}
                                                             type="checkbox" name="gotthebag"
@@ -1285,7 +1312,7 @@ class CompanyShow extends Component {
                                                             onChange={(event) => this.handleChange(event, position._id)}
                                                             type="checkbox" name="nexttime"
                                                             value={position.nexttime}
-                                                        />
+                                                        /> */}
                                                     </table>
                                                     <label htmlFor="tostudy" >Need to Study: </label>
                                                     <textarea

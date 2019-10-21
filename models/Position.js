@@ -36,12 +36,7 @@ const Position = new Schema({
     intvwvirtual4: String,
     intvwperson4: String,
     intvwtbnt4: String,
-    intvw1: [{
-      intvwphone5: String,
-      intvwvirtual5: String,
-      intvwperson5: String,
-      intvwtbnt5: String,
-    }],
+    intvw1: String,
     intvw2: String,
     intvw3: String,
     intvw4: String,

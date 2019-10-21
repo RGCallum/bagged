@@ -88,7 +88,7 @@ background-repeat: no-repeat;
 .memo{
     padding: 10px;
     // box-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
-    border: dashed rgb(182, 182, 182) .5px;
+    border: dashed rgba(182, 182, 182, 0.100) .5px;
 
 }
 
@@ -306,7 +306,7 @@ input{
 
 `
 const TotalsPosition = styled.div`
-// border: solid rgb(182, 182, 182) .5px;
+// border: solid rgba(182, 182, 182, 0.100) .5px;
 margin-top: 5%;
 display: flex;
 justify-content: space-evenly;
@@ -389,7 +389,7 @@ textarea{
 `
 
 const TotalDue = styled.div`
-border-top: solid rgb(182, 182, 182) .5px;
+border-top: solid rgba(182, 182, 182, 0.100) .5px;
 
 color: rgb(28, 147, 145);
 font-weight: bold;
@@ -696,7 +696,7 @@ img{
 
 
 const LineItemsGrid = styled.div`
-border: solid rgb(182, 182, 182) .5px;
+border: solid rgba(182, 182, 182, 0.100) .5px;
 border-radius: 3px;
 // box-sizing: content-box;
 display: flex;
@@ -739,7 +739,7 @@ font-weight: 700;
 }
 }
 .lineItems{
-    border-top: solid rgb(182, 182, 182) .5px;
+    border-top: solid rgba(182, 182, 182, 0.100) .5px;
   align-items: center;
    
 }

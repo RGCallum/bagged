@@ -14,7 +14,7 @@ padding-top: 20px;
 h1{
   font-family: helvetica;
 font-weight: 500;
-color: #952360;
+color: #E93241;
 font-size: 30px;
 text-align: center;
 }
@@ -28,9 +28,9 @@ const CompanyStyles = styled.div`
   position: relative;
   flex-direction: column;
 
-  // background: #95236005;
+  // background: #E9324105;
   input {
-    background: #95236005;
+    background: #E9324105;
 
     font-size: 15px;
 
@@ -83,7 +83,7 @@ h1{
 
 }
 h3{
-  color: #952360;
+  color: #E93241;
   font-weight: 500;
 margin-bottom: 5px;
 // text-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
@@ -106,7 +106,7 @@ justify-content: center;
   
   }
   input{
-    background: #95236005;
+    background: #E9324105;
     border-radius: 3px;
     border: .5px solid rgba(0,0,0, 0.2);
     padding: 5px;

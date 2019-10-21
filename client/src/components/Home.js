@@ -208,7 +208,7 @@ const CountStyles = styled.div`
     z-index: 1;
     height: 50vw;
     text-align: left;
-    background-color: #952360;
+    background-color: #E93241;
     width: 100vw;
     @media only screen and (max-width: 414px){
     height: 100vh;
@@ -386,10 +386,10 @@ img{
         button{
             padding: 5px;   
 
-            background-color: #952360;     
+            background-color: #E93241;     
             :hover{
             background-color: white;     
-            color: #952360; 
+            color: #E93241; 
             }  
         }
     }

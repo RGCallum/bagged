@@ -8,14 +8,31 @@ import NavBar from './NavBar'
 
 
 const BigDiv = styled.div`
+// #tab2, #tab3, #tab4{
+//     display: none;
+//     }
+.tabs{
+    h1{
+    font-weight: bold;
+
+    }
+    display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+font-weight: 100;
 input, textarea{
-    background: #95236005;
+    background: #E9324105;
+    color: white;
 border-radius: 3px;
 border: .5px solid rgba(0,0,0, 0.2);
 padding: 5px;
 font-family: helvetica;
 
 }
+
+background: rgb(42, 45, 54);
+color: white;
 
 @media print
 {
@@ -28,12 +45,13 @@ font-family: helvetica;
     }
 }
 input:focus, textarea:focus{
-    background: rgba(255, 212, 39, 0.2);
+    background: rgba(222, 52, 66, 0.1);
 
 }
 h1{
     font-family: helvetica;
-  color: #952360;
+    font-weight: 200;
+  color: #E93241;
 //   text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
   
   }
@@ -61,7 +79,7 @@ h3{
     margin-bottom: 2px;
 }
 h3:hover{
-    color: #952360;
+    color: #E93241;
 }
 `
 const PositionsContainerStyle = styled.div`
@@ -99,7 +117,7 @@ background-repeat: no-repeat;
 .memo{
     padding: 10px;
     // box-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
-    border: dashed rgb(182, 182, 182) .5px;
+    border: dashed rgba(182, 182, 182, 0.100) .5px;
 
 }
 
@@ -142,14 +160,14 @@ button:hover{
 button{
     background-color: white;
     padding: 5px 5px 5px 5px;
-    color: #952360;
+    color: #E93241;
     border: inset .5px #c0c0c0;
         
          
 }
 button:hover{
     color: white;
-    background-color: #952360;
+    background-color: #E93241;
 }
 p{
     margin-bottom: -2px;
@@ -338,7 +356,7 @@ input{
 
 `
 const TotalsPosition = styled.div`
-// border: solid rgb(182, 182, 182) .5px;
+// border: solid rgba(182, 182, 182, 0.100) .5px;
 margin-top: 5%;
 display: flex;
 justify-content: space-evenly;
@@ -385,7 +403,7 @@ text-align: center;
 
 // span{
 //     font-size: 30px;
-//     color: #952360;
+//     color: #E93241;
 //     font-weight: 200;
 // }
 // a{
@@ -580,7 +598,8 @@ img{
 
 
 const LineItemsGrid = styled.div`
-border: solid rgb(182, 182, 182) .5px;
+
+border: solid rgba(182, 182, 182, 0.100) .5px;
 border-radius: 3px;
 // box-sizing: content-box;
 display: flex;
@@ -615,7 +634,7 @@ td{
     }
 
 .row{
-background-color: #95236045;   
+background-color: #E9324115;   
 font-weight: 700;
 @media print{
     span{
@@ -624,16 +643,16 @@ font-weight: 700;
 }
 }
 .tab3{
-    border: solid rgb(182, 182, 182) .5px;
-
+    border: solid rgba(182, 182, 182, 0.100) .5px;
 }
+
 .lineItems{
-    border-top: solid rgb(182, 182, 182) .5px;
+    border-top: solid rgba(182, 182, 182, 0.100) .5px;
   align-items: center;
 
 }
 .row, .lineItems{
-    border: solid rgb(182, 182, 182) .5px;
+    border: solid rgba(182, 182, 182, 0.100) .5px;
 
     display: flex;
     justify-content: space-around;
@@ -961,7 +980,13 @@ class CompanyShow extends Component {
 
 
                                                 <br /><br />
-                                                <LineItemsGrid className='tab1'>
+                                                <div className="tabs">
+                                                <h1>Contact</h1>
+                                                <h1>Job</h1>
+                                                <h1>Interview</h1>
+                                                <h1>Results</h1>
+                                                </div>
+                                                <LineItemsGrid id='tab1'>
 
                                                     <h1>Contact Info:</h1>
 
@@ -997,7 +1022,7 @@ class CompanyShow extends Component {
                                                         value={position.contactphone}
                                                     />
                                                 </LineItemsGrid>
-                                                <LineItemsGrid className='tab2'>
+                                                <LineItemsGrid id='tab2'>
 
                                                     <h1>Job Info:</h1>
 
@@ -1041,7 +1066,7 @@ class CompanyShow extends Component {
                                                     > </textarea>
                                                 </LineItemsGrid>
 
-                                                <LineItemsGrid className='tab3'>
+                                                <LineItemsGrid id='tab3'>
 
                                                     <h1>Interview Info:</h1>
                                                     <div className="row header">
@@ -1200,7 +1225,7 @@ class CompanyShow extends Component {
                                                     > </textarea>
                                                 </LineItemsGrid>
 
-                                                <LineItemsGrid className='tab4'>
+                                                <LineItemsGrid id='tab4'>
 
                                                     <h1>Results:</h1>
 

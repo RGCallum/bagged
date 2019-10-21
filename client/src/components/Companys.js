@@ -30,17 +30,17 @@ height: 100%;
 form{
   justify-content: center;
   padding-bottom: 10px;
-  box-shadow: 1px 1px 5px #95236097;
+  box-shadow: 1px 1px 5px #E9324197;
   background-color:  rgba(255,255,255,0.95);
   text-align: center;  
   #empText{
-    color: #952360;  
+    color: #E93241;  
       font-size: 18px;
     
   }
 }
 input{
-  background: #95236005;
+  background: #E9324105;
   border:.5px solid rgba(0,0,0, 0.2);
 border-radius: 2px;
 padding: 5px;
@@ -57,7 +57,7 @@ input:focus, textarea:focus{
 }
 
 h1{
-  color: #952360;
+  color: #E93241;
 // text-shadow: .5px .5px .5px gray;
 display: flex;
 justify-content: center;
@@ -65,7 +65,7 @@ font-weight: 500;
 }
 span{
   color: white;
-  background-color: #95236090; 
+  background-color: #E9324190; 
   padding: 5px 9px 5px 9px;
   border-radius: 50px;
 }
@@ -174,7 +174,7 @@ font-size: 15px;
 
 
 const CompanyOutline = styled.div`
-box-shadow: 1px 1px 5px #95236097;
+box-shadow: 1px 1px 5px #E9324197;
 // border: solid black .5px;
 
 `

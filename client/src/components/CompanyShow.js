@@ -709,7 +709,7 @@ text-align: center;
     }
     td{
         input{
-            width: 60px !important;
+            // width: 60px !important;
         }
     }
 //     input:focus{
@@ -1083,8 +1083,8 @@ class CompanyShow extends Component {
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 3</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 3</div></td>
 
-                                                        <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 4</div></td>
-                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 4</div></td>
+                                                        {/* <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 4</div></td>
+                                                        <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 4</div></td> */}
 
                                                     </div>
                                                     <div className="lineItems">
@@ -1182,7 +1182,7 @@ class CompanyShow extends Component {
                                                                 <br /><br /></td>
                                                            
 
-                                                            <td> 
+                                                            {/* <td> 
                                                                 <label htmlFor="intvwdate4" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1209,7 +1209,7 @@ class CompanyShow extends Component {
                                                                         <option value={position.intvwtbnt4}>TBNT</option>
                                                                     </select>
                                                                 </label>
-                                                                <br /><br /></td>
+                                                                <br /><br /></td> */}
                                                             
                                                         
                                                     </div>

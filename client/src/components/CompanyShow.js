@@ -29,7 +29,7 @@ const BigDiv = styled.div`
     }
     display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-evenly;
 }
 input, textarea{
     background: #E9324105;

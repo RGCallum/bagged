@@ -11,6 +11,17 @@ const BigDiv = styled.div`
 // #tab2, #tab3, #tab4{
 //     display: none;
 //     }
+*{
+    input, tr, td, textarea{
+        font-weight: 100;
+    }
+    input::placeholder, textarea::placeholder{
+        font-weight: 100;
+        font-size: 10px;
+        font-style: italic;  
+    }
+    
+}
 .tabs{
     h1{
     font-weight: bold;
@@ -20,7 +31,6 @@ const BigDiv = styled.div`
 flex-direction: row;
 justify-content: space-around;
 }
-font-weight: 100;
 input, textarea{
     background: #E9324105;
     color: white;
@@ -121,9 +131,7 @@ background-repeat: no-repeat;
 
 }
 
-input::placeholder{
-    font-style: italic;
-}
+
 .required::after {
     content: "*";
     color: red;
@@ -321,10 +329,7 @@ const Client1Position = styled.div`
 display: flex;
 justify-content: space-evenly;
 width: 100%;
-input::placeholder{
-    font-weight: 100;
-    font-size: 10px;
-}
+
 tr{
     border-collapse:collapse;
     border:1px solid rgba(0,0,0, 0.2);
@@ -366,10 +371,7 @@ input{
     background: transparent;
 
 }
-input::placeholder{
-    font-weight: 100;
-    font-size: 10px;
-}
+
 @media only screen and (max-width: 414px) {
     input{
         width: 30px;
@@ -598,7 +600,9 @@ img{
 
 
 const LineItemsGrid = styled.div`
-
+td{
+font-weight: bold;
+}
 border: solid rgba(182, 182, 182, 0.100) .5px;
 border-radius: 3px;
 // box-sizing: content-box;
@@ -621,6 +625,7 @@ input{
     // width: 100px;
     flex-flow: row wrap;
 }
+
 textarea{
     height: 80px;
 }
@@ -635,13 +640,15 @@ td{
 
 .row{
 background-color: #E9324115;   
-font-weight: 700;
+
+
 @media print{
     span{
         display: none;
     }
 }
 }
+
 .tab3{
     border: solid rgba(182, 182, 182, 0.100) .5px;
 }
@@ -668,10 +675,7 @@ font-weight: 700;
     }
 }
 
-input::placeholder{
-    font-weight: 100;
-    font-size: 10px;
-}
+
 align-content: center;
 text-align: center;
 
@@ -969,7 +973,7 @@ class CompanyShow extends Component {
                                                 </LogoStyles>
                                                 <TopPosition>
 
-                                                    <th> <label htmlFor="dateapplied" className='required' > <span> <FaCalendarDay /> </span>Date Applied:</label></th>
+                                                    <th> <label htmlFor="dateapplied" > <span> <FaCalendarDay /> </span>Date Applied:</label></th>
                                                     <input
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
@@ -981,10 +985,10 @@ class CompanyShow extends Component {
 
                                                 <br /><br />
                                                 <div className="tabs">
-                                                <h1>Contact</h1>
-                                                <h1>Job</h1>
-                                                <h1>Interview</h1>
-                                                <h1>Results</h1>
+                                                <h1 id='tabtitle1'>Contact</h1>
+                                                <h1 id='tabtitle2'>Job</h1>
+                                                <h1 id='tabtitle3'>Interview</h1>
+                                                <h1 id='tabtitle4'>Results</h1>
                                                 </div>
                                                 <LineItemsGrid id='tab1'>
 

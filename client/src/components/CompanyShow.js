@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaMinusCircle, FaScroll, FaIdBadge, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaMinusCircle, FaScroll, FaUser, FaIdBadge, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -23,9 +23,14 @@ const BigDiv = styled.div`
     
 }
 .tabs{
-    h1{
+    h2{
     font-weight: bold;
-
+    font-family: helvetica;
+    // font-weight: 200;
+  color: #E93241;
+    }
+    h2:hover{
+        color: white;
     }
     display: flex;
 flex-direction: row;
@@ -55,7 +60,7 @@ color: white;
     }
 }
 input:focus, textarea:focus{
-    background: rgba(222, 52, 66, 0.1);
+    background: rgba(226, 112, 121, 0.15);
 
 }
 h1{
@@ -257,7 +262,7 @@ padding-top: 20px;
 justify-content: center;
 }
 .icons{
-    padding-top: 3px;
+    // padding-top: 3px;
 }
 `
 
@@ -266,6 +271,7 @@ const TopPosition = styled.div`
 margin-left: 75%;
 margin-top: -3.7%;
 position: relative;
+color: rgb(185, 184, 184);
 @media only screen and (max-width: 414px) {
     margin-top: -13.5%;
     margin-left: 55%;
@@ -443,12 +449,17 @@ margin-left: -20px;
 `
 
 const NewPositionButton = styled.button`
-  background: rgb(28, 125, 147);
+  background: #E93241;
   color: white;
-  font-size: 16px;
-  border-radius: 5px;
-  font-weight: 300;
+  border-radius: 100px;
+  padding: 10px 25px 10px 25px;
+  font-size: 50px;
+  font-weight: 100;
 cursor: pointer;
+#prof{
+    background: turquoise;
+
+}
 a:visited {
     text-decoration: none;
   }
@@ -458,22 +469,23 @@ a:hover{
 }
 :hover{
     background: white;
-    color: rgb(28, 125, 147);
+    color: #E93241;
 }
-height: 26.5px;
+// height: 26.5px;
 
 @media only screen and (max-width: 414px){
     font-size: 14px;
-    height: 26.5px;
+    // height: 26.5px;
 
 }
 `
 const EditProfileBtn = styled.button`
 background: #462255;
 color: white;
-border-radius: 5px;
-font-size: 16px;
-font-weight: 300;
+border-radius: 100px;
+padding: 10px 18px 10px 18px;
+font-size: 48px;
+font-weight: 100;
 a{
     text-decoration: none;
     color: white;
@@ -550,7 +562,8 @@ const LogoStyles = styled.div`
 position: relative;
     }
 }
-font-weight: 200;
+font-weight: bold;
+color: rgb(185, 184, 184);
 
    
 
@@ -610,6 +623,7 @@ display: flex;
 flex-direction: column;
 label{
     font-weight: bold;
+    color: rgb(185, 184, 184);
 }
 
 .client2line{
@@ -627,7 +641,7 @@ input{
 }
 
 textarea{
-    height: 80px;
+    height: 100px;
 }
 td{
     border-left:.5px solid rgba(0,0,0, 0.2);
@@ -889,14 +903,17 @@ class CompanyShow extends Component {
                                 <h1>{this.state.company.companyname} Positions </h1>
                             </NameNButtonStyle>
 
-                            <NewPositionButton onClick={this.handleCreateNewPosition}>
-                                <FaPlusCircle className='icons' /> Add New Position
+                            <NewPositionButton onClick={this.handleCreateNewPosition} id="plus">
+                                {/* <FaPlusCircle className='icons' />  */}
+                                 + 
                             </NewPositionButton>
-                            <EditProfileBtn >
-                                <Link to={`/companys/${this.props.match.params.companyId}/profile`} >
-                                    <FaIdBadge className='icons' /> Company Profile
-                                </Link>
+
+                            <Link to={`/companys/${this.props.match.params.companyId}/profile`} id="prof" >
+                            <EditProfileBtn >                
+                                    {/* <FaIdBadge className='icons' />  🗂   */}
+                                     📁                        
                             </EditProfileBtn>
+                            </Link>
                             {/* <PositionBtn>
                                 <Link to={`/companys/${this.props.match.params.companyId}`}>
                                     <button><FaBriefcase className='icons' /> Positions</button>
@@ -961,11 +978,11 @@ class CompanyShow extends Component {
                                                         {/* <div className="positionNum">ID:{position._id}  </div><br /> */}
 
                                                     </LogoIdDiv>
-                                                    <th> <label htmlFor="jobtitle" > <span> <FaBriefcase /> </span>Position: </label> </th>
+                                                    <th> <label htmlFor="jobtitle" > <span> <FaUser /> </span>{this.state.company.companyname} Position / ID#: </label> </th>
                                                     <input
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="jobtitle" placeholder='Position'
+                                                        type="text" name="jobtitle" placeholder='Position, Req#, JobID'
                                                         value={position.jobtitle}
                                                     />
 
@@ -979,17 +996,18 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="date" name="dateapplied" value={position.dateapplied}
                                                     /><br />
-                                                    <br /><br />
+                                                    <br />
                                                 </TopPosition>
 
 
-                                                <br /><br />
+                                                
                                                 <div className="tabs">
-                                                <h1 id='tabtitle1'>Contact</h1>
-                                                <h1 id='tabtitle2'>Job</h1>
-                                                <h1 id='tabtitle3'>Interview</h1>
-                                                <h1 id='tabtitle4'>Results</h1>
+                                                <h2 id='tabtitle1'>CONTACT</h2>
+                                                <h2 id='tabtitle2'>JOB</h2>
+                                                <h2 id='tabtitle3'>INTERVIEW</h2>
+                                                <h2 id='tabtitle4'>RESULTS</h2>
                                                 </div>
+                                                <br />
                                                 <LineItemsGrid id='tab1'>
 
                                                     <h1>Contact Info:</h1>
@@ -1217,7 +1235,7 @@ class CompanyShow extends Component {
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="intvwques" placeholder='Interview Questions'
+                                                        type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
                                                     > </textarea>
                                                     <label htmlFor="followupmsg" >Follow-Up Message: </label>
@@ -1259,7 +1277,7 @@ class CompanyShow extends Component {
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="tostudy" placeholder='Need to Study'
+                                                        type="text" name="tostudy" placeholder='Listing name or URL'
                                                         value={position.tostudy}
                                                     > </textarea>
                                                 </LineItemsGrid>

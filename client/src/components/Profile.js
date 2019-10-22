@@ -3,12 +3,51 @@ import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import Company from './Companys';
-import {FaMinusCircle, FaUser, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaBriefcase } from 'react-icons/fa';
+import {FaMinusCircle, FaUser, FaCity, FaLink, FaMapMarkerAlt, FaEnvelope, FaMobileAlt, FaAddressCard, FaPlusCircle, FaFolder, FaBriefcase } from 'react-icons/fa';
 import NavBar from '../components/NavBar'
 
 
+const BigDiv = styled.div`
+*{
+  input, tr, td, textarea{
+      font-weight: 100;
+  }
+  input::placeholder, textarea::placeholder{
+      font-weight: 100;
+      font-size: 10px;
+      font-style: italic;  
+      
+  }  
+}
+background: rgb(42, 45, 54);
+color: white;
+label{
+  color: rgb(122, 122, 122);
+}
 
+a:visited{
+  color: white;
+}
+a:hover{
+  rgb(122, 122, 122)
+}
+
+input, textarea{
+  background: #E9324105;
+  color: white;
+border-radius: 3px;
+border: .5px solid rgba(0,0,0, 0.2);
+padding: 5px;
+font-family: helvetica;
+
+}
+input:focus, textarea:focus{
+  background: rgba(226, 112, 121, 0.15);
+
+}
+`
 const NameContainer = styled.div`
+
 padding-top: 20px;
 
 h1{
@@ -72,36 +111,34 @@ font-weight: 200;
 box-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
 padding-left:10%;
 padding-right:10%;
-display:flex;
-justify-content: space-around;
-  flex-direction: column;
-  // align-items: center;
-  // width: 50vw;
+
   font-family: helvetica;
 h1{
   font-weight: 500;
-
 }
 h3{
   color: #E93241;
-  font-weight: 500;
+  font-weight: 100;
 margin-bottom: 5px;
-// text-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
-
+  text-align: center;
+  justify-content: center;
 }
+display:flex;
+flex-direction: column;
+
 text-align: center;
 justify-content: center;
   button {
     // position: absolute;
     color: white;
-    background-color: red;
-    border-radius: 5px;
+    background-color: #E93241;
+    border-radius: 50px;
     padding: 10px;
 
   }
   button:hover{
     background-color: white;
-    color:red;
+    color:#E93241;
     cursor:pointer;
   
   }
@@ -116,30 +153,31 @@ justify-content: center;
     font-size: 12px;
 text-align: left;
   }
-  h3{
-text-align: left;
 
-  }
   
 `
 const PositionBtn = styled.div`
 display: flex;
 justify-content: center;
-color: #d090c3;
 font-weight: 300;
 font-family: helvetica;
 
 button{
-  background: #d090c3;
+    color: white;
+    background: #E93241;
   color: white;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 300;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  border: inset .4px #c0c0c0;
+  font-size: 30px;
+  font-weight: 100;
 }
 button:hover{
   background: white;
   cursor:pointer;
-  color: #d090c3;
+    color: #E93241;
+
   
 }
 a{
@@ -220,8 +258,10 @@ class Profile extends Component {
   render() {
 
     return (
-      <div>
+      <BigDiv>
+        <div>
         <NavBar />
+        
         <NameContainer>
         <br /><h1>
         {this.state.company.companyname}'s Profile</h1>
@@ -230,13 +270,16 @@ class Profile extends Component {
 
           <br />
           <Link to={`/companys/${this.props.match.params.companyId}`}>
-       <button><FaBriefcase className='icons'/> Positions</button> </Link></PositionBtn>
-        <br />    <Toptext><div>Edit Company information below <br/>  (All changes are auto saved)</div></Toptext>
+       <button><FaAddressCard className='icons'/></button> </Link>
+       </PositionBtn>
+           
+        <Toptext></Toptext>
         <br/>
         <NameNButtonStyle>
 
-          <h3><FaUser/> {this.state.company.companyname}</h3>
-          <label htmlFor="companyname" >Update Company: </label>
+          <h3>
+            <FaCity/> {this.state.company.companyname}</h3>
+          <label htmlFor="companyname" > Update Company: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -244,9 +287,10 @@ class Profile extends Component {
             value={this.state.company.companyname}
           />
 
-          <h3> <FaAddressCard/> 
-          <a href={this.state.company.website}> {this.state.company.website}</a> </h3>
-          <label htmlFor="website">Update Website Url: </label>
+          <h3> 
+            <FaLink/>
+          <a href={this.state.company.website}> {this.state.company.website} </a> </h3>
+          <label htmlFor="website"> Update Website Url: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -255,8 +299,10 @@ class Profile extends Component {
             name="website"
           />
 
-           <h3> <FaAddressCard/> <a href='#'> {this.state.company.careerpage} </a></h3>
-          <label htmlFor="careerpage">Update career page Url: </label>
+           <h3> 
+           <FaLink/>
+           <a href='#'> {this.state.company.careerpage} </a></h3>
+          <label htmlFor="careerpage"> Update career page Url: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -265,8 +311,8 @@ class Profile extends Component {
             name="careerpage"
           />
 
-                     <h3> <FaAddressCard/> {this.state.company.location} </h3>
-          <label htmlFor="location">Update location: </label>
+                     <h3> <FaMapMarkerAlt/> {this.state.company.location} </h3>
+          <label htmlFor="location"> Update location: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -275,8 +321,8 @@ class Profile extends Component {
             name="location"
           />
 
-<h3> <FaAddressCard/> {this.state.company.maincontact} </h3>
-          <label htmlFor="maincontact">Update Main Contact: </label>
+<h3> <FaUser/> {this.state.company.maincontact} </h3>
+          <label htmlFor="maincontact"> Update Main Contact: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -286,7 +332,7 @@ class Profile extends Component {
           />
 
           <h3> <FaEnvelope/> {this.state.company.email}</h3>
-          <label htmlFor="email">Update Email: </label>
+          <label htmlFor="email"> Update Email: </label>
           <input
             onBlur={() => this.handleUpdate()}
             onChange={(event) => this.handleChange(event)}
@@ -294,7 +340,7 @@ class Profile extends Component {
             value={this.state.company.email}
           />
           <h3><FaMobileAlt/> {this.state.company.phone} </h3>
-          <label htmlFor="phone">Update Phone: </label>
+          <label htmlFor="phone"> Update Phone: </label>
 
           <input
             onBlur={() => this.handleUpdate()}
@@ -317,45 +363,7 @@ class Profile extends Component {
           <CompanysContainerStyle>
 
             <CompanyStyles>
-              {/* <label htmlFor="companyname" >Company Name: </label>
-
-              <input
-                onBlur={() => this.handleUpdate()}
-                onChange={(event) => this.handleChange(event)}
-                type="text" name="companyname" placeholder={this.state.company.companyname}
-                value={this.state.company.companyname}
-              />
-              <label htmlFor="idnumber">ID Number: </label>
-
-              <input
-                onBlur={() => this.handleUpdate()}
-                onChange={(event) => this.handleChange(event)}
-                type='text' placeholder='idnumber'
-                value={this.state.company.idnumber}
-                name="idnumber"
-              />
-              <label htmlFor="email">Email: </label>
-
-              <input
-                onBlur={() => this.handleUpdate()}
-                onChange={(event) => this.handleChange(event)}
-                type='text' name="email" placeholder='Email'
-                value={this.state.company.email}
-              />
-              <label htmlFor="phone">Phone: </label>
-
-              <input
-                onBlur={() => this.handleUpdate()}
-                onChange={this.handleChange}
-                type='text' name="phone" placeholder='phone'
-                value={this.state.company.phone}
-              /> */}
-
-              {/* <Link to={`/companys`}> 
-                        <button className='noprint' onClick={e =>
-                                            window.confirm("Are you sure you want to delete this company? All their positions will be deleted as well!") &&
-                                            this.handleDelete(e)}>Delete Company</button>
-                        </Link>  */}
+            
 
 
             </CompanyStyles>
@@ -365,6 +373,7 @@ class Profile extends Component {
 
         
       </div>
+      </BigDiv>
     )
   }
 }

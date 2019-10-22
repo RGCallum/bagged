@@ -2,36 +2,68 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { FaBriefcase, FaFolder, FaPlusCircle} from 'react-icons/fa';
+import { FaBriefcase, FaFolder, FaPlus, FaAddressCard } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
+const BigDiv = styled.div`
+*{
+  
+  color: white;
+}
+.tabs{
+  h2{
+  font-weight: bold;
+  font-family: helvetica;
+  // font-weight: 200;
+color: #E93241;
+  }
+  h2:hover{
+      color: white;
+  }
+  display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+`
+
 const BkgdColors = styled.div`
-
-
 *{
   margin: 0;
+  color: white;
 }
+
 font-size: 12px;
-color: white;
 display: flex ;
 justify-content: center ;
-font-family: arial;
-// background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
-
-background-color: white;
-background-size: cover;
+font-family: helvetica;
+background: rgb(42, 45, 54);
 width: 100vw;
 margin-left: -10px;
 margin-top: 0px;
-padding-top: 20px;
+padding-top: 40px;
 height: 100%;
+
+.tabs{
+  h2{
+  font-weight: bold;
+  font-family: helvetica;
+  // font-weight: 200;
+color: #E93241;
+  }
+  h2:hover{
+      color: white;
+  }
+  display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
 
 form{
   justify-content: center;
   padding-bottom: 10px;
   box-shadow: 1px 1px 5px #E9324197;
-  background-color:  rgba(255,255,255,0.95);
+  // background-color:  rgba(255,255,255,0.95);
   text-align: center;  
   #empText{
     color: #E93241;  
@@ -48,7 +80,7 @@ width: 100%;
 
 }
 input:focus, textarea:focus{
-  background: rgba(255, 212, 39, 0.2);
+  background: rgba(226, 112, 121, 0.15);
 
 }
 .required:after {
@@ -71,19 +103,19 @@ span{
 }
 
 h3{
-  color: rgb(60, 60, 60);
+  color: white;
   text-align: left;
-font-weight: 540;
+font-weight: 100;
 }
 h2{
-  color: rgb(60, 60, 60);
-  font-weight: 540;
+  color: rgb(122, 122, 122);
+  font-weight: 100;
 font-size: 14px;
 text-align: center;
 }
 label{
   font-size: 12px;
-  color: rgb(60, 60, 60);
+  color: rgb(122, 122, 122);
 font-weight: 400;
 }
 
@@ -104,19 +136,20 @@ a:visited{
 }
 
 button{
-background: #462255;
-color: white;
-border-radius: 5px;
-font-size: 16px;
-font-weight: 300;
-cursor: pointer;
+  background: #E93241;
+  color: white;
+  width: 65px;
+  height: 65px;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: 100;
+  border: inset .4px #c0c0c0;
 
 }
 button:hover{
-  background: white;
-  
-      color: #462255;
-  
+background: white;
+cursor:pointer;
+  color: #E93241;
 }
 .addemp{
   // background-color: rgba(255,255,255,0.95);
@@ -131,13 +164,6 @@ h2, h3{
 }
 }
 
-.overlay{
-  // background-color:  rgba(255,255,255,0.95);
-  // border-top: inset #C0C0C0 .5px;
-  // width: 40vw;
-
-
-}
 
 @media only screen and (max-width: 414px){
   form{
@@ -145,16 +171,16 @@ h2, h3{
   
   }
 }
-.icons{
-  padding-top: 3px;
-}
+// .icons{
+//   padding-top: 3px;
+// }
 #linkNum{
   display: flex;
   flex-direction: row;
 }
 `
 const CompanyContainer = styled.div`
-background-color:  white;
+// background-color:  white;
 border-bottom: inset #C0C0C0 .5px;
 // border-radius: 5px;
 display: flex ;
@@ -224,95 +250,100 @@ class Company extends Component {
 
   render() {
     return (
-      
-      <div >
-        <NavBar />
-        <BkgdColors>
-          <div className="overlay">
-            <br/>
-            <h1>Bagged Directory</h1>
-          <h2>Click on a company name to view their profile. <br/>
-          Click on < FaBriefcase/> Positions to view the positions you applied for. </h2>
-            {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
+      <BigDiv>
 
-<br/>
-<CompanyOutline>
+        <div >
+          <NavBar />
+          <BkgdColors>
+            {/* <div className="tabs">
+              <h2 id='tabtitle1'>COMPANY LIST</h2>
+              <h2 id='tabtitle2'>ADD NEW</h2>
+            </div> */}
+            <div className="overlay">
+              <br />
+              <h1>Company List</h1>
+              <h2>Click on a company name to view their profile. <br />
+                Click on < FaAddressCard /> Positions to view the positions you applied for. </h2>
+              {/* <a href="https://tenderfree.herokuapp.com/companys"><button>Click here for Free Editable version</button></a>    */}
 
-          {this.state.companys.map((company, index) => ( 
-           
-           
-            <div key={company._id}>
+              <br />
+              <CompanyOutline>
 
-              <CompanyContainer>
-             
-              {/* <h5> ID: {company.idnumber}</h5>  */}
+                {this.state.companys.map((company, index) => (
 
-                <Link id="linkNum" to={`/companys/${company._id}/profile`}> 
-                <span>{index + 1}</span>&#160;&#160; <h3>{company.companyname} </h3>
-                
-                </Link> 
-                <Link id="link" to={`/companys/${company._id}`}> 
-          {/* 📂 */}
-          &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaBriefcase/> Positions</Link>
-                {/* <h5> {company.email}</h5> 
+
+                  <div key={company._id}>
+
+                    <CompanyContainer>
+
+                      {/* <h5> ID: {company.idnumber}</h5>  */}
+
+                      <Link id="linkNum" to={`/companys/${company._id}/profile`}>
+                        <span>{index + 1}</span>&#160;&#160; <h3>{company.companyname} </h3>
+
+                      </Link>
+                      <Link id="link" to={`/companys/${company._id}`}>
+                        {/* 📂 */}
+                        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; < FaAddressCard /> Positions</Link>
+                      {/* <h5> {company.email}</h5> 
                 <h5> {company.phone}</h5>  */}
-              </CompanyContainer>
+                    </CompanyContainer>
 
-            </div>
-            
-          ))} 
-</CompanyOutline>
+                  </div>
 
-<br/><br/>
+                ))}
+              </CompanyOutline>
 
-          <form onSubmit={this.handleSubmit} className='addemp' id='companyname'>
-        <br/>  <h2 id='empText'>Add New Company</h2> 
+              <br /><br />
 
-<h3> </h3>         
- <h3>To add a new company enter necessary info <br/> in the form below 
-  then click the <FaPlusCircle className='icons'/>Add Company button.</h3>
- <br/> 
-            <div >
-           <th>  <label className='required' htmlFor="companyname" >Company Name: </label></th> 
-              <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname"  required='true'/>
-            </div>
-            <div>
-             <th> <label htmlFor="website">Website Url: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.website} type="website" name="website" />
-            </div>
-            <div>
-             <th> <label htmlFor="careerpage">Career Page Url: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.careerpage} type="careerpage" name="careerpage" />
-            </div>
-            <div>
-             <th> <label htmlFor="location">Company Location: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.location} type="location" name="location" />
-            </div>
-            <div>
-             <th> <label htmlFor="maincontact">Main Contact Name: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.maincontact} type="maincontact" name="maincontact" />
-            </div>
+              <form onSubmit={this.handleSubmit} className='addemp' id='companyname'>
+                <br />  <h2 id='empText'>Add New Company</h2>
 
+                <h2>To add a new company enter necessary info <br /> in the form below
+  then click the <FaPlus className='icons' /> button.</h2>
+                <br />
+                <div >
+                  <th>  <label className='required' htmlFor="companyname" >Company Name: </label></th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.companyname} type="text" name="companyname" required='true' />
+                </div>
+                <div>
+                  <th> <label htmlFor="website">Website Url: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.website} type="website" name="website" />
+                </div>
+                <div>
+                  <th> <label htmlFor="careerpage">Career Page Url: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.careerpage} type="careerpage" name="careerpage" />
+                </div>
+                <div>
+                  <th> <label htmlFor="location">Company Location: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.location} type="location" name="location" />
+                </div>
+                <div>
+                  <th> <label htmlFor="maincontact">Main Contact Name: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.maincontact} type="maincontact" name="maincontact" />
+                </div>
 
 
-            <div>
-             <th> <label htmlFor="email">Email: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.email} type="text" name="email" />
-            </div>
-            <div>
-             <th> <label htmlFor="phone">Phone: </label> </th>
-              <input onChange={this.handleChange} value={this.state.newCompany.phone} type="text" name="phone" />
-            </div>
-            <br/>
-            {/* <div>
+
+                <div>
+                  <th> <label htmlFor="email">Email: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.email} type="text" name="email" />
+                </div>
+                <div>
+                  <th> <label htmlFor="phone">Phone: </label> </th>
+                  <input onChange={this.handleChange} value={this.state.newCompany.phone} type="text" name="phone" />
+                </div>
+                <br />
+                {/* <div>
               <label htmlFor="positions">Positions: </label>
               <input onChange={this.handleChange} value={this.state.newCompany.positions} type="text" name="positions" />
             </div> */}
-            <button type="submit"><FaPlusCircle className='icons'/> Add Company</button>
-          </form>
-          </div>
-        </BkgdColors>
-      </div>
+                <button type="submit"><FaPlus className='icons' /></button>
+              </form>
+            </div>
+          </BkgdColors>
+        </div>
+      </BigDiv>
     )
   }
 

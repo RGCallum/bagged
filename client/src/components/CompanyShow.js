@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaMinusCircle, FaScroll, FaUser, FaIdBadge, FaAddressCard, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaMinusCircle, FaScroll, FaUser, FaIdBadge, FaAddressCard, FaPlus, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -124,18 +124,10 @@ const PositionStyles = styled.div`
 
 font-size: 12px;
 font-weight: 200;
-  
-  font-family: helvetica;
-// background-image: url('https://img.freepik.com/free-photo/gray-wall-textures-background_74190-4389.jpg?size=626&ext=jpg');
-background-size: cover;
-background-repeat: no-repeat;
-.memo{
-    padding: 10px;
-    // box-shadow: 1px 1px 5px rgba(0,0,0, 0.4);
-    border: dashed rgba(182, 182, 182, 0.100) .5px;
-
+font-family: helvetica;
+h3{
+    color: rgb(122, 122, 122);
 }
-
 
 .required::after {
     content: "*";
@@ -153,8 +145,8 @@ font-weight: bold;
     // position: absolute;
     // margin-left: 40vw;
     color: white;
-    background-color: red;
-    border-radius: 5px;
+    background-color: #E93241;
+    border-radius: 50px;
     font-size: 10px;
     // height: 40px;
     // width: 80px;
@@ -163,7 +155,7 @@ font-weight: bold;
 
 button:hover{
     background-color: white;
-    color:red;
+    color:#E93241;
     cursor:pointer;
 
 }
@@ -265,7 +257,11 @@ justify-content: center;
     // padding-top: 3px;
 }
 `
-
+const PlusJobBtns = styled.div`
+display: flex;
+justify-content: space-around;
+text-align: center;
+`
 const TopPosition = styled.div`
 // border: black solid 1px;
 margin-left: 75%;
@@ -289,83 +285,7 @@ color: rgb(185, 184, 184);
 }
 z-index: 100;
 `
-const PeriodPosition = styled.div`
-padding-top: 20px;
-padding-bottom: 10px;
-// border: black solid 1px;
-// margin-left: 20%;
-// margin-top: 5%;
-display: flex;
-flex-direction: row;
-flex-wrap: no-wrap;
-justify-content: center;
-text-align: center;
-align-content: center;
-input{
-    width: 35%;
-}
-@media only screen and (max-width: 414px){
-// margin-top: -26%;
-margin-left: -5%;
 
-input{
-    width: 100px;
-    height: 100%;
-}
-
-}
-@media print { 
-    padding-top: 80px;
-    input{
-        border: none;
-        
-    } 
-    input[type="date"]::-webkit-clear-button{
-        display: none;
-    }
-
-}
-`
-const Client1Position = styled.div`
-@media only screen and (max-width: 800px) {
-    flex-direction: column;
-  
-}
-// border: gray solid 1px;
-display: flex;
-justify-content: space-evenly;
-width: 100%;
-
-tr{
-    border-collapse:collapse;
-    border:1px solid rgba(0,0,0, 0.2);
-    // box-shadow: 1px 1px 4px rgba(0,0,0, 0.4);
-
-    }
-    
-    td{
-    border-left:1px solid rgba(0,0,0, 0.2);
-    // box-shadow: 1px 1px 1px rgba(0,0,0, 0.4);
-
-    }
-th{
-    // border-bottom:1px solid gray;
-    // width: 100%;
-
-}
-#box{
-    // border: gray solid 1px;
-
-}
-`
-const Client2Position = styled.div`
-// border: black solid 1px;
-// display: none;
-input{
-    // display: none;
-}
-
-`
 const TotalsPosition = styled.div`
 // border: solid rgba(182, 182, 182, 0.100) .5px;
 margin-top: 5%;
@@ -451,15 +371,16 @@ margin-left: -20px;
 const NewPositionButton = styled.button`
   background: #E93241;
   color: white;
-  border-radius: 100px;
-  padding: 10px 25px 10px 25px;
-  font-size: 50px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50px;
+  font-size: 30px;
   font-weight: 100;
-cursor: pointer;
-#prof{
-    background: turquoise;
+  
 
-}
+cursor: pointer;
+border: inset .4px #c0c0c0;
+
 a:visited {
     text-decoration: none;
   }
@@ -474,17 +395,19 @@ a:hover{
 // height: 26.5px;
 
 @media only screen and (max-width: 414px){
-    font-size: 14px;
+    // font-size: 14px;
     // height: 26.5px;
 
 }
 `
 const EditProfileBtn = styled.button`
-background: #462255;
+background: black;
 color: white;
-border-radius: 100px;
-padding: 10px 18px 10px 18px;
-font-size: 48px;
+width: 70px;
+height: 70px;
+border-radius: 50px;
+border: inset .4px #c0c0c0;
+font-size: 30px;
 font-weight: 100;
 a{
     text-decoration: none;
@@ -497,13 +420,12 @@ a:visited {
 
 :hover{
     background: white;
-    a{
-        color: #462255;
-
-    }
+    color: black;
 }
+cursor: pointer;
+
 @media only screen and (max-width: 414px){
-    font-size: 14px;
+    // font-size: 14px;
 }
 `
 const PositionBtn = styled.div`
@@ -896,24 +818,24 @@ class CompanyShow extends Component {
 
                     <Topbtns>
 
-
-
-                        <div className="noprint">
+                        <div className="noprint" id='topBtns'>
                             <NameNButtonStyle>
                                 <h1>{this.state.company.companyname} Positions </h1>
                             </NameNButtonStyle>
 
-                            <NewPositionButton onClick={this.handleCreateNewPosition} id="plus">
-                                {/* <FaPlusCircle className='icons' />  */}
-                                 + 
-                            </NewPositionButton>
+                            <PlusJobBtns>
+                                <NewPositionButton onClick={this.handleCreateNewPosition} id="plus">
+                                    <FaPlus className='icons' />
+                                    {/* +  */}
+                                </NewPositionButton>
 
-                            <Link to={`/companys/${this.props.match.params.companyId}/profile`} id="prof" >
-                            <EditProfileBtn >                
-                                    {/* <FaIdBadge className='icons' />  🗂   */}
-                                     📁                        
-                            </EditProfileBtn>
-                            </Link>
+                                <Link to={`/companys/${this.props.match.params.companyId}/profile`} id="prof" >
+                                    <EditProfileBtn >
+                                        <FaBriefcase className='icons' />
+                                        {/* 🗃                         */}
+                                    </EditProfileBtn>
+                                </Link>
+                            </PlusJobBtns>
                             {/* <PositionBtn>
                                 <Link to={`/companys/${this.props.match.params.companyId}`}>
                                     <button><FaBriefcase className='icons' /> Positions</button>
@@ -950,10 +872,9 @@ class CompanyShow extends Component {
                                     <Addlogo>
 
                                         <PositionStyles>
-                                            <Link to={`/companys/${this.props.match.params.companyId}/positions/${position._id}`}
-                                                onClick={this.handleClick.bind(this, position._id)}>
-                                                <h3>(Position{index + 1}) </h3>
-                                            </Link>
+                                            {/* <Link to={`/companys/${this.props.match.params.companyId}/positions/${position._id}`} onClick={this.handleClick.bind(this, position._id)}> */}
+                                            <h3>(Position {index + 1}) </h3>
+                                            {/* </Link> */}
 
                                             <BkgdImg>
 
@@ -1000,12 +921,12 @@ class CompanyShow extends Component {
                                                 </TopPosition>
 
 
-                                                
+
                                                 <div className="tabs">
-                                                <h2 id='tabtitle1'>CONTACT</h2>
-                                                <h2 id='tabtitle2'>JOB</h2>
-                                                <h2 id='tabtitle3'>INTERVIEW</h2>
-                                                <h2 id='tabtitle4'>RESULTS</h2>
+                                                    <h2 id='tabtitle1'>CONTACT</h2>
+                                                    <h2 id='tabtitle2'>JOB</h2>
+                                                    <h2 id='tabtitle3'>INTERVIEW</h2>
+                                                    <h2 id='tabtitle4'>RESULTS</h2>
                                                 </div>
                                                 <br />
                                                 <LineItemsGrid id='tab1'>
@@ -1097,7 +1018,7 @@ class CompanyShow extends Component {
 
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 2</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 2</div></td>
-                                                        
+
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 3</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 3</div></td>
 
@@ -1106,101 +1027,101 @@ class CompanyShow extends Component {
 
                                                     </div>
                                                     <div className="lineItems">
-                                                        
 
-                                                            <td> 
-                                                                <label htmlFor="intvwdate1" >Date: </label>
-                                                                <input
-                                                                    onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="date" name="intvwdate1" placeholder='contact Name'
-                                                                    value={position.intvwdate1}
-                                                                />
-                                                                <label htmlFor="intvwtime1" > Time: </label>
-                                                                <input
-                                                                    onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="time" name="intvwtime1" placeholder='interview time'
-                                                                    value={position.intvwtime1}
-                                                                />
-                                                                <label htmlFor="intvw1"> <br />
-                                                                    Type of Interview:
+
+                                                        <td>
+                                                            <label htmlFor="intvwdate1" >Date: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="date" name="intvwdate1" placeholder='contact Name'
+                                                                value={position.intvwdate1}
+                                                            />
+                                                            <label htmlFor="intvwtime1" > Time: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="time" name="intvwtime1" placeholder='interview time'
+                                                                value={position.intvwtime1}
+                                                            />
+                                                            <label htmlFor="intvw1"> <br />
+                                                                Type of Interview:
                                                             <select value={this.state.value}
-                                                                        onBlur={() => this.handleUpdate(position._id)}
-                                                                        onChange={(event) => this.handleChange(event, position._id)}>
-                                                                        <option value={position.intvwphone1}>Phone</option>
-                                                                        <option value={position.intvwvirtual1}>Virtual</option>
-                                                                        <option value={position.intvwperson1}>In-Person</option>
-                                                                        <option value={position.intvwtbnt1}>TBNT</option>
-                                                                    </select>
-                                                                </label>
-                                                                <br /><br />
-                                                            </td>
-                                                            
-
-                                                            <td> 
-                                                                <label htmlFor="intvwdate2" >Date: </label>
-                                                                <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="date" name="intvwdate2" placeholder='contact Name'
-                                                                    value={position.intvwdate2}
-                                                                />
-                                                                <label htmlFor="intvwtime2" > Time: </label>
-                                                                <input
-                                                                    onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="time" name="intvwtime2" placeholder='interview time'
-                                                                    value={position.intvwtime2}
-                                                                />
+                                                                    onChange={(event) => this.handleChange(event, position._id)}>
+                                                                    <option value={position.intvwphone1}>Phone</option>
+                                                                    <option value={position.intvwvirtual1}>Virtual</option>
+                                                                    <option value={position.intvwperson1}>In-Person</option>
+                                                                    <option value={position.intvwtbnt1}>TBNT</option>
+                                                                </select>
+                                                            </label>
+                                                            <br /><br />
+                                                        </td>
 
-                                                                <label htmlFor="intvw2">
-                                                                    <br />
-                                                                    Type of Interview:
+
+                                                        <td>
+                                                            <label htmlFor="intvwdate2" >Date: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="date" name="intvwdate2" placeholder='contact Name'
+                                                                value={position.intvwdate2}
+                                                            />
+                                                            <label htmlFor="intvwtime2" > Time: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="time" name="intvwtime2" placeholder='interview time'
+                                                                value={position.intvwtime2}
+                                                            />
+
+                                                            <label htmlFor="intvw2">
+                                                                <br />
+                                                                Type of Interview:
                                                             <select value={this.state.value}
-                                                                        onBlur={() => this.handleUpdate(position._id)}
-                                                                        onChange={(event) => this.handleChange(event, position._id)}>
-                                                                        <option value={position.intvwphone2}>Phone</option>
-                                                                        <option value={position.intvwvirtual2}>Virtual</option>
-                                                                        <option value={position.intvwperson2}>In-Person</option>
-                                                                        <option value={position.intvwtbnt2}>TBNT</option>
-                                                                    </select>
-                                                                </label>
-                                                                <br /><br /></td>
-                                                           
-
-                                                            <td> 
-                                                                <label htmlFor="intvwdate3" >Date: </label>
-                                                                <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="date" name="intvwdate3" placeholder='contact Name'
-                                                                    value={position.intvwdate3}
-                                                                />
-                                                                <label htmlFor="intvwtime3" > Time: </label>
-                                                                <input
-                                                                    onBlur={() => this.handleUpdate(position._id)}
-                                                                    onChange={(event) => this.handleChange(event, position._id)}
-                                                                    type="time" name="intvwtime3" placeholder='interview time'
-                                                                    value={position.intvwtime3}
-                                                                />
+                                                                    onChange={(event) => this.handleChange(event, position._id)}>
+                                                                    <option value={position.intvwphone2}>Phone</option>
+                                                                    <option value={position.intvwvirtual2}>Virtual</option>
+                                                                    <option value={position.intvwperson2}>In-Person</option>
+                                                                    <option value={position.intvwtbnt2}>TBNT</option>
+                                                                </select>
+                                                            </label>
+                                                            <br /><br /></td>
 
-                                                                <label htmlFor="intvw3">
-                                                                    <br />
-                                                                    Type of Interview:
+
+                                                        <td>
+                                                            <label htmlFor="intvwdate3" >Date: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="date" name="intvwdate3" placeholder='contact Name'
+                                                                value={position.intvwdate3}
+                                                            />
+                                                            <label htmlFor="intvwtime3" > Time: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="time" name="intvwtime3" placeholder='interview time'
+                                                                value={position.intvwtime3}
+                                                            />
+
+                                                            <label htmlFor="intvw3">
+                                                                <br />
+                                                                Type of Interview:
                                                             <select value={this.state.value}
-                                                                        onBlur={() => this.handleUpdate(position._id)}
-                                                                        onChange={(event) => this.handleChange(event, position._id)}>
-                                                                        <option value={position.intvwphone3}>Phone</option>
-                                                                        <option value={position.intvwvirtual3}>Virtual</option>
-                                                                        <option value={position.intvwperson3}>In-Person</option>
-                                                                        <option value={position.intvwtbnt3}>TBNT</option>
-                                                                    </select>
-                                                                </label>
-                                                                <br /><br /></td>
-                                                           
+                                                                    onBlur={() => this.handleUpdate(position._id)}
+                                                                    onChange={(event) => this.handleChange(event, position._id)}>
+                                                                    <option value={position.intvwphone3}>Phone</option>
+                                                                    <option value={position.intvwvirtual3}>Virtual</option>
+                                                                    <option value={position.intvwperson3}>In-Person</option>
+                                                                    <option value={position.intvwtbnt3}>TBNT</option>
+                                                                </select>
+                                                            </label>
+                                                            <br /><br /></td>
 
-                                                            {/* <td> 
+
+                                                        {/* <td> 
                                                                 <label htmlFor="intvwdate4" >Date: </label>
                                                                 <input
                                                                     onBlur={() => this.handleUpdate(position._id)}
@@ -1228,8 +1149,8 @@ class CompanyShow extends Component {
                                                                     </select>
                                                                 </label>
                                                                 <br /><br /></td> */}
-                                                            
-                                                        
+
+
                                                     </div>
                                                     <label htmlFor="intvwques" >Interview Questions: </label>
                                                     <textarea
@@ -1292,13 +1213,13 @@ class CompanyShow extends Component {
                                                     </CommentsBox>
                                                 </TotalsPosition>
 
-                                                <OptionsPosition className='noprint printSave'>
+                                                {/* <OptionsPosition className='noprint printSave'>
                                                     <Link to={`/companys/${this.props.match.params.companyId}/positions/${position._id}`}
                                                         onClick={this.handleClick.bind(this, position._id)}>
                                                         <button > <span><FaPrint /> <FaFileDownload />  </span><p>Export</p>  </button>
                                                     </Link>
 
-                                                </OptionsPosition>
+                                                </OptionsPosition> */}
 
                                                 <DletBtn>
                                                     <button className='noprint dlet' onClick={e =>

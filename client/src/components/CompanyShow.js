@@ -848,6 +848,7 @@ class CompanyShow extends Component {
 
             <div>
                 <NavBar />
+                
                 <BigDiv>
 
                     <Topbtns>
@@ -957,15 +958,15 @@ class CompanyShow extends Component {
 
 
                                                 <div className="tabs">
-                                                  <button id='tabtitle1' >  <h2 >CONTACT</h2></button>
-                                                  <button id='tabtitle2'onClick={this.showTabs}>  <h2>JOB</h2></button>
-                                                  <button id='tabtitle3'> <h2>INTERVIEW</h2></button>
-                                                  <button id='tabtitle4'>  <h2>RESULTS</h2></button>
+                                                  <a href="#tab1"><button id='tabtitle1' >  <h2 >CONTACT</h2></button></a>
+                                                  <a href="#tab2"><button id='tabtitle2'>  <h2>JOB</h2></button></a>
+                                                  <a href="#tab3"><button id='tabtitle3'> <h2>INTERVIEW</h2></button></a>
+                                                  <a href="#tab4"><button id='tabtitle4'>  <h2>RESULTS</h2></button></a>
                                                 </div>
                                                 <br />
-                                                <LineItemsGrid id='tab1'ref={this.tab1}>
+                                                <LineItemsGrid >
 
-                                                    <h1>Contact Info:</h1>
+                                                    <h1 id='tab1'>Contact Info:</h1>
 
                                                     <label htmlFor="contactname" >Contact Name: </label>
                                                     <input
@@ -997,12 +998,19 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="contactphone" placeholder='contact phone'
                                                         value={position.contactphone}
-                                                    />
+                                                    />                                                <br/>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
                                                 </LineItemsGrid>
-                                                
-                                                <LineItemsGrid id='tab2'ref={this.tab2} >
 
-                                                    <h1>Job Info:</h1>
+                                                
+                                                <LineItemsGrid >
+                                                <br/>
+<br/>
+<br/>
+<br/>
+                                                    <h1 id='tab2'>Job Info:</h1>
 
                                                     <label htmlFor="joburl" >Position URL: </label>
                                                     <input
@@ -1042,11 +1050,22 @@ class CompanyShow extends Component {
                                                         type="text" name="coverletter" placeholder='Cover Letter'
                                                         value={position.coverletter}
                                                     > </textarea>
+ <br/>
+<br/>
+<br/>
+<br/>
                                                 </LineItemsGrid>
+                                                <br/>
+<br/>
+<br/>
+<br/>
 
-                                                <LineItemsGrid id='tab3'>
-
-                                                    <h1>Interview Info:</h1>
+                                                <LineItemsGrid>
+                                                <br/>
+<br/>
+<br/>
+<br/>
+                                                    <h1 id='tab3'>Interview Info:</h1>
                                                     <div className="row header">
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 1</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 1</div></td>
@@ -1200,12 +1219,19 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="followupmsg" placeholder='Follow-Up Message'
                                                         value={position.followupmsg}
-                                                    > </textarea>
+                                                    > </textarea> <br/>
+                                                    <br/>
+                                                    <br/>
+                                                    <br/>
                                                 </LineItemsGrid>
 
-                                                <LineItemsGrid id='tab4'>
 
-                                                    <h1>Results:</h1>
+                                                <LineItemsGrid>
+                                                <br/>
+<br/>
+<br/>
+<br/>
+                                                    <h1 id='tab4'>Results:</h1>
 
                                                     <table>
                                                         <select value={this.state.value}

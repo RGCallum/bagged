@@ -8,9 +8,9 @@ import NavBar from './NavBar'
 
 
 const BigDiv = styled.div`
-// #tab2, #tab3, #tab4{
-//     display: none;
-//     }
+#tab2, #tab3, #tab4{
+    // display: none;
+    }
 *{
     input, tr, td, textarea{
         font-weight: 100;
@@ -23,6 +23,14 @@ const BigDiv = styled.div`
     
 }
 .tabs{
+    button{
+        background-color: transparent;
+        border: none;
+    }
+    button:hover{
+        background-color: transparent;
+
+    }
     h2{
     font-weight: bold;
     font-family: helvetica;
@@ -662,6 +670,7 @@ text-align: center;
 `
 
 class CompanyShow extends Component {
+    
 
     state = {
         company: '',
@@ -711,8 +720,10 @@ class CompanyShow extends Component {
             nexttime: '',
             tostudy: '',
             foundon: '',
+            
 
         }
+        
     }
 
 
@@ -748,7 +759,30 @@ class CompanyShow extends Component {
             this.setState({ positions: newStatePositions })
         })
     }
+    
+    // trying to use this to display and hide
 
+    // handleShowTabs = () => {
+    //     document.getElementById('#tab1').style.display = 'none';
+    //     document.getElementById('#tab2').style.display = 'block';
+    //     console.log("This is the handle click event to show tabs");
+    // }
+
+    // trying to use this to display and hide as well
+    // constructor(props){
+    //     super(props)
+  
+    //     this.state = {}
+  
+    //     this.tab1 = React.createRef()
+    //     this.tab2 = React.createRef()
+    // }
+    // showTabs() {
+    //     this.tab1.current.style.display = "none";
+    //     this.tab2.current.style.display = "block";
+    //   }
+    
+ 
     handleDelete = positionId => {
         axios.delete(`/api/positions/${positionId}`).then(() => {
             const newPositions = [...this.state.positions]
@@ -923,13 +957,13 @@ class CompanyShow extends Component {
 
 
                                                 <div className="tabs">
-                                                    <h2 id='tabtitle1'>CONTACT</h2>
-                                                    <h2 id='tabtitle2'>JOB</h2>
-                                                    <h2 id='tabtitle3'>INTERVIEW</h2>
-                                                    <h2 id='tabtitle4'>RESULTS</h2>
+                                                  <button id='tabtitle1' >  <h2 >CONTACT</h2></button>
+                                                  <button id='tabtitle2'onClick={this.showTabs}>  <h2>JOB</h2></button>
+                                                  <button id='tabtitle3'> <h2>INTERVIEW</h2></button>
+                                                  <button id='tabtitle4'>  <h2>RESULTS</h2></button>
                                                 </div>
                                                 <br />
-                                                <LineItemsGrid id='tab1'>
+                                                <LineItemsGrid id='tab1'ref={this.tab1}>
 
                                                     <h1>Contact Info:</h1>
 
@@ -965,7 +999,8 @@ class CompanyShow extends Component {
                                                         value={position.contactphone}
                                                     />
                                                 </LineItemsGrid>
-                                                <LineItemsGrid id='tab2'>
+                                                
+                                                <LineItemsGrid id='tab2'ref={this.tab2} >
 
                                                     <h1>Job Info:</h1>
 

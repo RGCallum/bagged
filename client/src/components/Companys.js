@@ -9,7 +9,7 @@ import NavBar from './NavBar'
 const BigDiv = styled.div`
 *{
   
-  color: white;
+  // color: white;
 }
 .tabs{
   h2{
@@ -149,8 +149,10 @@ button{
 button:hover{
 background: white;
 cursor:pointer;
-  color: #E93241;
+color: #E93241;
+
 }
+
 .addemp{
   // background-color: rgba(255,255,255,0.95);
 padding-left: 10px;
@@ -338,7 +340,7 @@ class Company extends Component {
               <label htmlFor="positions">Positions: </label>
               <input onChange={this.handleChange} value={this.state.newCompany.positions} type="text" name="positions" />
             </div> */}
-                <button type="submit"><FaPlus className='icons' /></button>
+                <button type="submit"><FaPlus className='icons' id='plusBtn' /></button>
               </form>
             </div>
           </BkgdColors>

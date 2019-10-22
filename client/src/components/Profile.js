@@ -120,7 +120,7 @@ h3{
   color: #E93241;
   font-weight: 100;
 margin-bottom: 5px;
-  text-align: center;
+  text-align: left;
   justify-content: center;
 }
 display:flex;

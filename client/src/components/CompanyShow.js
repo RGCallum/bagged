@@ -1217,7 +1217,7 @@ class CompanyShow extends Component {
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="intvwnotes" placeholder='Add notes about the company here or your interview here'
+                                                        type="text" name="intvwnotes" placeholder='Add notes about the company or your interview here'
                                                         value={position.intvwnotes}
                                                     ></textarea>
                                                     <label htmlFor="followupmsg" >Follow-Up Message: </label>

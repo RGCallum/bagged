@@ -1049,7 +1049,7 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="coverletter" placeholder='Cover Letter'
                                                         value={position.coverletter}
-                                                    > </textarea>
+                                                    ></textarea>
  <br/>
 <br/>
 <br/>
@@ -1212,21 +1212,21 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
-                                                    > </textarea>
+                                                    ></textarea>
                                                      <label htmlFor="intvwnotes" >Interview Notes: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="intvwnotes" placeholder='Add notes about the company here or your interview here'
                                                         value={position.intvwnotes}
-                                                    > </textarea>
+                                                    ></textarea>
                                                     <label htmlFor="followupmsg" >Follow-Up Message: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="followupmsg" placeholder='Follow-Up Message'
                                                         value={position.followupmsg}
-                                                    > </textarea> <br/>
+                                                    ></textarea> <br/>
                                                     <br/>
                                                     <br/>
                                                     <br/>
@@ -1268,14 +1268,14 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="results" placeholder='Did you get the job?'
                                                         value={position.results}
-                                                    > </textarea>
+                                                    ></textarea>
                                                     <label htmlFor="tostudy" >Need to Study: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="tostudy" placeholder='What could have went better and/or what should study up on?'
                                                         value={position.tostudy}
-                                                    > </textarea>
+                                                    ></textarea>
                                                 </LineItemsGrid>
 
                                                 <TotalsPosition>

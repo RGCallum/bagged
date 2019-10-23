@@ -1213,6 +1213,13 @@ class CompanyShow extends Component {
                                                         type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
                                                     > </textarea>
+                                                     <label htmlFor="intvwnotes" >Interview Notes: </label>
+                                                    <textarea
+                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                        onChange={(event) => this.handleChange(event, position._id)}
+                                                        type="text" name="intvwnotes" placeholder='Add notes about the company here or your interview here'
+                                                        value={position.intvwnotes}
+                                                    > </textarea>
                                                     <label htmlFor="followupmsg" >Follow-Up Message: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
@@ -1255,11 +1262,18 @@ class CompanyShow extends Component {
                                                             value={position.nexttime}
                                                         /> */}
                                                     </table>
+                                                    <label htmlFor="results" >Notes: </label>
+                                                    <textarea
+                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                        onChange={(event) => this.handleChange(event, position._id)}
+                                                        type="text" name="results" placeholder='Did you get the job?'
+                                                        value={position.results}
+                                                    > </textarea>
                                                     <label htmlFor="tostudy" >Need to Study: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="tostudy" placeholder='Listing name or URL'
+                                                        type="text" name="tostudy" placeholder='What could have went better and/or what should study up on?'
                                                         value={position.tostudy}
                                                     > </textarea>
                                                 </LineItemsGrid>

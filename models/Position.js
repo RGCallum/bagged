@@ -41,9 +41,11 @@ const Position = new Schema({
     intvw3: String,
     intvw4: String,
     intvwques: String,
+    intvwnotes: String,
     followupmsg: String,
     gotthebag: Boolean,
     nexttime: String,
+    results: String,
     tostudy: String,
     foundon: String,
     

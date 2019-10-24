@@ -169,7 +169,7 @@ button{
   width: 70px;
   height: 70px;
   border-radius: 50px;
-  border: inset .4px #c0c0c0;
+  border: inset .5px #c0c0c0;
   font-size: 30px;
   font-weight: 100;
 }

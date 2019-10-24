@@ -143,7 +143,7 @@ button{
   border-radius: 50px;
   font-size: 30px;
   font-weight: 100;
-  border: inset .4px #c0c0c0;
+  border: inset .5px #c0c0c0;
 
 }
 button:hover{

@@ -23,6 +23,8 @@ const BigDiv = styled.div`
     
 }
 .tabs{
+    position: sticky;
+    top: 50px;
     button{
         background-color: transparent;
         border: none;
@@ -387,7 +389,7 @@ const NewPositionButton = styled.button`
   
 
 cursor: pointer;
-border: inset .4px #c0c0c0;
+border: inset .5px #c0c0c0;
 
 a:visited {
     text-decoration: none;
@@ -414,7 +416,7 @@ color: white;
 width: 70px;
 height: 70px;
 border-radius: 50px;
-border: inset .4px #c0c0c0;
+border: inset .5px #c0c0c0;
 font-size: 30px;
 font-weight: 100;
 a{
@@ -670,7 +672,7 @@ text-align: center;
 `
 
 class CompanyShow extends Component {
-    
+
 
     state = {
         company: '',
@@ -720,10 +722,10 @@ class CompanyShow extends Component {
             nexttime: '',
             tostudy: '',
             foundon: '',
-            
+
 
         }
-        
+
     }
 
 
@@ -759,7 +761,7 @@ class CompanyShow extends Component {
             this.setState({ positions: newStatePositions })
         })
     }
-    
+
     // trying to use this to display and hide
 
     // handleShowTabs = () => {
@@ -771,9 +773,9 @@ class CompanyShow extends Component {
     // trying to use this to display and hide as well
     // constructor(props){
     //     super(props)
-  
+
     //     this.state = {}
-  
+
     //     this.tab1 = React.createRef()
     //     this.tab2 = React.createRef()
     // }
@@ -781,8 +783,8 @@ class CompanyShow extends Component {
     //     this.tab1.current.style.display = "none";
     //     this.tab2.current.style.display = "block";
     //   }
-    
- 
+
+
     handleDelete = positionId => {
         axios.delete(`/api/positions/${positionId}`).then(() => {
             const newPositions = [...this.state.positions]
@@ -848,7 +850,7 @@ class CompanyShow extends Component {
 
             <div>
                 <NavBar />
-                
+
                 <BigDiv>
 
                     <Topbtns>
@@ -958,15 +960,17 @@ class CompanyShow extends Component {
 
 
                                                 <div className="tabs">
-                                                  <a href="#tab1"><button id='tabtitle1' >  <h2 >CONTACT</h2></button></a>
-                                                  <a href="#tab2"><button id='tabtitle2'>  <h2>JOB</h2></button></a>
-                                                  <a href="#tab3"><button id='tabtitle3'> <h2>INTERVIEW</h2></button></a>
-                                                  <a href="#tab4"><button id='tabtitle4'>  <h2>RESULTS</h2></button></a>
+                                                    <a href="#tab1"><button id='tabtitle1'>  <h2 >CONTACT</h2></button></a>
+                                                    <a href="#tab2"><button id='tabtitle2'>  <h2>JOB</h2></button></a>
+                                                    <a href="#tab3"><button id='tabtitle3'> <h2>INTERVIEW</h2></button></a>
+                                                    <a href="#tab4"><button id='tabtitle4'>  <h2>RESULTS</h2></button></a>
                                                 </div>
+                                                <div id='tab1'></div>
+                                                <br />
                                                 <br />
                                                 <LineItemsGrid >
 
-                                                    <h1 id='tab1'>Contact Info:</h1>
+                                                    <h1>Contact Info:</h1>
 
                                                     <label htmlFor="contactname" >Contact Name: </label>
                                                     <input
@@ -998,19 +1002,19 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="contactphone" placeholder='contact phone'
                                                         value={position.contactphone}
-                                                    />                                                <br/>
-                                                    <br/>
-                                                    <br/>
-                                                    <br/>
+                                                    />                                                <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
                                                 </LineItemsGrid>
 
-                                                
+<div id='tab2'></div>
                                                 <LineItemsGrid >
-                                                <br/>
-<br/>
-<br/>
-<br/>
-                                                    <h1 id='tab2'>Job Info:</h1>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <h1 >Job Info:</h1>
 
                                                     <label htmlFor="joburl" >Position URL: </label>
                                                     <input
@@ -1050,22 +1054,22 @@ class CompanyShow extends Component {
                                                         type="text" name="coverletter" placeholder='Cover Letter'
                                                         value={position.coverletter}
                                                     ></textarea>
- <br/>
-<br/>
-<br/>
-<br/>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
                                                 </LineItemsGrid>
-                                                <br/>
-<br/>
-<br/>
-<br/>
-
+                                                <br />
+                                                <br />
+                                                <br />
+                                                <br />
+                                                <div id='tab3'></div>
                                                 <LineItemsGrid>
-                                                <br/>
-<br/>
-<br/>
-<br/>
-                                                    <h1 id='tab3'>Interview Info:</h1>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <h1 >Interview Info:</h1>
                                                     <div className="row header">
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 1</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 1</div></td>
@@ -1098,17 +1102,24 @@ class CompanyShow extends Component {
                                                                 type="time" name="intvwtime1" placeholder='interview time'
                                                                 value={position.intvwtime1}
                                                             />
-                                                            <label htmlFor="intvw1"> <br />
+                                                            <label htmlFor="intvw1" >Type of Interview: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvw1" placeholder='Phone / Virtual / Office / Technical'
+                                                                value={position.intvw1}
+                                                            />
+                                                            {/* <label htmlFor="intvw1"> <br />
                                                                 Type of Interview:
                                                             <select value={this.state.value}
                                                                     onBlur={() => this.handleUpdate(position._id)}
                                                                     onChange={(event) => this.handleChange(event, position._id)}>
                                                                     <option value={position.intvwphone1}>Phone</option>
                                                                     <option value={position.intvwvirtual1}>Virtual</option>
-                                                                    <option value={position.intvwperson1}>In-Person</option>
+                                                                    <option value={position.intvwperson1}>Office</option>
                                                                     <option value={position.intvwtbnt1}>TBNT</option>
                                                                 </select>
-                                                            </label>
+                                                            </label> */}
                                                             <br /><br />
                                                         </td>
 
@@ -1128,8 +1139,14 @@ class CompanyShow extends Component {
                                                                 type="time" name="intvwtime2" placeholder='interview time'
                                                                 value={position.intvwtime2}
                                                             />
-
-                                                            <label htmlFor="intvw2">
+                                                            <label htmlFor="intvw2" >Type of Interview: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvw2" placeholder='Phone / Virtual / Office / Technical'
+                                                                value={position.intvw2}
+                                                            />
+                                                            {/* <label htmlFor="intvw2">
                                                                 <br />
                                                                 Type of Interview:
                                                             <select value={this.state.value}
@@ -1137,10 +1154,10 @@ class CompanyShow extends Component {
                                                                     onChange={(event) => this.handleChange(event, position._id)}>
                                                                     <option value={position.intvwphone2}>Phone</option>
                                                                     <option value={position.intvwvirtual2}>Virtual</option>
-                                                                    <option value={position.intvwperson2}>In-Person</option>
+                                                                    <option value={position.intvwperson2}>Office</option>
                                                                     <option value={position.intvwtbnt2}>TBNT</option>
                                                                 </select>
-                                                            </label>
+                                                            </label> */}
                                                             <br /><br /></td>
 
 
@@ -1159,8 +1176,14 @@ class CompanyShow extends Component {
                                                                 type="time" name="intvwtime3" placeholder='interview time'
                                                                 value={position.intvwtime3}
                                                             />
-
-                                                            <label htmlFor="intvw3">
+                                                            <label htmlFor="intvw3" >Type of Interview: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvw3" placeholder='Phone / Virtual / Office / Technical'
+                                                                value={position.intvw3}
+                                                            />
+                                                            {/* <label htmlFor="intvw3">
                                                                 <br />
                                                                 Type of Interview:
                                                             <select value={this.state.value}
@@ -1168,10 +1191,10 @@ class CompanyShow extends Component {
                                                                     onChange={(event) => this.handleChange(event, position._id)}>
                                                                     <option value={position.intvwphone3}>Phone</option>
                                                                     <option value={position.intvwvirtual3}>Virtual</option>
-                                                                    <option value={position.intvwperson3}>In-Person</option>
+                                                                    <option value={position.intvwperson3}>Office</option>
                                                                     <option value={position.intvwtbnt3}>TBNT</option>
                                                                 </select>
-                                                            </label>
+                                                            </label> */}
                                                             <br /><br /></td>
 
 
@@ -1198,7 +1221,7 @@ class CompanyShow extends Component {
                                                                         onChange={(event) => this.handleChange(event, position._id)}>
                                                                         <option value={position.intvwphone4}>Phone</option>
                                                                         <option value={position.intvwvirtual4}>Virtual</option>
-                                                                        <option value={position.intvwperson4}>In-Person</option>
+                                                                        <option value={position.intvwperson4}>Office</option>
                                                                         <option value={position.intvwtbnt4}>TBNT</option>
                                                                     </select>
                                                                 </label>
@@ -1213,7 +1236,7 @@ class CompanyShow extends Component {
                                                         type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
                                                     ></textarea>
-                                                     <label htmlFor="intvwnotes" >Interview Notes: </label>
+                                                    <label htmlFor="intvwnotes" >Interview Notes: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
@@ -1226,21 +1249,21 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="followupmsg" placeholder='Follow-Up Message'
                                                         value={position.followupmsg}
-                                                    ></textarea> <br/>
-                                                    <br/>
-                                                    <br/>
-                                                    <br/>
+                                                    ></textarea> <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
                                                 </LineItemsGrid>
 
-
+                                                <div id='tab4'></div>
                                                 <LineItemsGrid>
-                                                <br/>
-<br/>
-<br/>
-<br/>
-                                                    <h1 id='tab4'>Results:</h1>
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <br />
+                                                    <h1>Results:</h1>
 
-                                                    <table>
+                                                    {/* <table>
                                                         <select value={this.state.value}
                                                             onBlur={() => this.handleUpdate(position._id)}
                                                             onChange={(event) => this.handleChange(event, position._id)}>
@@ -1249,24 +1272,13 @@ class CompanyShow extends Component {
                                                         </select>
                                                         <br />
                                                         <br />
-                                                        {/* Secured the Bag  <span>💰</span> <input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="gotthebag"
-                                                            value={position.gotthebag}
-                                                        />
-                                                        Better Luck Next Time  <span>🧗🏽‍♀️</span><input
-                                                            onBlur={() => this.handleUpdate(position._id)}
-                                                            onChange={(event) => this.handleChange(event, position._id)}
-                                                            type="checkbox" name="nexttime"
-                                                            value={position.nexttime}
-                                                        /> */}
-                                                    </table>
+                                                        
+                                                    </table> */}
                                                     <label htmlFor="results" >Notes: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
                                                         onChange={(event) => this.handleChange(event, position._id)}
-                                                        type="text" name="results" placeholder='Did you get the job?'
+                                                        type="text" name="results" placeholder='Did you land the job? Why or Why not?'
                                                         value={position.results}
                                                     ></textarea>
                                                     <label htmlFor="tostudy" >Need to Study: </label>

@@ -75,12 +75,12 @@ class NavBar extends Component {
                         <Link to="/"> <FaHome />&#160; <p>Home</p>
                         {/* <img src="/images/CAL_ent_logo.png" alt="logo" /> */}
                          </Link> 
-                         <Link to="#"> <FaCalendarDay/>&#160; <p>Home</p>
+                         <Link to="#"> <FaCalendarDay/>&#160; <p>Calendar</p>
                          </Link> 
-                        <Link to="/companys"> <FaCity/>&#160; <p>Directory</p></Link>
+                        <Link to="/companys"> <FaCity/>&#160; <p>Companies</p></Link>
                         {/* <Link to="/companys/#companyname"> 👩🏿‍💻Add New Company </Link> */}
-                        <Link to="#"> <FaGem/>&#160; <p>Home</p>
-                         </Link> 
+                        {/* <Link to="#"> <FaGem/>&#160; <p>Gems</p>
+                         </Link>  */}
                     </LogoStyles>
                     <div>
 

@@ -722,6 +722,13 @@ class CompanyShow extends Component {
             nexttime: '',
             tostudy: '',
             foundon: '',
+            intvwname1: '',
+            intvwname2: '',
+            intvwname3: '',
+            abtrole: '',
+            whyme: '',
+            nextsteps: '',
+
 
 
         }
@@ -1008,7 +1015,7 @@ class CompanyShow extends Component {
                                                     <br />
                                                 </LineItemsGrid>
 
-<div id='tab2'></div>
+                                                <div id='tab2'></div>
                                                 <LineItemsGrid >
                                                     <br />
                                                     <br />
@@ -1065,11 +1072,28 @@ class CompanyShow extends Component {
                                                 <br />
                                                 <div id='tab3'></div>
                                                 <LineItemsGrid>
+
                                                     <br />
                                                     <br />
                                                     <br />
                                                     <br />
                                                     <h1 >Interview Info:</h1>
+                                                    <label htmlFor="abtrole" >Pre-Interview Research Notes  </label>
+                                                    <textarea
+                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                        onChange={(event) => this.handleChange(event, position._id)}
+                                                        type="text" name="abtrole" placeholder='Notes about the role and company:'
+                                                        value={position.abtrole}
+                                                    ></textarea>
+                                                    <label htmlFor="whyme" >Why I'm a good fit for the {position.jobtitle} position</label>
+                                                    <textarea
+                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                        onChange={(event) => this.handleChange(event, position._id)}
+                                                        type="text" name="whyme" placeholder='Tell them why they need you 💪🏾!'
+                                                        value={position.whyme}
+                                                    ></textarea>
+                                                    <br />
+                                                    <br />
                                                     <div className="row header">
                                                         <td id="desktop">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview 1</div></td>
                                                         <td id="phone">    <div className='' ><span> <FaBriefcase /> </span> <br /> Interview <br /> 1</div></td>
@@ -1109,6 +1133,13 @@ class CompanyShow extends Component {
                                                                 type="text" name="intvw1" placeholder='Phone / Virtual / Office / Technical'
                                                                 value={position.intvw1}
                                                             />
+                                                            <label htmlFor="intvwname1" >Interviewer's name: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvwname1" placeholder='Bob Ross'
+                                                                value={position.intvwname1}
+                                                            />
                                                             {/* <label htmlFor="intvw1"> <br />
                                                                 Type of Interview:
                                                             <select value={this.state.value}
@@ -1146,6 +1177,13 @@ class CompanyShow extends Component {
                                                                 type="text" name="intvw2" placeholder='Phone / Virtual / Office / Technical'
                                                                 value={position.intvw2}
                                                             />
+                                                            <label htmlFor="intvwname2" >Interviewer's name: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvwname2" placeholder='Oprah Winfrey'
+                                                                value={position.intvwname2}
+                                                            />
                                                             {/* <label htmlFor="intvw2">
                                                                 <br />
                                                                 Type of Interview:
@@ -1182,6 +1220,12 @@ class CompanyShow extends Component {
                                                                 onChange={(event) => this.handleChange(event, position._id)}
                                                                 type="text" name="intvw3" placeholder='Phone / Virtual / Office / Technical'
                                                                 value={position.intvw3}
+                                                            /><label htmlFor="intvwname3" >Interviewer's name: </label>
+                                                            <input
+                                                                onBlur={() => this.handleUpdate(position._id)}
+                                                                onChange={(event) => this.handleChange(event, position._id)}
+                                                                type="text" name="intvwname3" placeholder='Martin Payne'
+                                                                value={position.intvwname3}
                                                             />
                                                             {/* <label htmlFor="intvw3">
                                                                 <br />
@@ -1242,6 +1286,13 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="intvwnotes" placeholder='Add notes about the company or your interview here'
                                                         value={position.intvwnotes}
+                                                    ></textarea>
+                                                    <label htmlFor="nextsteps" >Next Steps: </label>
+                                                    <textarea
+                                                        onBlur={() => this.handleUpdate(position._id)}
+                                                        onChange={(event) => this.handleChange(event, position._id)}
+                                                        type="text" name="nextsteps" placeholder='Technical Interview / Code Challenge / Background Check / Reference Check'
+                                                        value={position.nextsteps}
                                                     ></textarea>
                                                     <label htmlFor="followupmsg" >Follow-Up Message: </label>
                                                     <textarea

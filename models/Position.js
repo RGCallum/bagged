@@ -48,7 +48,13 @@ const Position = new Schema({
     results: String,
     tostudy: String,
     foundon: String,
-    
+    intvwname1: String,
+    intvwname2: String,
+    intvwname3: String,
+    abtrole: String,
+    whyme: String,
+    nextsteps:String,
+
     allClients: [
         {
           type: Schema.Types.ObjectId,

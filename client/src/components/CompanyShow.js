@@ -23,8 +23,9 @@ const BigDiv = styled.div`
     
 }
 .tabs{
+    background-color: #2A2D36;
     position: sticky;
-    top: 50px;
+    top: 30px;
     button{
         background-color: transparent;
         border: none;
@@ -965,6 +966,7 @@ class CompanyShow extends Component {
                                                 </TopPosition>
 
 
+                                                    <br />
 
                                                 <div className="tabs">
                                                     <a href="#tab1"><button id='tabtitle1'>  <h2 >CONTACT</h2></button></a>
@@ -976,6 +978,9 @@ class CompanyShow extends Component {
                                                 <br />
                                                 <br />
                                                 <LineItemsGrid >
+                                                <br />
+                                                <br />                                                <br />
+                                                <br />                                                <br />
 
                                                     <h1>Contact Info:</h1>
 
@@ -1021,6 +1026,9 @@ class CompanyShow extends Component {
                                                     <br />
                                                     <br />
                                                     <br />
+                                                    <br />
+                                                <br />                                                <br />
+                                                <br /> 
                                                     <h1 >Job Info:</h1>
 
                                                     <label htmlFor="joburl" >Position URL: </label>
@@ -1077,6 +1085,9 @@ class CompanyShow extends Component {
                                                     <br />
                                                     <br />
                                                     <br />
+                                                    <br />
+                                                <br />                                                <br />
+                                                <br /> 
                                                     <h1 >Interview Info:</h1>
                                                     <label htmlFor="abtrole" >Pre-Interview Research Notes  </label>
                                                     <textarea
@@ -1312,6 +1323,9 @@ class CompanyShow extends Component {
                                                     <br />
                                                     <br />
                                                     <br />
+                                                    <br />
+                                                <br />                                                <br />
+                                                <br /> 
                                                     <h1>Results:</h1>
 
                                                     {/* <table>

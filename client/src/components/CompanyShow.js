@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { FaMinusCircle, FaScroll, FaUser, FaIdBadge, FaAddressCard, FaPlus, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
+import { FaMinusCircle, FaScroll, FaUser, FaIdBadge, FaAddressCard, FaCog, FaPlus, FaPlusCircle, FaComments, FaCog, FaStopwatch, FaFolder, FaHourglassHalf, FaCalendarDay, FaCalendarAlt, FaUserClock, FaClock, FaMoneyCheckAlt, FaMoneyBillAlt, FaHandHoldingUsd, FaBriefcase, FaDollarSign, FaFolderOpen, FaPrint, FaFileDownload, FaCartPlus } from 'react-icons/fa';
 import NavBar from './NavBar'
 
 
@@ -876,7 +876,7 @@ class CompanyShow extends Component {
 
                                 <Link to={`/companys/${this.props.match.params.companyId}/profile`} id="prof" >
                                     <EditProfileBtn >
-                                        <FaBriefcase className='icons' />
+                                        <FaCog className='icons' />
                                         {/* 🗃                         */}
                                     </EditProfileBtn>
                                 </Link>
@@ -1290,7 +1290,13 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
-                                                    ></textarea>
+                                                    >How Long has the company been around?
+                                                    How many people on the team? 
+                                                    What would I actually be working on?
+                                                    what would my day to day responsibilities be like?
+                                                    How long does the process normally take?
+                                                    How long have you worked there and what is the most useful thing you've learned? 
+                                                    Next Steps?</textarea>
                                                     <label htmlFor="intvwnotes" >Interview Notes: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}

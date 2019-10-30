@@ -1290,13 +1290,7 @@ class CompanyShow extends Component {
                                                         onChange={(event) => this.handleChange(event, position._id)}
                                                         type="text" name="intvwques" placeholder='Add position and company specific questions here'
                                                         value={position.intvwques}
-                                                    >How Long has the company been around?
-                                                    How many people on the team? 
-                                                    What would I actually be working on?
-                                                    what would my day to day responsibilities be like?
-                                                    How long does the process normally take?
-                                                    How long have you worked there and what is the most useful thing you've learned? 
-                                                    Next Steps?</textarea>
+                                                    ></textarea>
                                                     <label htmlFor="intvwnotes" >Interview Notes: </label>
                                                     <textarea
                                                         onBlur={() => this.handleUpdate(position._id)}
